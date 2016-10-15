@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Dal\MySqlDal class
+ * This file contain Seeren\Database\Dal\MySql\MySqlDal class
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
@@ -13,8 +13,10 @@
  * @version 1.0.1
  */
 
-namespace Seeren\Database\Dal;
+namespace Seeren\Database\Dal\MySql;
 
+use Seeren\Database\Dal\Dal;
+use Seeren\Database\Dal\DalInterface;
 use Seeren\Database\Dao\MySql\CountMySqlDao;
 use Seeren\Database\Dao\MySql\CreateMySqlDao;
 use Seeren\Database\Dao\MySql\CreateDbMySqlDao;
@@ -32,7 +34,7 @@ use Seeren\Database\Dao\MySql\UseDbMySqlDao;
  * 
  * @category Seeren
  * @package Database
- * @subpackage Dal
+ * @subpackage Dal\MySql
  */
 class MySqlDal extends Dal implements DalInterface
 {
