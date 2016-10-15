@@ -1,9 +1,16 @@
 <?php
 
 /**
- * This file contain DropDbMySqlDao class
+ * This file contain Seeren\Database\Dao\MySql\DropDbMySqlDao class
+ *     __
+ *    / /__ __ __ __ __ __
+ *   / // // // // // // /
+ *  /_// // // // // // /
+ *    /_//_//_//_//_//_/
  *
- * @package Database
+ * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @link http://www.seeren.fr/ Seeren
+ * @version 1.0.1
  */
 
 namespace Seeren\Database\Dao\MySql;
