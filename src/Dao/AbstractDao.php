@@ -36,11 +36,11 @@ abstract class AbstractDao
         /**
          * @var int row number
          */
-        $row,
-        /**
-         * @var array fetch result
-         */
-        $result;
+        $row;
+//         /**
+//          * @var array fetch result
+//          */
+//         $result;
 
     /**
      * Template method Get MSql syntaxe
@@ -70,7 +70,7 @@ abstract class AbstractDao
     {
         $this->queryString = "";
         $this->row = 0;
-        $this->result = [];
+//         $this->result = [];
     }
 
     /**
@@ -123,13 +123,14 @@ abstract class AbstractDao
         return $this->queryString;
     }
 
+
     /**
      * Get attribut
      *
      * @param string $name attribut name
      * @return null
      */
-    public final function __get($name)
+    public final function get($name = self::ATTR_ROW)
     {
         return property_exists($this, $name) ? $this->{$name} : null;
     }

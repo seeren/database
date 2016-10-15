@@ -27,6 +27,12 @@ use Seeren\Database\Dal\DalInterface;
 interface DaoInterface
 {
 
+    const
+        /**
+         * @var string attribut name
+         */
+        ATTR_ROW = "row";
+
     /**
      * Query table for dal
      *
@@ -59,6 +65,6 @@ interface DaoInterface
      * @param string $name attribut name
      * @return null
      */
-    public function __get($name);
+    public function get($name);
 
 }
