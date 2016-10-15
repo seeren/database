@@ -1,9 +1,16 @@
 <?php
 
 /**
- * This file contain UpdateMySqlDao class
+ * This file contain Seeren\Database\Dao\MySql\UpdateMySqlDao class
+ *     __
+ *    / /__ __ __ __ __ __
+ *   / // // // // // // /
+ *  /_// // // // // // /
+ *    /_//_//_//_//_//_/
  *
- * @package Database
+ * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @link http://www.seeren.fr/ Seeren
+ * @version 1.0.1
  */
 
 namespace Seeren\Database\Dao\MySql;
@@ -21,48 +28,56 @@ use RuntimeException;
  * @category Seeren
  * @package Database
  * @subpackage Dao\MySql
- * @author Cyril
- * @copyright 2016
- * @version 1.0.1
- * @final
  */
-final class UpdateMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
+class UpdateMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
 {
-
-    private
-        /**
-         * @var PDOStatement statement in process
-         */
-        $sth;
 
     /**
      * Construct UpdateMySqlDao
      *
      * @return null
      */
-    final public function __construct()
+    public function __construct()
     {
         parent::__construct();
     }
 
     /**
-     * Execute operation
+     * Template method Get MSql syntaxe
+     *
+     * @param TableInterface $table table
+     * @return string Myql operation for table
+     */
+    protected function getSyntax(TableInterface $table): string
+    {
+        $mySql = "";
+        foreach ($table->get($table::ATTR_COLUMN) as $key => $value) {
+            if (null !== $value->getValue()) {
+                $id = ":" . $key;
+                $mySql .= "`" . $key . "`=" . $id . ", ";
+                $this->setParam($id, $value->getValue(), $value->getParam());
+            }
+        }
+        return "UPDATE `". $table::NAME. "` " . "SET " . substr($mySql, 0, -2)
+             . (($clause = $this->getClause($table)) ? " " . $clause : "")
+             . ";";
+    }
+
+    /**
+     * Template method Execute operation
      *
      * @param TableInterface $table table
      * @param DalInterface $dal access layer
      * @return DaoInterface self
      */
-    final protected function execute(
-        TableInterface $table,
-        DalInterface $dal): DaoInterface
+    protected function execute(TableInterface $table, DalInterface $dal)
     {
         if (!$this->sth || $this->queryString !== $this->sth->queryString) {
             $this->sth = $dal->getLayer()->prepare($this->queryString);
             $this->bindParam($this->sth);
         }
         $this->sth->execute();
-        $this->row = $this->row + $this->sth->rowCount();
-        return $this;
+        $this->row += $this->sth->rowCount();
     }
 
     /**
@@ -74,35 +89,15 @@ final class UpdateMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
      * 
      * @throws RuntimeException if no clause
      */
-    final public function query(
+    public function query(
         TableInterface $table,
         DalInterface $dal): DaoInterface
     {
-        if ([] !== $table->get($table::ATTR_CLAUSE)) {
-            return parent::query($table, $dal)->execute($table, $dal);
+        if ([] === $table->get($table::ATTR_CLAUSE)) {
+            throw new RuntimeException(
+                "Can't query table: must provide clause");
         }
-        throw new RuntimeException("Can't query table: must provide clause");
-    }
-
-    /**
-     * Get MySql syntaxe
-     *
-     * @param TableInterface $table table
-     * @return string MySql operation for table
-     */
-    final public function mySql(TableInterface $table): string
-    {
-        $mySql = "";
-        foreach ($table->get($table::ATTR_COLUMN) as $key => &$value) {
-            if (null !== $value->getValue()) {
-                $bind = ":" . $key;
-                $mySql .= "`" . $key . "`=" . $bind . ", ";
-                $this->setParam($bind, $value->getValue(), $value->getParam());
-            }
-        }
-        return "UPDATE `". $table::NAME. "` " . "SET " . substr($mySql, 0, -2)
-             . (($clause = $this->getClause($table)) ? " " . $clause : "")
-             . ";";
+        return parent::query($table, $dal);
     }
 
 }

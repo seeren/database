@@ -17,6 +17,7 @@ namespace Seeren\Database\Dao;
 
 use Seeren\Database\Table\TableInterface;
 use Seeren\Database\Dal\DalInterface;
+
 /**
  * Interface for provide data access object
  * 
@@ -31,7 +32,15 @@ interface DaoInterface
         /**
          * @var string attribut name
          */
-        ATTR_ROW = "row";
+        ATTR_ROW = "row",
+        /**
+         * @var string attribut name
+         */
+        ATTR_PARAM = "param",
+        /**
+         * @var string attribut name
+         */
+        ATTR_RESULT = "result";
 
     /**
      * Query table for dal
@@ -40,9 +49,14 @@ interface DaoInterface
      * @param DalInterface $dal access layer
      * @return DaoInterface self
      */
-    public function query(
-        TableInterface $table,
-        DalInterface $dal): DaoInterface;
+    public function query(TableInterface $table, DalInterface $dal): self;
+
+    /**
+     * Close
+     *
+     * @return null
+     */
+    public function close();
 
     /**
      * Get an instance
@@ -50,7 +64,7 @@ interface DaoInterface
      * @return DaoInterface instance
      *
      */
-    public function clone(): DaoInterface;
+    public function clone(): self;
 
     /**
      * Get string representation
@@ -65,6 +79,6 @@ interface DaoInterface
      * @param string $name attribut name
      * @return null
      */
-    public function get($name);
+    public function __get($name);
 
 }

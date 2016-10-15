@@ -37,10 +37,6 @@ abstract class AbstractDao
          * @var int row number
          */
         $row;
-//         /**
-//          * @var array fetch result
-//          */
-//         $result;
 
     /**
      * Template method Get MSql syntaxe
@@ -51,7 +47,7 @@ abstract class AbstractDao
     abstract protected function getSyntax(TableInterface $table): string;
 
     /**
-     * Execute operation
+     * Template method Execute operation
      *
      * @param TableInterface $table table
      * @param DalInterface $dal access layer
@@ -70,7 +66,6 @@ abstract class AbstractDao
     {
         $this->queryString = "";
         $this->row = 0;
-//         $this->result = [];
     }
 
     /**
@@ -98,8 +93,17 @@ abstract class AbstractDao
     {
         $this->queryString = $this->getSyntax($table);
         $this->execute($table, $dal);
-        $table->set($this);
         return $this;
+    }
+
+    /**
+     * Close
+     *
+     * @return null
+     */
+    public function close()
+    {
+        unset($this->queryString);
     }
 
     /**
@@ -120,9 +124,8 @@ abstract class AbstractDao
      */
     public final function __toString(): string
     {
-        return $this->queryString;
+        return (string) $this->queryString;
     }
-
 
     /**
      * Get attribut
@@ -130,7 +133,7 @@ abstract class AbstractDao
      * @param string $name attribut name
      * @return null
      */
-    public final function get($name = self::ATTR_ROW)
+    public final function __get($name)
     {
         return property_exists($this, $name) ? $this->{$name} : null;
     }

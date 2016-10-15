@@ -55,7 +55,7 @@ class CreateDbMySqlDao extends AbstractDao implements DaoInterface
     }
 
     /**
-     * Execute operation
+     * Template method Execute operation
      *
      * @param TableInterface $table table
      * @param DalInterface $dal access layer

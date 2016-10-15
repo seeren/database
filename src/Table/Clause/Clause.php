@@ -108,4 +108,14 @@ class Clause implements ClauseInterface
         return $this->value;
     }
 
+    /**
+     * Set value
+     *
+     * @return null
+     */
+    public final function setValue($value)
+    {
+        $this->value = $value;
+    }
+
 }

@@ -1,9 +1,16 @@
 <?php
 
 /**
- * This file contain DeleteMySqlDao class
+ * This file contain Seeren\Database\Dao\MySql\DeleteMySqlDao class
+ *     __
+ *    / /__ __ __ __ __ __
+ *   / // // // // // // /
+ *  /_// // // // // // /
+ *    /_//_//_//_//_//_/
  *
- * @package Database
+ * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @link http://www.seeren.fr/ Seeren
+ * @version 1.0.1
  */
 
 namespace Seeren\Database\Dao\MySql;
@@ -21,40 +28,41 @@ use RuntimeException;
  * @category Seeren
  * @package Database
  * @subpackage Dao\MySql
- * @author Cyril
- * @copyright 2016
- * @version 1.0.1
- * @final
  */
-final class DeleteMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
+class DeleteMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
 {
-
-    private
-        /**
-         * @var PDOStatement statement in process
-         */
-        $sth;
 
     /**
      * Construct DeleteMySqlDao
      *
      * @return null
      */
-    final public function __construct()
+    public function __construct()
     {
         parent::__construct();
     }
 
     /**
-     * Execute operation
+     * Template method Get MSql syntaxe
+     *
+     * @param TableInterface $table table
+     * @return string Myql operation for table
+     */
+    protected function getSyntax(TableInterface $table): string
+    {
+       return "DELETE FROM `" . $table->get($table::ATTR_NAME) . "`"
+            . (($clause = $this->getClause($table)) ? " " . $clause : "")
+            . ";";;
+    }
+
+    /**
+     * Template method Execute operation
      *
      * @param TableInterface $table table
      * @param DalInterface $dal access layer
      * @return DaoInterface self
      */
-    final protected function execute(
-        TableInterface $table,
-        DalInterface $dal): DaoInterface
+    protected function execute(TableInterface $table, DalInterface $dal)
     {
         if (!$this->sth || $this->queryString !== $this->sth->queryString) {
             $this->sth = $dal->getLayer()->prepare($this->queryString);
@@ -62,7 +70,6 @@ final class DeleteMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
         }
         $this->sth->execute();
         $this->row += $this->sth->rowCount();
-        return $this;
     }
 
     /**
@@ -71,30 +78,18 @@ final class DeleteMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
      * @param TableInterface $table table
      * @param DalInterface $dal access layer
      * @return DaoInterface self
-     * 
+     *
      * @throws RuntimeException if no clause
      */
-    final public function query(
+    public function query(
         TableInterface $table,
         DalInterface $dal): DaoInterface
     {
-        if ([] !== $table->get($table::ATTR_CLAUSE)) {
-            return parent::query($table, $dal)->execute($table, $dal);
+        if ([] === $table->get($table::ATTR_CLAUSE)) {
+            throw new RuntimeException(
+                "Can't query table: must provide clause");
         }
-        throw new RuntimeException("Can't query table: must provide clause");
-    }
-
-    /**
-     * Get MySql syntaxe
-     *
-     * @param TableInterface $table table
-     * @return string MySql operation for table
-     */
-    final public function mySql(TableInterface $table): string
-    {
-       return "DELETE FROM `" . $table::NAME . "`"
-           . (($clause = $this->getClause($table)) ? " " . $clause : "")
-           . ";";
+        return parent::query($table, $dal);
     }
 
 }

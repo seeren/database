@@ -97,7 +97,7 @@ class Dal
         string $operation): DalInterface
     {
         try {
-            $this->getObject($operation)->query($table, $this);
+            $table->set($this->getObject($operation)->query($table, $this));
             return $this;
         } catch (Throwable $e) {
             throw new RuntimeException("Can't query: " . $e->getMessage());

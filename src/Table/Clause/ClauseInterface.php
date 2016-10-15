@@ -119,4 +119,11 @@ interface ClauseInterface
      */
     public function getValue();
 
+    /**
+     * Set value
+     *
+     * @return null
+     */
+    public function setValue($value);
+
 }
