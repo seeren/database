@@ -41,7 +41,7 @@ interface DalInterface
         /**
          * @var string operation name
          */
-        CREATE_DB = "createdb",
+        CREATE_DB = "create_db",
         /**
          * @var string operation name
          */
@@ -53,7 +53,7 @@ interface DalInterface
         /**
          * @var string operation name
          */
-        DROP_DB = "dropdb",
+        DROP_DB = "drop_db",
         /**
          * @var string operation name
          */
@@ -73,7 +73,7 @@ interface DalInterface
         /**
          * @var string operation name
          */
-        USE_DB = "usedb";
+        USE_DB = "use_db";
 
     /**
      * Query table for operation

@@ -16,6 +16,7 @@
 namespace Seeren\Database\Table;
 
 use Seeren\Database\Table\Clause\ClauseInterface;
+use Seeren\Database\Dao\DaoInterface;
 
 /**
  * Interface for map table in object
@@ -35,7 +36,7 @@ interface TableInterface
         /**
          * @var string const name
          */
-        ATTR_ENGINE = "ENGINE",
+        ATTR_OBJECT = "object",
         /**
          * @var string attribut name
          */
@@ -67,6 +68,14 @@ interface TableInterface
      * @return mixed attribute value
      */
     public function get(string $name);
+
+    /**
+     * Set results
+     *
+     * @param DaoInterface $object access object
+     * @return null
+     */
+    public function set(DaoInterface $object);
 
     /**
      * Add clause

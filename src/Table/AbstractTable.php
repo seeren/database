@@ -15,10 +15,12 @@
 
 namespace Seeren\Database\Table;
 
+use Seeren\Database\Dal\DalInterface;
+use Seeren\Database\Dao\DaoInterface;
 use Seeren\Database\Table\Clause\ClauseInterface;
 use Seeren\Database\Table\Column\ColumnInterface;
 use Seeren\Database\Table\Key\KeyInterface;
-use Seeren\Database\Dal\DalInterface;
+use BadMethodCallException;
 use RuntimeException;
 use Throwable;
 
@@ -33,6 +35,10 @@ abstract class AbstractTable
 {
 
     protected
+        /**
+         * @var array DaoInterface access object
+         */
+        $object,
         /**
          * @var array ColumnInterface collection
          */
@@ -87,19 +93,23 @@ abstract class AbstractTable
      * @param array methode arguments
      * @return TableInterface self
      * 
-     * @throws RuntimeException on faillure
+     * @throws BadMethodCallException for no layer
+     * @throws RuntimeException on layer exception
      */
      public function __call(string $name, array $args): TableInterface
     {
         try {
-            if (is_object($args[0]) && $args[0] instanceof  DalInterface) {
+            if (array_key_exists(0, $args)
+             && is_object($args[0])
+             && $args[0] instanceof DalInterface) {
                 $args[0]->query($this, $name);
                 return $this;
             }
-            throw new RuntimeException(
-                "Can't call methode: need to provide access layer");
+            throw new BadMethodCallException(
+                "Can't call " . $name . ": need to provide access layer");
         } catch (Throwable $e) {
-            throw new RuntimeException($e->getMessage());
+            throw new RuntimeException(
+                "Can't call " . $name . ": " . $e->getMessage());
         }
     }
 
@@ -136,13 +146,24 @@ abstract class AbstractTable
      * @param string $name attribute name
      * @return mixed attribute value
      */
-    public function get(string $name)
+    public function get(string $name = TableInterface::ATTR_OBJECT)
     {
         return property_exists($this, $name)
              ? $this->{$name}
              : (($const = "static::" . $name) && defined($const)
-                        ? constant($const)
-                        : null);
+             ? constant($const)
+             : null);
+    }
+
+    /**
+     * Set access object
+     *
+     * @param DaoInterface $object access object
+     * @return null
+     */
+    public final function set(DaoInterface $object)
+    {
+        $this->object = $object;
     }
 
     /**
@@ -161,8 +182,9 @@ abstract class AbstractTable
      *
      * @return null
      */
-    public function clear()
+    public final function clear()
     {
+        $this->object = null;
         $this->clause   = [];
     }
 
