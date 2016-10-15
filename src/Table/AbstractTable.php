@@ -15,7 +15,6 @@
 
 namespace Seeren\Database\Table;
 
-use Seeren\Database\Table\TableInterface;
 use Seeren\Database\Table\Clause\ClauseInterface;
 use Seeren\Database\Table\Column\ColumnInterface;
 use Seeren\Database\Table\Key\KeyInterface;
@@ -132,16 +131,6 @@ abstract class AbstractTable
     }
 
     /**
-     * Clear clauses and results
-     *
-     * @return null
-     */
-    public function clear()
-    {
-        $this->clause   = [];
-    }
-
-    /**
      * Get attribute
      *
      * @param string $name attribute name
@@ -165,6 +154,16 @@ abstract class AbstractTable
     public final function addClause(ClauseInterface $clause)
     {
         $this->clause[] = $clause;
+    }
+
+    /**
+     * Clear clauses and results
+     *
+     * @return null
+     */
+    public function clear()
+    {
+        $this->clause   = [];
     }
 
 }

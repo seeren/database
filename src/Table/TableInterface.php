@@ -61,13 +61,6 @@ interface TableInterface
     public function __call(string $name, array $args): TableInterface;
 
     /**
-     * Clear clauses and results
-     *
-     * @return null
-     */
-    public function clear();
-
-    /**
      * Get attribute
      *
      * @param string $name attribute name
@@ -82,5 +75,12 @@ interface TableInterface
      * @return null
      */
     public function addClause(ClauseInterface $clause);
+
+    /**
+     * Clear clauses and results
+     *
+     * @return null
+     */
+    public function clear();
 
 }
