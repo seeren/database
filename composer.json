@@ -1,0 +1,23 @@
+{
+    "name": "seeren/database",
+    "description": "Performant Data Mapper",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Cyril Ichti",
+        "email": "consultant@seeren.fr",
+        "homepage" : "http://www.seeren.fr"
+      }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+      "php": ">=7.0.1"
+    },
+    "autoload": {
+      "psr-4": {
+		"Seeren\\Database\\": "src/",
+		"Seeren\\Database\\Test\\": "test/"
+      }
+   }
+}
