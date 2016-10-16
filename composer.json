@@ -1,6 +1,6 @@
 {
     "name": "seeren/database",
-    "description": "Performant Data Mapper",
+    "description": "Not persistent Data Mapper",
     "type": "library",
     "license": "MIT",
     "authors": [

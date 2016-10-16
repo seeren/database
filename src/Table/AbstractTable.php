@@ -163,6 +163,7 @@ abstract class AbstractTable
      */
     public final function set(DaoInterface $object)
     {
+        $object->close();
         $this->object = $object;
     }
 

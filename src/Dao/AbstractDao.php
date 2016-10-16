@@ -135,7 +135,7 @@ abstract class AbstractDao
      */
     public final function __get($name)
     {
-        return property_exists($this, $name) ? $this->{$name} : null;
+        return isset($this->{$name}) ? $this->{$name} : null;
     }
 
 }
