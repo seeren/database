@@ -59,7 +59,7 @@ interface MySqlDaoInterface extends DaoInterface
         /**
          * @var string column option
          */
-        AUTO_INCREMENT = "AUTO_INCREMENT",
+        AUTO_INCREMENT = "",
         /**
          * @var string column type
          */

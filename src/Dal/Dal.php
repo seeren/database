@@ -28,7 +28,7 @@ use Throwable;
  * @package Database
  * @subpackage Dal
  */
-class Dal
+class Dal implements DalInterface
 {
 
     private

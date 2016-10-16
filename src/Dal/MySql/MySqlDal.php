@@ -16,7 +16,6 @@
 namespace Seeren\Database\Dal\MySql;
 
 use Seeren\Database\Dal\Dal;
-use Seeren\Database\Dal\DalInterface;
 use Seeren\Database\Dao\MySql\CountMySqlDao;
 use Seeren\Database\Dao\MySql\CreateMySqlDao;
 use Seeren\Database\Dao\MySql\CreateDbMySqlDao;
@@ -36,7 +35,7 @@ use Seeren\Database\Dao\MySql\UseDbMySqlDao;
  * @package Database
  * @subpackage Dal\MySql
  */
-class MySqlDal extends Dal implements DalInterface
+class MySqlDal extends Dal
 {
 
     /**

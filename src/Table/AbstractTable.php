@@ -20,9 +20,8 @@ use Seeren\Database\Dao\DaoInterface;
 use Seeren\Database\Table\Clause\ClauseInterface;
 use Seeren\Database\Table\Column\ColumnInterface;
 use Seeren\Database\Table\Key\KeyInterface;
-use BadMethodCallException;
+use InvalidArgumentException;
 use RuntimeException;
-use Throwable;
 
 /**
  * Class for map table in object
@@ -93,23 +92,24 @@ abstract class AbstractTable
      * @param array methode arguments
      * @return TableInterface self
      * 
-     * @throws BadMethodCallException for no layer
+     * @throws InvalidArgumentException for no layer
      * @throws RuntimeException on layer exception
      */
-     public function __call(string $name, array $args): TableInterface
+     public final function __call(string $name, array $args): TableInterface
     {
-        try {
-            if (array_key_exists(0, $args)
-             && is_object($args[0])
-             && $args[0] instanceof DalInterface) {
-                $args[0]->query($this, $name);
-                return $this;
-            }
-            throw new BadMethodCallException(
+        if (!array_key_exists(0, $args)
+         || !is_object($args[0])
+         || !$args[0] instanceof DalInterface) {
+            throw new InvalidArgumentException(
                 "Can't call " . $name . ": need to provide access layer");
-        } catch (Throwable $e) {
+        }
+        try {
+            $args[0]->query($this, $name);
+            return $this;
+        } catch (RuntimeException $e) {
             throw new RuntimeException(
-                "Can't call " . $name . ": " . $e->getMessage());
+                "Can't call " . self::class . "::" . $name
+              . ": " . $e->getMessage());
         }
     }
 
@@ -146,7 +146,7 @@ abstract class AbstractTable
      * @param string $name attribute name
      * @return mixed attribute value
      */
-    public function get(string $name = TableInterface::ATTR_OBJECT)
+    public final function get(string $name = TableInterface::ATTR_OBJECT)
     {
         return property_exists($this, $name)
              ? $this->{$name}

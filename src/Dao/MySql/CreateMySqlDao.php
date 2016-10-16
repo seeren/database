@@ -20,6 +20,7 @@ use Seeren\Database\Dao\MySql\MySqlDaoInterface;
 use Seeren\Database\Dal\DalInterface;
 use Seeren\Database\Table\TableInterface;
 use Seeren\Database\Table\Key\KeyInterface;
+use Seeren\Database\Table\Column\ColumnInterface;
 
 /**
  * Class for provide create MySql operation
@@ -47,25 +48,51 @@ class CreateMySqlDao extends AbstractDao implements MySqlDaoInterface
      * @param TableInterface $table table
      * @return string constraint syntaxe
      */
-    private function constraint(TableInterface $table): string
+    private final function constraint(TableInterface $table): string
     {
         $mySql = $sk = $fk = "";
         foreach ($table->get($table::ATTR_KEY) as $key => $value) {
             if (KeyInterface::FOREIGN !== $value->getType()) {
                 $sk .= $this->addKey($value, $key);
+                if (KeyInterface::PRIMARY === $value->getType()) {
+                    $column = $table->get($table::ATTR_COLUMN);
+                    foreach ($value->getSubject() as $key) {
+                        $sk .= $this->addAutoIncrement($key, $column);
+                    }
+                }
             } else {
                 $fk .= $this->addForeign($value, $key);
             }
         }
         foreach ([$sk, $fk] as $value) {
-            $mySql .= "" !== $value
+            $mySql .= $value
                     ? "ALTER TABLE `" . $table->get($table::ATTR_NAME) . "`\n"
                     . substr($value, 0, -2) . ";\n"
-                    : "";
+                    : $value;
         }
         return substr($mySql, 0, -1);
     }
-    
+
+    /**
+     * Add auto increment
+     * 
+     * @param string $key
+     * @param array $column
+     * @return string modify auto increment syntax
+     */
+    private final function addAutoIncrement(string $key, array $column): string
+    {
+        $ai = "";
+        if (array_key_exists($key, $column) && in_array(
+                ColumnInterface::OPT_AUTO_INCREMENT,
+                $column[$key]->getOption())) {
+            $ai .= "MODIFY "
+                 . substr($this->getColumnSyntaxe($column[$key]), 0, -2)
+                 . " AUTO_INCREMENT;\n";
+        }
+        return $ai;
+    }
+
     /**
      * Get add key syntaxe
      *
@@ -73,7 +100,7 @@ class CreateMySqlDao extends AbstractDao implements MySqlDaoInterface
      * @param string $name name
      * @return string add key syntaxe
      */
-    private function addKey(KeyInterface $key, string $name): string
+    private final function addKey(KeyInterface $key, string $name): string
     {
         return "ADD " . $this->constant($key->getType())
              . " `k_" . $name . "`"
@@ -87,13 +114,31 @@ class CreateMySqlDao extends AbstractDao implements MySqlDaoInterface
      * @param string $name name
      * @return string add foreign key syntaxe
      */
-    private function addForeign(KeyInterface $key, string $name): string
+    private final function addForeign(KeyInterface $key, string $name): string
     {
         return "ADD CONSTRAINT" . " `fk_" . $name . "`"
              . " " . $this->constant($key->getType())
              . " (`" . implode("`, `", ($key->getSubject())) . "`) "
              . " REFERENCES `" . $key->getForeigner() . "`"
              . " (`" . implode("`, `", ($key->getForeignerSubject())) . "`),\n";
+    }
+
+    /**
+     * Get column syntax
+     * 
+     * @param ColumnInterface $column
+     * @return string column syntax line
+     */
+    private final function getColumnSyntaxe(ColumnInterface $column)
+    {
+        $mySql = "`" . $column->getName() . "` "
+               . $this->constant($column->getType())
+               . "(" . $column->getSize() . ")";
+        foreach ($column->getOption() as $option) {
+            $const = $this->constant($option);
+            $mySql .= $const ? " " . $const : "";
+        }
+        return $mySql . ",\n";
     }
 
     /**
@@ -104,19 +149,12 @@ class CreateMySqlDao extends AbstractDao implements MySqlDaoInterface
      */
     protected function getSyntax(TableInterface $table): string
     {
-        $mySql = "CREATE TABLE IF NOT EXISTS `"
-                . $table->get($table::ATTR_NAME) . "` (\n";
-        foreach ($table->get($table::ATTR_COLUMN) as $column) {
-            $mySql .= "`" . $column->getName() . "` "
-                   . $this->constant($column->getType())
-                   . "(" . $column->getSize() . ")";
-            foreach ($column->getOption() as $option) {
-                $mySql .= " " . $this->constant($option);
-            }
-            $mySql .= ",\n";
+        $mySql = "CREATE TABLE IF NOT EXISTS `" . $table->get($table::ATTR_NAME)
+               . "` (\n";
+        foreach ($table->get($table::ATTR_COLUMN) as $value) {
+            $mySql .= $this->getColumnSyntaxe($value);
         }
-        return substr($mySql, 0, -2) . "\n)"
-             . " ENGINE=innoDB CHARSET=utf8;\n"
+        return substr($mySql, 0, -2) . "\n)" . " ENGINE=innoDB CHARSET=utf8;\n"
              . $this->constraint($table);
     }
 
