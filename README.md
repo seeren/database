@@ -1,17 +1,17 @@
 ## Seeren\Database\
 
-Data mapper.
+Data mapper and syntax resolvers.
 
 #### Code Example
 
 Package contain table, access layer and access object. Table is an entity like,
 dal provide access objects then access objects can parse table for resolve
-query syntaxe and execute an operation. There is
+query syntax and execute an operation. There is
 one access object per operation, like select, update, drop, delete etc.
 
 ### Seeren\Database\Dal
 
-Dal can be used for limit access, providing only specific operations.
+Dal can be used for access limitation, providing only specific operations.
 
 ```php
 $dal = new Dal([
@@ -69,7 +69,3 @@ $ phpunit test/Dal/DalTest.php
 $ phpunit test/Dao/DaoTest.php
 $ phpunit test/Table/TableTest.php
 ```
-
-#### License
-
-[MIT](https://github.com/Seeren/Seeren/blob/master/LICENSE)
