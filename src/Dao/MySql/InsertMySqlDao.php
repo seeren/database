@@ -39,6 +39,7 @@ class InsertMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
     public function __construct()
     {
         parent::__construct();
+        unset($this->result);
     }
 
     /**
