@@ -51,9 +51,10 @@ class CreateMySqlDao extends AbstractDao implements MySqlDaoInterface
     private final function constraint(TableInterface $table): string
     {
         $mySql = $sk = $fk = "";
+        $name = $table->get($table::ATTR_NAME);
         foreach ($table->get($table::ATTR_KEY) as $key => $value) {
             if (KeyInterface::FOREIGN !== $value->getType()) {
-                $sk .= $this->addKey($value, $key);
+                $sk .= $this->addKey($value, $name . "_" . $key);
                 if (KeyInterface::PRIMARY === $value->getType()) {
                     $column = $table->get($table::ATTR_COLUMN);
                     foreach ($value->getSubject() as $key) {
@@ -61,14 +62,13 @@ class CreateMySqlDao extends AbstractDao implements MySqlDaoInterface
                     }
                 }
             } else {
-                $fk .= $this->addForeign($value, $key);
+                $fk .= $this->addForeign($value, $name . "_" . $key);
             }
         }
         foreach ([$sk, $fk] as $value) {
-            $mySql .= $value
-                    ? "ALTER TABLE `" . $table->get($table::ATTR_NAME) . "`\n"
-                    . substr($value, 0, -2) . ";\n"
-                    : $value;
+            $mySql .= $value ? "ALTER TABLE `" . $name . "`\n"
+                             . substr($value, 0, -2) . ";\n"
+                             : $value;
         }
         return substr($mySql, 0, -1);
     }
