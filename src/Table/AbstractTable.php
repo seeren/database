@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 namespace Seeren\Database\Table;
@@ -33,7 +33,7 @@ use RuntimeException;
 abstract class AbstractTable
 {
 
-    protected
+    private
         /**
          * @var array DaoInterface access object
          */
@@ -95,20 +95,21 @@ abstract class AbstractTable
      * @throws InvalidArgumentException for no layer
      * @throws RuntimeException on layer exception
      */
-     public final function __call(string $name, array $args): TableInterface
+     public function __call(string $name, array $args): TableInterface
     {
         if (!array_key_exists(0, $args)
          || !is_object($args[0])
          || !$args[0] instanceof DalInterface) {
             throw new InvalidArgumentException(
-                "Can't call " . $name . ": need to provide access layer");
+                "Can't call " . static::class . "::" . $name
+              . ": need to provide access layer");
         }
         try {
             $args[0]->query($this, $name);
             return $this;
         } catch (RuntimeException $e) {
             throw new RuntimeException(
-                "Can't call " . self::class . "::" . $name
+                "Can't call " . static::class . "::" . $name
               . ": " . $e->getMessage());
         }
     }
@@ -146,7 +147,7 @@ abstract class AbstractTable
      * @param string $name attribute name
      * @return mixed attribute value
      */
-    public final function get(string $name = TableInterface::ATTR_OBJECT)
+    public function get(string $name = TableInterface::ATTR_OBJECT)
     {
         return property_exists($this, $name)
              ? $this->{$name}
@@ -161,7 +162,7 @@ abstract class AbstractTable
      * @param DaoInterface $object access object
      * @return null
      */
-    public final function set(DaoInterface $object)
+    public function set(DaoInterface $object)
     {
         $object->close();
         $this->object = $object;
@@ -173,7 +174,7 @@ abstract class AbstractTable
      * @param ClauseInterface $clause table clause
      * @return null
      */
-    public final function addClause(ClauseInterface $clause)
+    public function addClause(ClauseInterface $clause)
     {
         $this->clause[] = $clause;
     }
@@ -183,7 +184,7 @@ abstract class AbstractTable
      *
      * @return null
      */
-    public final function clear()
+    public function clear()
     {
         $this->object = null;
         $this->clause   = [];
