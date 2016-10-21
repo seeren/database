@@ -10,18 +10,19 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.2
+ * @version 1.0.3
  */
 
 namespace Seeren\Database\Table;
 
-use Seeren\Database\Dal\DalInterface;
 use Seeren\Database\Dao\DaoInterface;
 use Seeren\Database\Table\Clause\ClauseInterface;
 use Seeren\Database\Table\Column\ColumnInterface;
 use Seeren\Database\Table\Key\KeyInterface;
 use InvalidArgumentException;
 use RuntimeException;
+use Error;
+use Throwable;
 
 /**
  * Class for map table in object
@@ -97,17 +98,14 @@ abstract class AbstractTable
      */
      public function __call(string $name, array $args): TableInterface
     {
-        if (!array_key_exists(0, $args)
-         || !is_object($args[0])
-         || !$args[0] instanceof DalInterface) {
-            throw new InvalidArgumentException(
-                "Can't call " . static::class . "::" . $name
-              . ": need to provide access layer");
-        }
         try {
             $args[0]->query($this, $name);
             return $this;
-        } catch (RuntimeException $e) {
+        } catch (Error $e) {
+            throw new InvalidArgumentException(
+                "Can't call " . static::class . "::" . $name
+              . ": " . $e->getMessage());
+        } catch (Throwable $e) {
             throw new RuntimeException(
                 "Can't call " . static::class . "::" . $name
               . ": " . $e->getMessage());
