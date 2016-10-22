@@ -80,7 +80,6 @@ class SelectMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
         $this->row = count($this->result);
         if (1 === $this->row) {
             foreach ($this->result[0] as $key => $value) {
-                var_dump($key);
                 $table->{$key} = $value;
             }
             unset($this->result);
