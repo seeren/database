@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.1
+ * @version 1.1.1
  */
 
 namespace Seeren\Database\Table;
@@ -85,6 +85,27 @@ abstract class MasterTable extends AbstractTable
             throw new RuntimeException(
                 "Can't call " . static::class . "::" . $name
               . ": " . $e->getMessage());
+        }
+    }
+
+    /**
+     * Select
+     *
+     * @param DalInterface $dal
+     * @return TableInterface self
+     *
+     * @throws RuntimeException on layer exception
+     */
+    public function select(DalInterface $dal)
+    {
+        try {
+            foreach ($this->table as $table) {
+                $dal->query($table, __FUNCTION__);
+            }
+            $dal->query($this, __FUNCTION__);
+            return $this;
+        } catch (RuntimeException $e) {
+            throw $e;
         }
     }
 
