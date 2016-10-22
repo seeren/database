@@ -10,13 +10,12 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.2.1
+ * @version 1.2.2
  */
 
 namespace Seeren\Database\Table;
 
 use Seeren\Database\Dal\DalInterface;
-use Seeren\Database\Dao\DaoInterface;
 use Seeren\Database\Table\Clause\ClauseInterface;
 use InvalidArgumentException;
 use RuntimeException;
