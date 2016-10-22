@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.1.1
+ * @version 1.2.1
  */
 
 namespace Seeren\Database\Table;
@@ -177,20 +177,6 @@ abstract class MasterTable extends AbstractTable
         return ($value = parent::get($name))
              ? $value : (array_key_exists($name, $this->table)
              ? $this->table[$name] : null);
-    }
-
-    /**
-     * Set access object
-     *
-     * @param DaoInterface $object access object
-     * @return null
-     */
-    public final function set(DaoInterface $object)
-    {
-        parent::set($object);
-        foreach ($this->table as $table) {
-            $table->set($object);
-        }
     }
 
     /**
