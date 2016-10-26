@@ -21,7 +21,6 @@ use Seeren\Database\Table\Column\ColumnInterface;
 use Seeren\Database\Table\Key\KeyInterface;
 use InvalidArgumentException;
 use RuntimeException;
-use Error;
 use Throwable;
 
 /**
@@ -101,12 +100,12 @@ abstract class AbstractTable
         try {
             $args[0]->query($this, $name);
             return $this;
-        } catch (Error $e) {
-            throw new InvalidArgumentException(
+        } catch (RuntimeException $e) {
+            throw new RuntimeException(
                 "Can't call " . static::class . "::" . $name
               . ": " . $e->getMessage());
         } catch (Throwable $e) {
-            throw new RuntimeException(
+            throw new InvalidArgumentException(
                 "Can't call " . static::class . "::" . $name
               . ": " . $e->getMessage());
         }
