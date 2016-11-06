@@ -40,7 +40,7 @@ $dal->query($table, "select");
 
 ### Seeren\Database\Dao
 
-Access object can be manipulated directy for execute an operation for and an access layer.
+Access object can be manipulated directy for execute an operation for a table and an access layer.
 
 ```php
 $select->query($table, $dal);
