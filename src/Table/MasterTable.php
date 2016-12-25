@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.2.2
+ * @version 1.2.3
  */
 
 namespace Seeren\Database\Table;
@@ -173,9 +173,11 @@ abstract class MasterTable extends AbstractTable
      */
     public final function get(string $name = TableInterface::ATTR_OBJECT)
     {
-        return ($value = parent::get($name))
-             ? $value : (array_key_exists($name, $this->table)
-             ? $this->table[$name] : null);
+        return ($value = parent::get($name)) || null !== $value
+             ? $value
+             : (array_key_exists($name, $this->table)
+             ? $this->table[$name]
+             : null);
     }
 
     /**
