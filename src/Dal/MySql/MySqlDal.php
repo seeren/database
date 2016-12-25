@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 namespace Seeren\Database\Dal\MySql;
@@ -46,17 +46,17 @@ class MySqlDal extends Dal
     public function __construct()
     {
         parent::__construct([
-            self::COUNT => CountMySqlDao::class,
-            self::CREATE => CreateMySqlDao::class,
+            self::COUNT     => CountMySqlDao::class,
+            self::CREATE    => CreateMySqlDao::class,
             self::CREATE_DB => CreateDbMySqlDao::class,
-            self::DELETE => DeleteMySqlDao::class,
-            self::DROP => DropMySqlDao::class,
-            self::DROP_DB => DropDbMySqlDao::class,
-            self::INSERT => InsertMySqlDao::class,
-            self::OPEN => OpenMySqlDao::class,
-            self::SELECT => SelectMySqlDao::class,
-            self::UPDATE => UpdateMySqlDao::class,
-            self::USE_DB => UseDbMySqlDao::class,
+            self::DELETE    => DeleteMySqlDao::class,
+            self::DROP      => DropMySqlDao::class,
+            self::DROP_DB   => DropDbMySqlDao::class,
+            self::INSERT    => InsertMySqlDao::class,
+            self::OPEN      => OpenMySqlDao::class,
+            self::SELECT    => SelectMySqlDao::class,
+            self::UPDATE    => UpdateMySqlDao::class,
+            self::USE_DB    => UseDbMySqlDao::class,
         ]);
     }
 
