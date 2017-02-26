@@ -100,14 +100,17 @@ abstract class AbstractTable
         try {
             $args[0]->query($this, $name);
             return $this;
-        } catch (RuntimeException $e) {
-            throw new RuntimeException(
-                "Can't call " . static::class . "::" . $name
-              . ": " . $e->getMessage());
         } catch (Throwable $e) {
-            throw new InvalidArgumentException(
-                "Can't call " . static::class . "::" . $name
-              . ": " . $e->getMessage());
+			if ($e instanceof RuntimeException) {
+			    throw new RuntimeException(
+				    "Can't call " . static::class . "::" . $name
+			      . ": " . $e->getMessage());
+			} else {
+
+                throw new InvalidArgumentException(
+                    "Can't call " . static::class . "::" . $name
+                  . ": " . $e->getMessage());
+			}
         }
     }
 
