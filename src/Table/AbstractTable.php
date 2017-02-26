@@ -97,10 +97,10 @@ abstract class AbstractTable
      */
      public function __call(string $name, array $args): TableInterface
     {
-		if (!array_key_exists(0, args) {
+		if (!array_key_exists(0, $args)) {
             throw new InvalidArgumentException(
                 "Can't call " . static::class . "::" . $name
-              . ": " . $e->getMessage());
+              . ": missing DalInterface");
         }
         try {
             $args[0]->query($this, $name);
