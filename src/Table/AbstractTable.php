@@ -97,21 +97,19 @@ abstract class AbstractTable
      */
      public function __call(string $name, array $args): TableInterface
     {
+		if (!array_key_exists(0, args) {
+            throw new InvalidArgumentException(
+                "Can't call " . static::class . "::" . $name
+              . ": " . $e->getMessage());
+        }
         try {
             $args[0]->query($this, $name);
             return $this;
         } catch (Throwable $e) {
-			if ($e instanceof RuntimeException) {
-			    throw new RuntimeException(
-				    "Can't call " . static::class . "::" . $name
-			      . ": " . $e->getMessage());
-			} else {
-
-                throw new InvalidArgumentException(
-                    "Can't call " . static::class . "::" . $name
-                  . ": " . $e->getMessage());
-			}
-        }
+            throw new RuntimeException(
+                "Can't call " . static::class . "::" . $name
+              . ": " . $e->getMessage());
+        } 
     }
 
     /**
