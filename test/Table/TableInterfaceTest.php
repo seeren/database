@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 
@@ -32,7 +32,7 @@ use Seeren\Database\Dal\Dal;
  * @subpackage Test\Table
  * @abstract
  */
-abstract class TableInterfaceTest extends \PHPUnit_Framework_TestCase
+abstract class TableInterfaceTest extends \PHPUnit\Framework\TestCase
 {
 
    /**
