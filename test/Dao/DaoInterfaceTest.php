@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 namespace Seeren\Database\Test\Dao;
@@ -29,7 +29,7 @@ use Throwable;
  * @subpackage Test\Dao
  * @abstract
  */
-abstract class DaoInterfaceTest extends \PHPUnit_Framework_TestCase
+abstract class DaoInterfaceTest extends \PHPUnit\Framework\TestCase
 {
 
    /**
