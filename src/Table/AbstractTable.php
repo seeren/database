@@ -95,12 +95,12 @@ abstract class AbstractTable
      * @throws InvalidArgumentException for no layer
      * @throws RuntimeException on layer exception
      */
-     public function __call(string $name, array $args): TableInterface
+    public function __call(string $name, array $args): TableInterface
     {
-		if (!array_key_exists(0, $args)) {
+        if (!array_key_exists(0, $args)) {
             throw new InvalidArgumentException(
-                "Can't call " . static::class . "::" . $name
-              . ": missing DalInterface");
+               "Can't call " . static::class . "::" . $name
+             . ": missing DalInterface");
         }
         try {
             $args[0]->query($this, $name);
