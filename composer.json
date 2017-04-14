@@ -19,5 +19,8 @@
 		"Seeren\\Database\\": "src/",
 		"Seeren\\Database\\Test\\": "test/"
       }
-   }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "6.1"
+    }
 }
