@@ -1,6 +1,7 @@
 {
     "name": "seeren/database",
     "description": "Data mapper",
+    "keywords": ["datamapper" ,"activerecord", "mysql"],
     "type": "library",
     "license": "MIT",
     "authors": [
