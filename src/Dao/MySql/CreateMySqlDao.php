@@ -50,22 +50,22 @@ class CreateMySqlDao extends AbstractDao implements MySqlDaoInterface
      */
     private final function constraint(TableInterface $table): string
     {
-        $mySql = $sk = $fk = "";
+        $mySql = $selfKey = $foreignKey = "";
         $name = $table->get($table::ATTR_NAME);
         foreach ($table->get($table::ATTR_KEY) as $key => $value) {
             if (KeyInterface::FOREIGN !== $value->getType()) {
-                $sk .= $this->addKey($value, $name . "_" . $key);
+                $selfKey .= $this->addKey($value, $name . "_" . $key);
                 if (KeyInterface::PRIMARY === $value->getType()) {
                     $column = $table->get($table::ATTR_COLUMN);
                     foreach ($value->getSubject() as $key) {
-                        $sk .= $this->addAutoIncrement($key, $column);
+                        $selfKey .= $this->addAutoIncrement($key, $column);
                     }
                 }
-            } else {
-                $fk .= $this->addForeign($value, $name . "_" . $key);
+                continue;
             }
+            $foreignKey .= $this->addForeign($value, $name . "_" . $key);
         }
-        foreach ([$sk, $fk] as $value) {
+        foreach ([$selfKey, $foreignKey] as $value) {
             $mySql .= $value ? "ALTER TABLE `" . $name . "`\n"
                              . substr($value, 0, -2) . ";\n"
                              : $value;
@@ -82,15 +82,15 @@ class CreateMySqlDao extends AbstractDao implements MySqlDaoInterface
      */
     private final function addAutoIncrement(string $key, array $column): string
     {
-        $ai = "";
+        $autoIncrement = "";
         if (array_key_exists($key, $column) && in_array(
                 ColumnInterface::OPT_AUTO_INCREMENT,
                 $column[$key]->getOption())) {
-            $ai .= "MODIFY "
+            $autoIncrement .= "MODIFY "
                  . substr($this->getColumnSyntaxe($column[$key]), 0, -2)
                  . " AUTO_INCREMENT;\n";
         }
-        return $ai;
+        return $autoIncrement;
     }
 
     /**

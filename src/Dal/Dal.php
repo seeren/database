@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 namespace Seeren\Database\Dal;
@@ -117,10 +117,9 @@ class Dal implements DalInterface
         try {
             if (is_object($this->object[$operation])) {
                 return $this->object[$operation]->clone();
-            } else {
-                $this->object[$operation] = new $this->object[$operation];
-                return $this->getObject($operation);
             }
+            $this->object[$operation] = new $this->object[$operation];
+            return $this->getObject($operation);
         } catch (Throwable $e) {
             throw new RuntimeException(
                 "Can't get object: operation unreachable");
