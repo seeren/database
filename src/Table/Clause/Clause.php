@@ -60,11 +60,11 @@ class Clause implements ClauseInterface
         string $operator = null,
         $value = null)
     {
-        $this->type = (defined("static::" . $type) ? $type : null);
+        $this->type = defined("static::" . $type) ? $type : "";
         $this->subject = (string) $subject;
-        $this->operator = (defined("static::OPE_" . $operator)
+        $this->operator = defined("static::OPE_" . $operator)
                         ? $operator
-                        : "");
+                        : "";
         $this->value = $value;
     }
 
