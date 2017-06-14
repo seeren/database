@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.1
+ * @version 1.0.2
  */
 namespace Seeren\Database\Table\Column;
 
@@ -42,7 +42,7 @@ class StringColumn extends AbstractColumn implements StringColumnInterface
         array $option = [])
     {
         parent::__construct($name,  $type, $size, $option);
-        if (null === $this->type) {
+        if (!$this->type) {
             $this->type = self::CHAR;
         }
     }

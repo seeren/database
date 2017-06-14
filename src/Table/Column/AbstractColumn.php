@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 namespace Seeren\Database\Table\Column;
@@ -63,7 +63,7 @@ abstract class AbstractColumn
         array $option)
     {
         $this->name = $name;
-        $this->type = (defined("static::" . $type) ? $type : null);
+        $this->type = defined("static::" . $type) ? $type : "";
         $this->size = $size;
         $this->option = [];
         foreach ($option as $value) {
