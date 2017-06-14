@@ -63,7 +63,7 @@ abstract class AbstractColumn
         array $option)
     {
         $this->name = $name;
-        $this->type = defined("static::" . $type) ? $type : "";
+        $this->type = defined("static::" . $type) ? $type : null;
         $this->size = $size;
         $this->option = [];
         foreach ($option as $value) {

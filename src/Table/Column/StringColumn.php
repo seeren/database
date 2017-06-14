@@ -42,7 +42,7 @@ class StringColumn extends AbstractColumn implements StringColumnInterface
         array $option = [])
     {
         parent::__construct($name,  $type, $size, $option);
-        if (!$this->type) {
+        if (null === $this->type) {
             $this->type = self::CHAR;
         }
     }
