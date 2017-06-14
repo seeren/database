@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1497448116">
-  <project timestamp="1497448116">
+<coverage generated="1497452173">
+  <project timestamp="1497452173">
     <package name="Seeren\Database\Dal">
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Dal/Dal.php">
         <class name="Dal" namespace="Seeren\Database\Dal" fullPackage="Database.Dal" category="Seeren" package="Database" subpackage="Dal">
@@ -429,60 +429,60 @@
     <package name="Seeren\Database\Table\Column">
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Table/Column/AbstractColumn.php">
         <class name="AbstractColumn" namespace="Seeren\Database\Table\Column" fullPackage="Database.Table" category="Seeren" package="Database" subpackage="Table">
-          <metrics complexity="9" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="19" coveredelements="0"/>
+          <metrics complexity="9" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="19" coveredelements="19"/>
         </class>
-        <line num="59" type="method" name="__construct" visibility="protected" complexity="4" crap="20" count="0"/>
-        <line num="65" type="stmt" count="0"/>
-        <line num="66" type="stmt" count="0"/>
-        <line num="67" type="stmt" count="0"/>
-        <line num="68" type="stmt" count="0"/>
-        <line num="69" type="stmt" count="0"/>
-        <line num="70" type="stmt" count="0"/>
-        <line num="71" type="stmt" count="0"/>
-        <line num="74" type="stmt" count="0"/>
-        <line num="81" type="method" name="getName" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="83" type="stmt" count="0"/>
-        <line num="91" type="method" name="getValue" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="93" type="stmt" count="0"/>
-        <line num="101" type="method" name="getType" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="103" type="stmt" count="0"/>
-        <line num="111" type="method" name="getSize" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="113" type="stmt" count="0"/>
-        <line num="121" type="method" name="getOption" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="123" type="stmt" count="0"/>
-        <metrics loc="126" ncloc="58" classes="1" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="19" coveredelements="0"/>
+        <line num="59" type="method" name="__construct" visibility="protected" complexity="4" crap="4" count="16"/>
+        <line num="65" type="stmt" count="16"/>
+        <line num="66" type="stmt" count="16"/>
+        <line num="67" type="stmt" count="16"/>
+        <line num="68" type="stmt" count="16"/>
+        <line num="69" type="stmt" count="16"/>
+        <line num="70" type="stmt" count="2"/>
+        <line num="71" type="stmt" count="2"/>
+        <line num="74" type="stmt" count="16"/>
+        <line num="81" type="method" name="getName" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="83" type="stmt" count="2"/>
+        <line num="91" type="method" name="getValue" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="93" type="stmt" count="2"/>
+        <line num="101" type="method" name="getType" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="103" type="stmt" count="4"/>
+        <line num="111" type="method" name="getSize" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="113" type="stmt" count="2"/>
+        <line num="121" type="method" name="getOption" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="123" type="stmt" count="4"/>
+        <metrics loc="126" ncloc="58" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="19" coveredelements="19"/>
       </file>
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Table/Column/IntegerColumn.php">
         <class name="IntegerColumn" namespace="Seeren\Database\Table\Column" fullPackage="Database.Table" category="Seeren" package="Database" subpackage="Table">
-          <metrics complexity="4" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
+          <metrics complexity="4" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="10" coveredelements="10"/>
         </class>
-        <line num="39" type="method" name="__construct" visibility="public" complexity="2" crap="6" count="0"/>
-        <line num="45" type="stmt" count="0"/>
-        <line num="46" type="stmt" count="0"/>
-        <line num="47" type="stmt" count="0"/>
-        <line num="49" type="stmt" count="0"/>
-        <line num="57" type="method" name="setValue" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="59" type="stmt" count="0"/>
-        <line num="60" type="stmt" count="0"/>
-        <line num="67" type="method" name="getParam" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="69" type="stmt" count="0"/>
-        <metrics loc="72" ncloc="33" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
+        <line num="39" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="8"/>
+        <line num="45" type="stmt" count="8"/>
+        <line num="46" type="stmt" count="8"/>
+        <line num="47" type="stmt" count="1"/>
+        <line num="49" type="stmt" count="8"/>
+        <line num="57" type="method" name="setValue" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="59" type="stmt" count="1"/>
+        <line num="60" type="stmt" count="1"/>
+        <line num="67" type="method" name="getParam" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="69" type="stmt" count="1"/>
+        <metrics loc="72" ncloc="33" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="10" coveredelements="10"/>
       </file>
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Table/Column/StringColumn.php">
         <class name="StringColumn" namespace="Seeren\Database\Table\Column" fullPackage="Database.Table" category="Seeren" package="Database" subpackage="Table">
-          <metrics complexity="4" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
+          <metrics complexity="4" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="10" coveredelements="10"/>
         </class>
-        <line num="38" type="method" name="__construct" visibility="public" complexity="2" crap="6" count="0"/>
-        <line num="44" type="stmt" count="0"/>
-        <line num="45" type="stmt" count="0"/>
-        <line num="46" type="stmt" count="0"/>
-        <line num="48" type="stmt" count="0"/>
-        <line num="56" type="method" name="setValue" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="58" type="stmt" count="0"/>
-        <line num="59" type="stmt" count="0"/>
-        <line num="66" type="method" name="getParam" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="68" type="stmt" count="0"/>
-        <metrics loc="71" ncloc="32" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
+        <line num="38" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="8"/>
+        <line num="44" type="stmt" count="8"/>
+        <line num="45" type="stmt" count="8"/>
+        <line num="46" type="stmt" count="1"/>
+        <line num="48" type="stmt" count="8"/>
+        <line num="56" type="method" name="setValue" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="58" type="stmt" count="1"/>
+        <line num="59" type="stmt" count="1"/>
+        <line num="66" type="method" name="getParam" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="68" type="stmt" count="1"/>
+        <metrics loc="71" ncloc="32" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="10" coveredelements="10"/>
       </file>
     </package>
     <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Table/Column/ColumnInterface.php">
@@ -555,6 +555,6 @@
     <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Table/User/UserInterface.php">
       <metrics loc="48" ncloc="17" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="33" loc="3472" ncloc="1608" classes="18" methods="73" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="295" coveredstatements="13" elements="368" coveredelements="19"/>
+    <metrics files="33" loc="3472" ncloc="1608" classes="18" methods="73" coveredmethods="18" conditionals="0" coveredconditionals="0" statements="295" coveredstatements="40" elements="368" coveredelements="58"/>
   </project>
 </coverage>
