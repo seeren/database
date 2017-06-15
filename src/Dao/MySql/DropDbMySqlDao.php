@@ -10,14 +10,13 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 namespace Seeren\Database\Dao\MySql;
 
 use Seeren\Database\Dao\DaoInterface;
 use Seeren\Database\Dao\AbstractDao;
-use Seeren\Database\Dao\MySql\MySqlDaoInterface;
 use Seeren\Database\Dal\DalInterface;
 use Seeren\Database\Table\TableInterface;
 use InvalidArgumentException;

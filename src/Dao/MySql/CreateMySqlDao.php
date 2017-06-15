@@ -16,7 +16,6 @@
 namespace Seeren\Database\Dao\MySql;
 
 use Seeren\Database\Dao\AbstractDao;
-use Seeren\Database\Dao\MySql\MySqlDaoInterface;
 use Seeren\Database\Dal\DalInterface;
 use Seeren\Database\Table\TableInterface;
 use Seeren\Database\Table\Key\KeyInterface;
@@ -56,9 +55,10 @@ class CreateMySqlDao extends AbstractDao implements MySqlDaoInterface
             if (KeyInterface::FOREIGN !== $value->getType()) {
                 $selfKey .= $this->addKey($value, $name . "_" . $key);
                 if (KeyInterface::PRIMARY === $value->getType()) {
-                    $column = $table->get($table::ATTR_COLUMN);
                     foreach ($value->getSubject() as $key) {
-                        $selfKey .= $this->addAutoIncrement($key, $column);
+                        $selfKey .= $this->addAutoIncrement(
+                            $key,
+                            $table->get($table::ATTR_COLUMN));
                     }
                 }
                 continue;

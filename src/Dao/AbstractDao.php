@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 namespace Seeren\Database\Dao;
@@ -103,13 +103,13 @@ abstract class AbstractDao
      */
     public function close()
     {
-        unset($this->queryString);
+        $this->queryString = "";
     }
 
     /**
      * Get an instance
      *
-     * @return PrototypeInterface instance
+     * @return DaoInterface instance
      *
      */
     public final function clone(): DaoInterface
@@ -124,7 +124,7 @@ abstract class AbstractDao
      */
     public final function __toString(): string
     {
-        return (string) $this->queryString;
+        return $this->queryString;
     }
 
     /**
