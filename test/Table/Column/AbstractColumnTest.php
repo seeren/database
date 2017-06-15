@@ -71,9 +71,9 @@ abstract class AbstractColumnTest extends \PHPUnit\Framework\TestCase
    abstract public function testGetParam();
 
    /**
-    * Assert get option defaukt
+    * Test get option defaukt
     */
-    protected function testGetOptionDefault()
+   public function testGetOptionDefault()
     {
       $this->assertTrue($this->getColumn()->getOption() === []);
     }

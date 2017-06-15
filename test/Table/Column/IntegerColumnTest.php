@@ -20,6 +20,7 @@ use Seeren\Database\Table\Column\IntegerColumn;
 use Seeren\Database\Table\Column\IntegerColumnInterface;
 use ReflectionClass;
 use PDO;
+
 /**
  * Class for test IntegerColumn
  * 
