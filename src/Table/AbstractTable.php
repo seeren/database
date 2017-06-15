@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.3
+ * @version 1.0.4
  */
 
 namespace Seeren\Database\Table;
@@ -58,9 +58,7 @@ abstract class AbstractTable
      */
     protected function __construct()
     {
-        $this->column   = [];
-        $this->key      = [];
-        $this->clause   = [];
+        $this->column = $this->key = $this->clause = [];
     }
 
     /**
@@ -88,8 +86,8 @@ abstract class AbstractTable
     /**
      * Call
      *
-     * @param $name methode name
-     * @param array methode arguments
+     * @param string $name methode name
+     * @param array $args methode arguments
      * @return TableInterface self
      * 
      * @throws InvalidArgumentException for no layer
