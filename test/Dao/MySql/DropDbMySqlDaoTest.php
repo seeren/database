@@ -91,7 +91,7 @@ class DropDbMySqlDaoTest extends AbstractDaoTest
      */
     public function testGetDefaultSyntax()
     {
-            parent::testGetDefaultSyntax();
+        parent::testGetDefaultSyntax();
     }
 
     /**
@@ -113,7 +113,6 @@ class DropDbMySqlDaoTest extends AbstractDaoTest
     public function testGetSyntaxInvalidTable()
     {
         $this->getDao()->query(new DummyTable(), $this->getDal());
-
     }
 
     /**
@@ -141,7 +140,6 @@ class DropDbMySqlDaoTest extends AbstractDaoTest
         $table = $this->getTable();
         $table->dbname = "";
         $this->getDao()->query($table, $this->getDal());
-        
     }
 
     /**
