@@ -16,7 +16,6 @@
 namespace Seeren\Database\Dao\MySql;
 
 use Seeren\Database\Dao\AbstractDao;
-use Seeren\Database\Dao\MySql\MySqlDaoInterface;
 use Seeren\Database\Dal\DalInterface;
 use Seeren\Database\Table\TableInterface;
 
