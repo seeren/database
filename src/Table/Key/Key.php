@@ -55,11 +55,11 @@ class Key implements KeyInterface
     public function __construct(
         string $type,
         array $subject,
-        string $foreigner = null,
-        array $foreignerSubject = null)
+        string $foreigner = "",
+        array $foreignerSubject = [])
     {
 
-        $this->type = (defined("static::" . $type) ? $type : "");
+        $this->type = defined("static::" . $type) ? $type : self::KEY;
         $this->subject = $subject;
         $this->foreigner = $foreigner;
         $this->foreignerSubject = $foreignerSubject;
@@ -92,7 +92,7 @@ class Key implements KeyInterface
      */
     public final function getForeigner(): string
     {
-        return (string) $this->foreigner;
+        return $this->foreigner;
     }
 
     /**
@@ -102,7 +102,7 @@ class Key implements KeyInterface
      */
     public final function getForeignerSubject(): array
     {
-        return $this->foreignerSubject ? $this->foreignerSubject : [];
+        return $this->foreignerSubject;
     }
 
 }
