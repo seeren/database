@@ -13,7 +13,7 @@
  * @version 1.0.1
  */
 
-namespace Seeren\Database\Test;
+namespace Seeren\Database\Test\Table\Clause;
 
 use Seeren\Database\Table\Clause\ClauseInterface;
 use Seeren\Database\Table\Clause\Clause;
@@ -34,7 +34,7 @@ class ClauseTest extends \PHPUnit\Framework\TestCase
     * 
     * @return ClauseInterface clause
     */
-   protected function getClause(): ClauseInterface
+   private function getClause(): ClauseInterface
    {
        return (new ReflectionClass(Clause::class))->newInstanceArgs([
            ClauseInterface::WHERE,
