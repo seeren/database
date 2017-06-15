@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c4467800b70ff25e5093a0f2b3535b21",
-    "content-hash": "04b704071740e8554ee170760675c33d",
+    "hash": "dde8312ee73ae9a764814117c009bf0d",
+    "content-hash": "1f80d74586e66841a4e25c3f72315706",
     "packages": [],
     "packages-dev": [
         {
@@ -597,6 +597,58 @@
             "time": "2017-05-31 16:22:32"
         },
         {
+            "name": "phpunit/dbunit",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/dbunit.git",
+                "reference": "f2f8bec1d6ad7ad0bcdb47c1ed56d9d42d3e39ab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/dbunit/zipball/f2f8bec1d6ad7ad0bcdb47c1ed56d9d42d3e39ab",
+                "reference": "f2f8bec1d6ad7ad0bcdb47c1ed56d9d42d3e39ab",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pdo": "*",
+                "ext-simplexml": "*",
+                "php": "^7.0",
+                "phpunit/phpunit": "^6.0",
+                "symfony/yaml": "^3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "PHPUnit extension for database interaction testing",
+            "homepage": "https://github.com/sebastianbergmann/dbunit/",
+            "keywords": [
+                "database",
+                "testing",
+                "xunit"
+            ],
+            "time": "2017-02-03 08:50:36"
+        },
+        {
             "name": "phpunit/php-code-coverage",
             "version": "dev-master",
             "source": {
@@ -848,16 +900,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "6.1.x-dev",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "42b7f394a8e009516582331b1e03a1aba40175d1"
+                "reference": "ac835ca365deede0a69eb132c82f38541776dd02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/42b7f394a8e009516582331b1e03a1aba40175d1",
-                "reference": "42b7f394a8e009516582331b1e03a1aba40175d1",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ac835ca365deede0a69eb132c82f38541776dd02",
+                "reference": "ac835ca365deede0a69eb132c82f38541776dd02",
                 "shasum": ""
             },
             "require": {
@@ -902,7 +954,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.1.x-dev"
+                    "dev-master": "6.3.x-dev"
                 }
             },
             "autoload": {
@@ -928,7 +980,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-05-22 07:45:30"
+            "time": "2017-06-14 16:54:13"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1316,12 +1368,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "b89a97be3b97a4a2849ce778743edb9add641262"
+                "reference": "99851040b23c18fd20691275d36a96befe8afb62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/b89a97be3b97a4a2849ce778743edb9add641262",
-                "reference": "b89a97be3b97a4a2849ce778743edb9add641262",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/99851040b23c18fd20691275d36a96befe8afb62",
+                "reference": "99851040b23c18fd20691275d36a96befe8afb62",
                 "shasum": ""
             },
             "require": {
@@ -1358,7 +1410,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2017-06-13 13:48:49"
+            "time": "2017-06-14 10:35:46"
         },
         {
             "name": "sebastian/exporter",
@@ -1949,12 +2001,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "f29dca382a6485c3cbe6379f0c61230167681937"
+                "reference": "7c8fae0ac1d216eb54349e6a8baa57d515fe8803"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/f29dca382a6485c3cbe6379f0c61230167681937",
-                "reference": "f29dca382a6485c3cbe6379f0c61230167681937",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/7c8fae0ac1d216eb54349e6a8baa57d515fe8803",
+                "reference": "7c8fae0ac1d216eb54349e6a8baa57d515fe8803",
                 "shasum": ""
             },
             "require": {
@@ -1966,7 +2018,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4-dev"
+                    "dev-master": "1.5-dev"
                 }
             },
             "autoload": {
@@ -2000,7 +2052,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-06-09 14:24:12"
+            "time": "2017-06-14 15:44:48"
         },
         {
             "name": "symfony/stopwatch",
@@ -2057,12 +2109,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "02878ee742708dd663c129a1bd3ad1b628098b00"
+                "reference": "08c644988dba9d608d18bb8ad8dd633f276137f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/02878ee742708dd663c129a1bd3ad1b628098b00",
-                "reference": "02878ee742708dd663c129a1bd3ad1b628098b00",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/08c644988dba9d608d18bb8ad8dd633f276137f7",
+                "reference": "08c644988dba9d608d18bb8ad8dd633f276137f7",
                 "shasum": ""
             },
             "require": {
@@ -2104,7 +2156,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-12 16:03:21"
+            "time": "2017-06-14 20:38:21"
         },
         {
             "name": "theseer/tokenizer",
@@ -2200,6 +2252,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "phpunit/phpunit": 20,
+        "phpunit/dbunit": 20,
         "satooshi/php-coveralls": 20
     },
     "prefer-stable": false,

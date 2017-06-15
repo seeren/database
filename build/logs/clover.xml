@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1497452173">
-  <project timestamp="1497452173">
+<coverage generated="1497559453">
+  <project timestamp="1497559453">
     <package name="Seeren\Database\Dal">
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Dal/Dal.php">
         <class name="Dal" namespace="Seeren\Database\Dal" fullPackage="Database.Dal" category="Seeren" package="Database" subpackage="Dal">
-          <metrics complexity="12" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="0" elements="26" coveredelements="0"/>
+          <metrics complexity="12" methods="5" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="20" elements="26" coveredelements="24"/>
         </class>
-        <line num="50" type="method" name="__construct" visibility="public" complexity="4" crap="20" count="0"/>
-        <line num="52" type="stmt" count="0"/>
-        <line num="53" type="stmt" count="0"/>
-        <line num="54" type="stmt" count="0"/>
-        <line num="55" type="stmt" count="0"/>
-        <line num="58" type="stmt" count="0"/>
-        <line num="67" type="method" name="getLayer" visibility="public" complexity="2" crap="6" count="0"/>
-        <line num="69" type="stmt" count="0"/>
-        <line num="70" type="stmt" count="0"/>
-        <line num="72" type="stmt" count="0"/>
-        <line num="81" type="method" name="setLayer" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="83" type="stmt" count="0"/>
-        <line num="84" type="stmt" count="0"/>
-        <line num="95" type="method" name="query" visibility="public" complexity="2" crap="6" count="0"/>
-        <line num="100" type="stmt" count="0"/>
+        <line num="50" type="method" name="__construct" visibility="public" complexity="4" crap="4" count="15"/>
+        <line num="52" type="stmt" count="15"/>
+        <line num="53" type="stmt" count="15"/>
+        <line num="54" type="stmt" count="7"/>
+        <line num="55" type="stmt" count="7"/>
+        <line num="58" type="stmt" count="15"/>
+        <line num="67" type="method" name="getLayer" visibility="public" complexity="2" crap="2" count="6"/>
+        <line num="69" type="stmt" count="6"/>
+        <line num="70" type="stmt" count="1"/>
+        <line num="72" type="stmt" count="5"/>
+        <line num="81" type="method" name="setLayer" visibility="public" complexity="1" crap="1" count="9"/>
+        <line num="83" type="stmt" count="9"/>
+        <line num="84" type="stmt" count="9"/>
+        <line num="95" type="method" name="query" visibility="public" complexity="2" crap="2.06" count="2"/>
+        <line num="100" type="stmt" count="2"/>
         <line num="101" type="stmt" count="0"/>
-        <line num="102" type="stmt" count="0"/>
-        <line num="103" type="stmt" count="0"/>
-        <line num="115" type="method" name="getObject" visibility="public" complexity="3" crap="12" count="0"/>
-        <line num="118" type="stmt" count="0"/>
-        <line num="119" type="stmt" count="0"/>
-        <line num="121" type="stmt" count="0"/>
-        <line num="122" type="stmt" count="0"/>
-        <line num="123" type="stmt" count="0"/>
-        <line num="124" type="stmt" count="0"/>
-        <line num="125" type="stmt" count="0"/>
-        <metrics loc="129" ncloc="68" classes="1" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="0" elements="26" coveredelements="0"/>
+        <line num="102" type="stmt" count="2"/>
+        <line num="103" type="stmt" count="2"/>
+        <line num="115" type="method" name="getObject" visibility="public" complexity="3" crap="3" count="5"/>
+        <line num="118" type="stmt" count="5"/>
+        <line num="119" type="stmt" count="2"/>
+        <line num="121" type="stmt" count="2"/>
+        <line num="122" type="stmt" count="2"/>
+        <line num="123" type="stmt" count="3"/>
+        <line num="124" type="stmt" count="3"/>
+        <line num="125" type="stmt" count="3"/>
+        <metrics loc="129" ncloc="68" classes="1" methods="5" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="20" elements="26" coveredelements="24"/>
       </file>
     </package>
     <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Dal/DalInterface.php">
@@ -41,17 +41,51 @@
     <package name="Seeren\Database\Dal\MySql">
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Dal/MySql/MySqlDal.php">
         <class name="MySqlDal" namespace="Seeren\Database\Dal\MySql" fullPackage="Database.Dal" category="Seeren" package="Database" subpackage="Dal">
-          <metrics complexity="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+          <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="14" coveredelements="14"/>
         </class>
-        <metrics loc="63" ncloc="39" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        <line num="46" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="7"/>
+        <line num="48" type="stmt" count="7"/>
+        <line num="49" type="stmt" count="7"/>
+        <line num="50" type="stmt" count="7"/>
+        <line num="51" type="stmt" count="7"/>
+        <line num="52" type="stmt" count="7"/>
+        <line num="53" type="stmt" count="7"/>
+        <line num="54" type="stmt" count="7"/>
+        <line num="55" type="stmt" count="7"/>
+        <line num="56" type="stmt" count="7"/>
+        <line num="57" type="stmt" count="7"/>
+        <line num="58" type="stmt" count="7"/>
+        <line num="59" type="stmt" count="7"/>
+        <line num="61" type="stmt" count="7"/>
+        <metrics loc="63" ncloc="39" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="14" coveredelements="14"/>
       </file>
     </package>
     <package name="Seeren\Database\Dao">
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Dao/AbstractDao.php">
         <class name="AbstractDao" namespace="Seeren\Database\Dao" fullPackage="Database.Dao" category="Seeren" package="Database" subpackage="Dao">
-          <metrics complexity="11" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+          <metrics complexity="11" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="20" coveredelements="20"/>
         </class>
-        <metrics loc="141" ncloc="63" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        <line num="65" type="method" name="__construct" visibility="protected" complexity="1" crap="1" count="24"/>
+        <line num="67" type="stmt" count="24"/>
+        <line num="68" type="stmt" count="24"/>
+        <line num="69" type="stmt" count="24"/>
+        <line num="77" type="method" name="constant" visibility="protected" complexity="2" crap="2" count="2"/>
+        <line num="79" type="stmt" count="2"/>
+        <line num="80" type="stmt" count="2"/>
+        <line num="90" type="method" name="query" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="94" type="stmt" count="4"/>
+        <line num="95" type="stmt" count="4"/>
+        <line num="96" type="stmt" count="4"/>
+        <line num="104" type="method" name="close" visibility="public" complexity="1" crap="1" count="5"/>
+        <line num="106" type="stmt" count="5"/>
+        <line num="107" type="stmt" count="5"/>
+        <line num="115" type="method" name="anonymous function" visibility="public" complexity="1" crap="1" count="5"/>
+        <line num="117" type="stmt" count="5"/>
+        <line num="125" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="127" type="stmt" count="3"/>
+        <line num="136" type="method" name="__get" visibility="public" complexity="2" crap="2" count="13"/>
+        <line num="138" type="stmt" count="13"/>
+        <metrics loc="141" ncloc="63" classes="1" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="20" coveredelements="20"/>
       </file>
     </package>
     <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Dao/DaoInterface.php">
@@ -60,18 +94,23 @@
     <package name="Seeren\Database\Dao\MySql">
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Dao/MySql/AbstractMySqlDao.php">
         <class name="AbstractMySqlDao" namespace="Seeren\Database\Dao\MySql" fullPackage="Database.Dao" category="Seeren" package="Database" subpackage="Dao">
-          <metrics complexity="13" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+          <metrics complexity="13" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
         </class>
-        <metrics loc="134" ncloc="75" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        <line num="53" type="method" name="__construct" visibility="protected" complexity="1" crap="1" count="2"/>
+        <line num="55" type="stmt" count="2"/>
+        <line num="56" type="stmt" count="2"/>
+        <line num="57" type="stmt" count="2"/>
+        <line num="58" type="stmt" count="2"/>
+        <metrics loc="134" ncloc="75" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
       </file>
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Dao/MySql/CountMySqlDao.php">
         <class name="CountMySqlDao" namespace="Seeren\Database\Dao\MySql" fullPackage="Database.Dao" category="Seeren" package="Database" subpackage="Dao">
-          <metrics complexity="6" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="15" coveredelements="0"/>
+          <metrics complexity="6" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="3" elements="15" coveredelements="4"/>
         </class>
-        <line num="39" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="41" type="stmt" count="0"/>
-        <line num="42" type="stmt" count="0"/>
-        <line num="43" type="stmt" count="0"/>
+        <line num="39" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="41" type="stmt" count="2"/>
+        <line num="42" type="stmt" count="2"/>
+        <line num="43" type="stmt" count="2"/>
         <line num="51" type="method" name="getSyntax" visibility="protected" complexity="2" crap="6" count="0"/>
         <line num="54" type="stmt" count="0"/>
         <line num="55" type="stmt" count="0"/>
@@ -83,102 +122,102 @@
         <line num="72" type="stmt" count="0"/>
         <line num="73" type="stmt" count="0"/>
         <line num="74" type="stmt" count="0"/>
-        <metrics loc="76" ncloc="39" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="15" coveredelements="0"/>
+        <metrics loc="76" ncloc="39" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="3" elements="15" coveredelements="4"/>
       </file>
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Dao/MySql/CreateDbMySqlDao.php">
         <class name="CreateDbMySqlDao" namespace="Seeren\Database\Dao\MySql" fullPackage="Database.Dao" category="Seeren" package="Database" subpackage="Dao">
-          <metrics complexity="6" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="17" coveredelements="0"/>
+          <metrics complexity="6" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="17" coveredelements="17"/>
         </class>
-        <line num="40" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="42" type="stmt" count="0"/>
-        <line num="43" type="stmt" count="0"/>
-        <line num="51" type="method" name="getSyntax" visibility="protected" complexity="1" crap="2" count="0"/>
-        <line num="54" type="stmt" count="0"/>
-        <line num="64" type="method" name="execute" visibility="protected" complexity="1" crap="2" count="0"/>
-        <line num="66" type="stmt" count="0"/>
-        <line num="67" type="stmt" count="0"/>
-        <line num="68" type="stmt" count="0"/>
-        <line num="79" type="method" name="query" visibility="public" complexity="3" crap="12" count="0"/>
-        <line num="83" type="stmt" count="0"/>
-        <line num="84" type="stmt" count="0"/>
-        <line num="85" type="stmt" count="0"/>
-        <line num="86" type="stmt" count="0"/>
-        <line num="87" type="stmt" count="0"/>
-        <line num="88" type="stmt" count="0"/>
-        <line num="90" type="stmt" count="0"/>
-        <metrics loc="93" ncloc="47" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="17" coveredelements="0"/>
+        <line num="40" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="8"/>
+        <line num="42" type="stmt" count="8"/>
+        <line num="43" type="stmt" count="8"/>
+        <line num="51" type="method" name="getSyntax" visibility="protected" complexity="1" crap="1" count="1"/>
+        <line num="54" type="stmt" count="1"/>
+        <line num="64" type="method" name="execute" visibility="protected" complexity="1" crap="1" count="1"/>
+        <line num="66" type="stmt" count="1"/>
+        <line num="67" type="stmt" count="1"/>
+        <line num="68" type="stmt" count="1"/>
+        <line num="79" type="method" name="query" visibility="public" complexity="3" crap="3" count="3"/>
+        <line num="83" type="stmt" count="3"/>
+        <line num="84" type="stmt" count="1"/>
+        <line num="85" type="stmt" count="1"/>
+        <line num="86" type="stmt" count="2"/>
+        <line num="87" type="stmt" count="1"/>
+        <line num="88" type="stmt" count="1"/>
+        <line num="90" type="stmt" count="1"/>
+        <metrics loc="93" ncloc="47" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="17" coveredelements="17"/>
       </file>
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Dao/MySql/CreateMySqlDao.php">
         <class name="CreateMySqlDao" namespace="Seeren\Database\Dao\MySql" fullPackage="Database.Dao" category="Seeren" package="Database" subpackage="Dao">
-          <metrics complexity="19" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="49" coveredstatements="0" elements="57" coveredelements="0"/>
+          <metrics complexity="19" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="49" coveredstatements="49" elements="57" coveredelements="57"/>
         </class>
-        <line num="40" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="42" type="stmt" count="0"/>
-        <line num="43" type="stmt" count="0"/>
-        <line num="51" type="method" name="constraint" visibility="private" complexity="7" crap="56" count="0"/>
-        <line num="53" type="stmt" count="0"/>
-        <line num="54" type="stmt" count="0"/>
-        <line num="55" type="stmt" count="0"/>
-        <line num="56" type="stmt" count="0"/>
-        <line num="57" type="stmt" count="0"/>
-        <line num="58" type="stmt" count="0"/>
-        <line num="59" type="stmt" count="0"/>
-        <line num="60" type="stmt" count="0"/>
-        <line num="61" type="stmt" count="0"/>
-        <line num="64" type="stmt" count="0"/>
-        <line num="66" type="stmt" count="0"/>
-        <line num="68" type="stmt" count="0"/>
-        <line num="69" type="stmt" count="0"/>
-        <line num="70" type="stmt" count="0"/>
-        <line num="71" type="stmt" count="0"/>
-        <line num="73" type="stmt" count="0"/>
-        <line num="83" type="method" name="addAutoIncrement" visibility="private" complexity="3" crap="12" count="0"/>
-        <line num="85" type="stmt" count="0"/>
-        <line num="86" type="stmt" count="0"/>
-        <line num="87" type="stmt" count="0"/>
-        <line num="88" type="stmt" count="0"/>
-        <line num="90" type="stmt" count="0"/>
-        <line num="91" type="stmt" count="0"/>
-        <line num="93" type="stmt" count="0"/>
-        <line num="103" type="method" name="addKey" visibility="private" complexity="1" crap="2" count="0"/>
-        <line num="105" type="stmt" count="0"/>
-        <line num="106" type="stmt" count="0"/>
-        <line num="107" type="stmt" count="0"/>
-        <line num="117" type="method" name="addForeign" visibility="private" complexity="1" crap="2" count="0"/>
-        <line num="119" type="stmt" count="0"/>
-        <line num="120" type="stmt" count="0"/>
-        <line num="121" type="stmt" count="0"/>
-        <line num="122" type="stmt" count="0"/>
-        <line num="123" type="stmt" count="0"/>
-        <line num="132" type="method" name="getColumnSyntaxe" visibility="private" complexity="3" crap="12" count="0"/>
-        <line num="134" type="stmt" count="0"/>
-        <line num="135" type="stmt" count="0"/>
-        <line num="136" type="stmt" count="0"/>
-        <line num="137" type="stmt" count="0"/>
-        <line num="138" type="stmt" count="0"/>
-        <line num="139" type="stmt" count="0"/>
-        <line num="141" type="stmt" count="0"/>
-        <line num="150" type="method" name="getSyntax" visibility="protected" complexity="2" crap="6" count="0"/>
-        <line num="152" type="stmt" count="0"/>
-        <line num="153" type="stmt" count="0"/>
-        <line num="154" type="stmt" count="0"/>
-        <line num="155" type="stmt" count="0"/>
-        <line num="157" type="stmt" count="0"/>
-        <line num="158" type="stmt" count="0"/>
-        <line num="168" type="method" name="execute" visibility="protected" complexity="1" crap="2" count="0"/>
-        <line num="170" type="stmt" count="0"/>
-        <line num="171" type="stmt" count="0"/>
-        <line num="172" type="stmt" count="0"/>
-        <metrics loc="174" ncloc="104" classes="1" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="49" coveredstatements="0" elements="57" coveredelements="0"/>
+        <line num="39" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="7"/>
+        <line num="41" type="stmt" count="7"/>
+        <line num="42" type="stmt" count="7"/>
+        <line num="50" type="method" name="constraint" visibility="private" complexity="7" crap="7" count="2"/>
+        <line num="52" type="stmt" count="2"/>
+        <line num="53" type="stmt" count="2"/>
+        <line num="54" type="stmt" count="2"/>
+        <line num="55" type="stmt" count="2"/>
+        <line num="56" type="stmt" count="2"/>
+        <line num="57" type="stmt" count="2"/>
+        <line num="58" type="stmt" count="2"/>
+        <line num="59" type="stmt" count="2"/>
+        <line num="61" type="stmt" count="2"/>
+        <line num="64" type="stmt" count="2"/>
+        <line num="66" type="stmt" count="1"/>
+        <line num="68" type="stmt" count="2"/>
+        <line num="69" type="stmt" count="2"/>
+        <line num="70" type="stmt" count="2"/>
+        <line num="71" type="stmt" count="2"/>
+        <line num="73" type="stmt" count="2"/>
+        <line num="83" type="method" name="addAutoIncrement" visibility="private" complexity="3" crap="3" count="2"/>
+        <line num="85" type="stmt" count="2"/>
+        <line num="86" type="stmt" count="2"/>
+        <line num="87" type="stmt" count="2"/>
+        <line num="88" type="stmt" count="2"/>
+        <line num="90" type="stmt" count="1"/>
+        <line num="91" type="stmt" count="1"/>
+        <line num="93" type="stmt" count="2"/>
+        <line num="103" type="method" name="addKey" visibility="private" complexity="1" crap="1" count="2"/>
+        <line num="105" type="stmt" count="2"/>
+        <line num="106" type="stmt" count="2"/>
+        <line num="107" type="stmt" count="2"/>
+        <line num="117" type="method" name="addForeign" visibility="private" complexity="1" crap="1" count="1"/>
+        <line num="119" type="stmt" count="1"/>
+        <line num="120" type="stmt" count="1"/>
+        <line num="121" type="stmt" count="1"/>
+        <line num="122" type="stmt" count="1"/>
+        <line num="123" type="stmt" count="1"/>
+        <line num="132" type="method" name="getColumnSyntaxe" visibility="private" complexity="3" crap="3" count="2"/>
+        <line num="134" type="stmt" count="2"/>
+        <line num="135" type="stmt" count="2"/>
+        <line num="136" type="stmt" count="2"/>
+        <line num="137" type="stmt" count="2"/>
+        <line num="138" type="stmt" count="2"/>
+        <line num="139" type="stmt" count="2"/>
+        <line num="141" type="stmt" count="2"/>
+        <line num="150" type="method" name="getSyntax" visibility="protected" complexity="2" crap="2" count="2"/>
+        <line num="152" type="stmt" count="2"/>
+        <line num="153" type="stmt" count="2"/>
+        <line num="154" type="stmt" count="2"/>
+        <line num="155" type="stmt" count="2"/>
+        <line num="157" type="stmt" count="2"/>
+        <line num="158" type="stmt" count="2"/>
+        <line num="168" type="method" name="execute" visibility="protected" complexity="1" crap="1" count="2"/>
+        <line num="170" type="stmt" count="2"/>
+        <line num="171" type="stmt" count="2"/>
+        <line num="172" type="stmt" count="2"/>
+        <metrics loc="174" ncloc="104" classes="1" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="49" coveredstatements="49" elements="57" coveredelements="57"/>
       </file>
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Dao/MySql/DeleteMySqlDao.php">
         <class name="DeleteMySqlDao" namespace="Seeren\Database\Dao\MySql" fullPackage="Database.Dao" category="Seeren" package="Database" subpackage="Dao">
-          <metrics complexity="8" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="0" elements="20" coveredelements="0"/>
+          <metrics complexity="8" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="3" elements="20" coveredelements="4"/>
         </class>
-        <line num="40" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="42" type="stmt" count="0"/>
-        <line num="43" type="stmt" count="0"/>
-        <line num="44" type="stmt" count="0"/>
+        <line num="40" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="42" type="stmt" count="1"/>
+        <line num="43" type="stmt" count="1"/>
+        <line num="44" type="stmt" count="1"/>
         <line num="52" type="method" name="getSyntax" visibility="protected" complexity="2" crap="6" count="0"/>
         <line num="54" type="stmt" count="0"/>
         <line num="55" type="stmt" count="0"/>
@@ -195,54 +234,54 @@
         <line num="90" type="stmt" count="0"/>
         <line num="91" type="stmt" count="0"/>
         <line num="93" type="stmt" count="0"/>
-        <metrics loc="96" ncloc="50" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="0" elements="20" coveredelements="0"/>
+        <metrics loc="96" ncloc="50" classes="1" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="3" elements="20" coveredelements="4"/>
       </file>
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Dao/MySql/DropDbMySqlDao.php">
         <class name="DropDbMySqlDao" namespace="Seeren\Database\Dao\MySql" fullPackage="Database.Dao" category="Seeren" package="Database" subpackage="Dao">
-          <metrics complexity="6" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="17" coveredelements="0"/>
+          <metrics complexity="6" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="17" coveredelements="17"/>
         </class>
-        <line num="41" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="43" type="stmt" count="0"/>
-        <line num="44" type="stmt" count="0"/>
-        <line num="52" type="method" name="getSyntax" visibility="protected" complexity="1" crap="2" count="0"/>
-        <line num="55" type="stmt" count="0"/>
-        <line num="65" type="method" name="execute" visibility="protected" complexity="1" crap="2" count="0"/>
-        <line num="67" type="stmt" count="0"/>
-        <line num="68" type="stmt" count="0"/>
-        <line num="69" type="stmt" count="0"/>
-        <line num="80" type="method" name="query" visibility="public" complexity="3" crap="12" count="0"/>
-        <line num="84" type="stmt" count="0"/>
-        <line num="85" type="stmt" count="0"/>
-        <line num="86" type="stmt" count="0"/>
-        <line num="87" type="stmt" count="0"/>
-        <line num="88" type="stmt" count="0"/>
-        <line num="89" type="stmt" count="0"/>
-        <line num="91" type="stmt" count="0"/>
-        <metrics loc="94" ncloc="48" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="17" coveredelements="0"/>
+        <line num="41" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="8"/>
+        <line num="43" type="stmt" count="8"/>
+        <line num="44" type="stmt" count="8"/>
+        <line num="52" type="method" name="getSyntax" visibility="protected" complexity="1" crap="1" count="1"/>
+        <line num="55" type="stmt" count="1"/>
+        <line num="65" type="method" name="execute" visibility="protected" complexity="1" crap="1" count="1"/>
+        <line num="67" type="stmt" count="1"/>
+        <line num="68" type="stmt" count="1"/>
+        <line num="69" type="stmt" count="1"/>
+        <line num="80" type="method" name="query" visibility="public" complexity="3" crap="3" count="3"/>
+        <line num="84" type="stmt" count="3"/>
+        <line num="85" type="stmt" count="1"/>
+        <line num="86" type="stmt" count="1"/>
+        <line num="87" type="stmt" count="2"/>
+        <line num="88" type="stmt" count="1"/>
+        <line num="89" type="stmt" count="1"/>
+        <line num="91" type="stmt" count="1"/>
+        <metrics loc="94" ncloc="48" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="17" coveredelements="17"/>
       </file>
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Dao/MySql/DropMySqlDao.php">
         <class name="DropMySqlDao" namespace="Seeren\Database\Dao\MySql" fullPackage="Database.Dao" category="Seeren" package="Database" subpackage="Dao">
-          <metrics complexity="3" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="9" coveredelements="0"/>
+          <metrics complexity="3" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="2" elements="9" coveredelements="3"/>
         </class>
-        <line num="38" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="40" type="stmt" count="0"/>
-        <line num="41" type="stmt" count="0"/>
+        <line num="38" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="40" type="stmt" count="1"/>
+        <line num="41" type="stmt" count="1"/>
         <line num="49" type="method" name="getSyntax" visibility="protected" complexity="1" crap="2" count="0"/>
         <line num="51" type="stmt" count="0"/>
         <line num="61" type="method" name="execute" visibility="protected" complexity="1" crap="2" count="0"/>
         <line num="63" type="stmt" count="0"/>
         <line num="64" type="stmt" count="0"/>
         <line num="65" type="stmt" count="0"/>
-        <metrics loc="67" ncloc="30" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="9" coveredelements="0"/>
+        <metrics loc="67" ncloc="30" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="2" elements="9" coveredelements="3"/>
       </file>
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Dao/MySql/InsertMySqlDao.php">
         <class name="InsertMySqlDao" namespace="Seeren\Database\Dao\MySql" fullPackage="Database.Dao" category="Seeren" package="Database" subpackage="Dao">
-          <metrics complexity="7" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="0" elements="23" coveredelements="0"/>
+          <metrics complexity="7" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="3" elements="23" coveredelements="4"/>
         </class>
-        <line num="39" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="41" type="stmt" count="0"/>
-        <line num="42" type="stmt" count="0"/>
-        <line num="43" type="stmt" count="0"/>
+        <line num="39" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="41" type="stmt" count="1"/>
+        <line num="42" type="stmt" count="1"/>
+        <line num="43" type="stmt" count="1"/>
         <line num="51" type="method" name="getSyntax" visibility="protected" complexity="3" crap="12" count="0"/>
         <line num="53" type="stmt" count="0"/>
         <line num="54" type="stmt" count="0"/>
@@ -262,15 +301,15 @@
         <line num="82" type="stmt" count="0"/>
         <line num="83" type="stmt" count="0"/>
         <line num="84" type="stmt" count="0"/>
-        <metrics loc="86" ncloc="49" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="0" elements="23" coveredelements="0"/>
+        <metrics loc="86" ncloc="49" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="3" elements="23" coveredelements="4"/>
       </file>
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Dao/MySql/OpenMySqlDao.php">
         <class name="OpenMySqlDao" namespace="Seeren\Database\Dao\MySql" fullPackage="Database.Dao" category="Seeren" package="Database" subpackage="Dao">
-          <metrics complexity="6" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="0" elements="22" coveredelements="0"/>
+          <metrics complexity="6" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="2" elements="22" coveredelements="3"/>
         </class>
-        <line num="41" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="43" type="stmt" count="0"/>
-        <line num="44" type="stmt" count="0"/>
+        <line num="41" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="43" type="stmt" count="3"/>
+        <line num="44" type="stmt" count="3"/>
         <line num="52" type="method" name="getSyntax" visibility="protected" complexity="2" crap="6" count="0"/>
         <line num="54" type="stmt" count="0"/>
         <line num="55" type="stmt" count="0"/>
@@ -290,15 +329,15 @@
         <line num="95" type="stmt" count="0"/>
         <line num="96" type="stmt" count="0"/>
         <line num="98" type="stmt" count="0"/>
-        <metrics loc="101" ncloc="55" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="0" elements="22" coveredelements="0"/>
+        <metrics loc="101" ncloc="55" classes="1" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="2" elements="22" coveredelements="3"/>
       </file>
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Dao/MySql/SelectMySqlDao.php">
         <class name="SelectMySqlDao" namespace="Seeren\Database\Dao\MySql" fullPackage="Database.Dao" category="Seeren" package="Database" subpackage="Dao">
-          <metrics complexity="11" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="22" coveredstatements="0" elements="25" coveredelements="0"/>
+          <metrics complexity="11" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="22" coveredstatements="2" elements="25" coveredelements="3"/>
         </class>
-        <line num="39" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="41" type="stmt" count="0"/>
-        <line num="42" type="stmt" count="0"/>
+        <line num="39" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="41" type="stmt" count="1"/>
+        <line num="42" type="stmt" count="1"/>
         <line num="50" type="method" name="getSyntax" visibility="protected" complexity="5" crap="30" count="0"/>
         <line num="52" type="stmt" count="0"/>
         <line num="53" type="stmt" count="0"/>
@@ -321,16 +360,16 @@
         <line num="83" type="stmt" count="0"/>
         <line num="85" type="stmt" count="0"/>
         <line num="87" type="stmt" count="0"/>
-        <metrics loc="89" ncloc="52" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="22" coveredstatements="0" elements="25" coveredelements="0"/>
+        <metrics loc="89" ncloc="52" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="22" coveredstatements="2" elements="25" coveredelements="3"/>
       </file>
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Dao/MySql/UpdateMySqlDao.php">
         <class name="UpdateMySqlDao" namespace="Seeren\Database\Dao\MySql" fullPackage="Database.Dao" category="Seeren" package="Database" subpackage="Dao">
-          <metrics complexity="10" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="22" coveredstatements="0" elements="26" coveredelements="0"/>
+          <metrics complexity="10" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="22" coveredstatements="3" elements="26" coveredelements="4"/>
         </class>
-        <line num="40" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="42" type="stmt" count="0"/>
-        <line num="43" type="stmt" count="0"/>
-        <line num="44" type="stmt" count="0"/>
+        <line num="40" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="42" type="stmt" count="1"/>
+        <line num="43" type="stmt" count="1"/>
+        <line num="44" type="stmt" count="1"/>
         <line num="52" type="method" name="getSyntax" visibility="protected" complexity="4" crap="20" count="0"/>
         <line num="54" type="stmt" count="0"/>
         <line num="55" type="stmt" count="0"/>
@@ -353,15 +392,15 @@
         <line num="98" type="stmt" count="0"/>
         <line num="99" type="stmt" count="0"/>
         <line num="101" type="stmt" count="0"/>
-        <metrics loc="104" ncloc="58" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="22" coveredstatements="0" elements="26" coveredelements="0"/>
+        <metrics loc="104" ncloc="58" classes="1" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="22" coveredstatements="3" elements="26" coveredelements="4"/>
       </file>
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Dao/MySql/UseDbMySqlDao.php">
         <class name="UseDbMySqlDao" namespace="Seeren\Database\Dao\MySql" fullPackage="Database.Dao" category="Seeren" package="Database" subpackage="Dao">
-          <metrics complexity="6" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="17" coveredelements="0"/>
+          <metrics complexity="6" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="2" elements="17" coveredelements="3"/>
         </class>
-        <line num="41" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="43" type="stmt" count="0"/>
-        <line num="44" type="stmt" count="0"/>
+        <line num="41" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="43" type="stmt" count="1"/>
+        <line num="44" type="stmt" count="1"/>
         <line num="52" type="method" name="getSyntax" visibility="protected" complexity="1" crap="2" count="0"/>
         <line num="54" type="stmt" count="0"/>
         <line num="64" type="method" name="execute" visibility="protected" complexity="1" crap="2" count="0"/>
@@ -376,7 +415,7 @@
         <line num="87" type="stmt" count="0"/>
         <line num="88" type="stmt" count="0"/>
         <line num="90" type="stmt" count="0"/>
-        <metrics loc="93" ncloc="47" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="17" coveredelements="0"/>
+        <metrics loc="93" ncloc="47" classes="1" methods="4" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="2" elements="17" coveredelements="3"/>
       </file>
     </package>
     <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Dao/MySql/MySqlDaoInterface.php">
@@ -385,9 +424,53 @@
     <package name="Seeren\Database\Table">
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Table/AbstractTable.php">
         <class name="AbstractTable" namespace="Seeren\Database\Table" fullPackage="Database" category="Seeren" package="Database">
-          <metrics complexity="17" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+          <metrics complexity="17" methods="10" coveredmethods="10" conditionals="0" coveredconditionals="0" statements="34" coveredstatements="34" elements="44" coveredelements="44"/>
         </class>
-        <metrics loc="191" ncloc="97" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        <line num="59" type="method" name="__construct" visibility="protected" complexity="1" crap="1" count="17"/>
+        <line num="61" type="stmt" count="17"/>
+        <line num="62" type="stmt" count="17"/>
+        <line num="70" type="method" name="addColumn" visibility="protected" complexity="1" crap="1" count="17"/>
+        <line num="72" type="stmt" count="17"/>
+        <line num="73" type="stmt" count="17"/>
+        <line num="81" type="method" name="addKey" visibility="protected" complexity="1" crap="1" count="17"/>
+        <line num="83" type="stmt" count="17"/>
+        <line num="84" type="stmt" count="17"/>
+        <line num="96" type="method" name="__call" visibility="public" complexity="3" crap="3" count="2"/>
+        <line num="98" type="stmt" count="2"/>
+        <line num="99" type="stmt" count="1"/>
+        <line num="100" type="stmt" count="1"/>
+        <line num="101" type="stmt" count="1"/>
+        <line num="104" type="stmt" count="1"/>
+        <line num="106" type="stmt" count="1"/>
+        <line num="107" type="stmt" count="1"/>
+        <line num="108" type="stmt" count="1"/>
+        <line num="109" type="stmt" count="1"/>
+        <line num="119" type="method" name="__get" visibility="public" complexity="2" crap="2" count="6"/>
+        <line num="121" type="stmt" count="6"/>
+        <line num="122" type="stmt" count="5"/>
+        <line num="123" type="stmt" count="6"/>
+        <line num="133" type="method" name="__set" visibility="public" complexity="2" crap="2" count="6"/>
+        <line num="135" type="stmt" count="6"/>
+        <line num="136" type="stmt" count="5"/>
+        <line num="138" type="stmt" count="6"/>
+        <line num="146" type="method" name="get" visibility="public" complexity="4" crap="4" count="7"/>
+        <line num="148" type="stmt" count="7"/>
+        <line num="149" type="stmt" count="7"/>
+        <line num="150" type="stmt" count="3"/>
+        <line num="151" type="stmt" count="3"/>
+        <line num="152" type="stmt" count="7"/>
+        <line num="161" type="method" name="set" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="163" type="stmt" count="2"/>
+        <line num="164" type="stmt" count="2"/>
+        <line num="165" type="stmt" count="2"/>
+        <line num="173" type="method" name="addClause" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="175" type="stmt" count="2"/>
+        <line num="176" type="stmt" count="2"/>
+        <line num="183" type="method" name="clear" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="185" type="stmt" count="1"/>
+        <line num="186" type="stmt" count="1"/>
+        <line num="187" type="stmt" count="1"/>
+        <metrics loc="189" ncloc="95" classes="1" methods="10" coveredmethods="10" conditionals="0" coveredconditionals="0" statements="34" coveredstatements="34" elements="44" coveredelements="44"/>
       </file>
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Table/MasterTable.php">
         <class name="MasterTable" namespace="Seeren\Database\Table" fullPackage="Database" category="Seeren" package="Database">
@@ -401,14 +484,14 @@
         <class name="Clause" namespace="Seeren\Database\Table\Clause" fullPackage="Database.Table" category="Seeren" package="Database" subpackage="Table">
           <metrics complexity="8" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="19" coveredelements="19"/>
         </class>
-        <line num="57" type="method" name="__construct" visibility="public" complexity="3" crap="3" count="9"/>
-        <line num="63" type="stmt" count="9"/>
-        <line num="64" type="stmt" count="9"/>
-        <line num="65" type="stmt" count="9"/>
+        <line num="57" type="method" name="__construct" visibility="public" complexity="3" crap="3" count="11"/>
+        <line num="63" type="stmt" count="11"/>
+        <line num="64" type="stmt" count="11"/>
+        <line num="65" type="stmt" count="11"/>
         <line num="66" type="stmt" count="9"/>
-        <line num="67" type="stmt" count="4"/>
-        <line num="68" type="stmt" count="9"/>
-        <line num="69" type="stmt" count="9"/>
+        <line num="67" type="stmt" count="6"/>
+        <line num="68" type="stmt" count="11"/>
+        <line num="69" type="stmt" count="11"/>
         <line num="76" type="method" name="getType" visibility="public" complexity="1" crap="1" count="2"/>
         <line num="78" type="stmt" count="2"/>
         <line num="86" type="method" name="getSubject" visibility="public" complexity="1" crap="1" count="2"/>
@@ -431,36 +514,36 @@
         <class name="AbstractColumn" namespace="Seeren\Database\Table\Column" fullPackage="Database.Table" category="Seeren" package="Database" subpackage="Table">
           <metrics complexity="9" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="19" coveredelements="19"/>
         </class>
-        <line num="59" type="method" name="__construct" visibility="protected" complexity="4" crap="4" count="16"/>
-        <line num="65" type="stmt" count="16"/>
-        <line num="66" type="stmt" count="16"/>
-        <line num="67" type="stmt" count="16"/>
-        <line num="68" type="stmt" count="16"/>
-        <line num="69" type="stmt" count="16"/>
-        <line num="70" type="stmt" count="2"/>
-        <line num="71" type="stmt" count="2"/>
-        <line num="74" type="stmt" count="16"/>
-        <line num="81" type="method" name="getName" visibility="public" complexity="1" crap="1" count="2"/>
-        <line num="83" type="stmt" count="2"/>
-        <line num="91" type="method" name="getValue" visibility="public" complexity="1" crap="1" count="2"/>
-        <line num="93" type="stmt" count="2"/>
-        <line num="101" type="method" name="getType" visibility="public" complexity="1" crap="1" count="4"/>
-        <line num="103" type="stmt" count="4"/>
-        <line num="111" type="method" name="getSize" visibility="public" complexity="1" crap="1" count="2"/>
-        <line num="113" type="stmt" count="2"/>
-        <line num="121" type="method" name="getOption" visibility="public" complexity="1" crap="1" count="4"/>
-        <line num="123" type="stmt" count="4"/>
+        <line num="59" type="method" name="__construct" visibility="protected" complexity="4" crap="4" count="33"/>
+        <line num="65" type="stmt" count="33"/>
+        <line num="66" type="stmt" count="33"/>
+        <line num="67" type="stmt" count="33"/>
+        <line num="68" type="stmt" count="33"/>
+        <line num="69" type="stmt" count="33"/>
+        <line num="70" type="stmt" count="19"/>
+        <line num="71" type="stmt" count="19"/>
+        <line num="74" type="stmt" count="33"/>
+        <line num="81" type="method" name="getName" visibility="public" complexity="1" crap="1" count="19"/>
+        <line num="83" type="stmt" count="19"/>
+        <line num="91" type="method" name="getValue" visibility="public" complexity="1" crap="1" count="7"/>
+        <line num="93" type="stmt" count="7"/>
+        <line num="101" type="method" name="getType" visibility="public" complexity="1" crap="1" count="6"/>
+        <line num="103" type="stmt" count="6"/>
+        <line num="111" type="method" name="getSize" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="113" type="stmt" count="4"/>
+        <line num="121" type="method" name="getOption" visibility="public" complexity="1" crap="1" count="6"/>
+        <line num="123" type="stmt" count="6"/>
         <metrics loc="126" ncloc="58" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="19" coveredelements="19"/>
       </file>
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Table/Column/IntegerColumn.php">
         <class name="IntegerColumn" namespace="Seeren\Database\Table\Column" fullPackage="Database.Table" category="Seeren" package="Database" subpackage="Table">
           <metrics complexity="4" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="10" coveredelements="10"/>
         </class>
-        <line num="39" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="8"/>
-        <line num="45" type="stmt" count="8"/>
-        <line num="46" type="stmt" count="8"/>
+        <line num="39" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="11"/>
+        <line num="45" type="stmt" count="11"/>
+        <line num="46" type="stmt" count="11"/>
         <line num="47" type="stmt" count="1"/>
-        <line num="49" type="stmt" count="8"/>
+        <line num="49" type="stmt" count="11"/>
         <line num="57" type="method" name="setValue" visibility="public" complexity="1" crap="1" count="1"/>
         <line num="59" type="stmt" count="1"/>
         <line num="60" type="stmt" count="1"/>
@@ -472,14 +555,14 @@
         <class name="StringColumn" namespace="Seeren\Database\Table\Column" fullPackage="Database.Table" category="Seeren" package="Database" subpackage="Table">
           <metrics complexity="4" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="10" coveredelements="10"/>
         </class>
-        <line num="38" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="8"/>
-        <line num="44" type="stmt" count="8"/>
-        <line num="45" type="stmt" count="8"/>
+        <line num="38" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="25"/>
+        <line num="44" type="stmt" count="25"/>
+        <line num="45" type="stmt" count="25"/>
         <line num="46" type="stmt" count="1"/>
-        <line num="48" type="stmt" count="8"/>
-        <line num="56" type="method" name="setValue" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="58" type="stmt" count="1"/>
-        <line num="59" type="stmt" count="1"/>
+        <line num="48" type="stmt" count="25"/>
+        <line num="56" type="method" name="setValue" visibility="public" complexity="1" crap="1" count="6"/>
+        <line num="58" type="stmt" count="6"/>
+        <line num="59" type="stmt" count="6"/>
         <line num="66" type="method" name="getParam" visibility="public" complexity="1" crap="1" count="1"/>
         <line num="68" type="stmt" count="1"/>
         <metrics loc="71" ncloc="32" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="10" coveredelements="10"/>
@@ -497,64 +580,61 @@
     <package name="Seeren\Database\Table\Key">
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Table/Key/Key.php">
         <class name="Key" namespace="Seeren\Database\Table\Key" fullPackage="Database.Table" category="Seeren" package="Database" subpackage="Table">
-          <metrics complexity="7" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="14" coveredelements="0"/>
+          <metrics complexity="6" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="14" coveredelements="14"/>
         </class>
-        <line num="55" type="method" name="__construct" visibility="public" complexity="2" crap="6" count="0"/>
-        <line num="62" type="stmt" count="0"/>
-        <line num="63" type="stmt" count="0"/>
-        <line num="64" type="stmt" count="0"/>
-        <line num="65" type="stmt" count="0"/>
-        <line num="66" type="stmt" count="0"/>
-        <line num="73" type="method" name="getType" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="75" type="stmt" count="0"/>
-        <line num="83" type="method" name="getSubject" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="85" type="stmt" count="0"/>
-        <line num="93" type="method" name="getForeigner" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="95" type="stmt" count="0"/>
-        <line num="103" type="method" name="getForeignerSubject" visibility="public" complexity="2" crap="6" count="0"/>
-        <line num="105" type="stmt" count="0"/>
-        <metrics loc="108" ncloc="48" classes="1" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="0" elements="14" coveredelements="0"/>
+        <line num="55" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="24"/>
+        <line num="62" type="stmt" count="24"/>
+        <line num="63" type="stmt" count="24"/>
+        <line num="64" type="stmt" count="24"/>
+        <line num="65" type="stmt" count="24"/>
+        <line num="66" type="stmt" count="24"/>
+        <line num="73" type="method" name="getType" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="75" type="stmt" count="4"/>
+        <line num="83" type="method" name="getSubject" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="85" type="stmt" count="3"/>
+        <line num="93" type="method" name="getForeigner" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="95" type="stmt" count="3"/>
+        <line num="103" type="method" name="getForeignerSubject" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="105" type="stmt" count="3"/>
+        <metrics loc="108" ncloc="48" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="14" coveredelements="14"/>
       </file>
     </package>
     <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Table/Key/KeyInterface.php">
       <metrics loc="78" ncloc="24" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Table/TableInterface.php">
-      <metrics loc="95" ncloc="29" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
-    </file>
     <package name="Seeren\Database\Table\User">
       <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Table/User/User.php">
         <class name="User" namespace="Seeren\Database\Table\User" fullPackage="Database.Table" category="Seeren" package="Database" subpackage="Table">
-          <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="0" elements="22" coveredelements="0"/>
+          <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="21" elements="22" coveredelements="22"/>
         </class>
-        <line num="43" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="45" type="stmt" count="0"/>
-        <line num="46" type="stmt" count="0"/>
-        <line num="47" type="stmt" count="0"/>
-        <line num="48" type="stmt" count="0"/>
-        <line num="49" type="stmt" count="0"/>
-        <line num="51" type="stmt" count="0"/>
-        <line num="52" type="stmt" count="0"/>
-        <line num="53" type="stmt" count="0"/>
-        <line num="54" type="stmt" count="0"/>
-        <line num="56" type="stmt" count="0"/>
-        <line num="57" type="stmt" count="0"/>
-        <line num="58" type="stmt" count="0"/>
-        <line num="59" type="stmt" count="0"/>
-        <line num="61" type="stmt" count="0"/>
-        <line num="62" type="stmt" count="0"/>
-        <line num="63" type="stmt" count="0"/>
-        <line num="65" type="stmt" count="0"/>
-        <line num="66" type="stmt" count="0"/>
-        <line num="68" type="stmt" count="0"/>
-        <line num="69" type="stmt" count="0"/>
-        <line num="71" type="stmt" count="0"/>
-        <metrics loc="73" ncloc="46" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="0" elements="22" coveredelements="0"/>
+        <line num="43" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="14"/>
+        <line num="45" type="stmt" count="14"/>
+        <line num="46" type="stmt" count="14"/>
+        <line num="47" type="stmt" count="14"/>
+        <line num="48" type="stmt" count="14"/>
+        <line num="49" type="stmt" count="14"/>
+        <line num="51" type="stmt" count="14"/>
+        <line num="52" type="stmt" count="14"/>
+        <line num="53" type="stmt" count="14"/>
+        <line num="54" type="stmt" count="14"/>
+        <line num="56" type="stmt" count="14"/>
+        <line num="57" type="stmt" count="14"/>
+        <line num="58" type="stmt" count="14"/>
+        <line num="59" type="stmt" count="14"/>
+        <line num="61" type="stmt" count="14"/>
+        <line num="62" type="stmt" count="14"/>
+        <line num="63" type="stmt" count="14"/>
+        <line num="65" type="stmt" count="14"/>
+        <line num="66" type="stmt" count="14"/>
+        <line num="68" type="stmt" count="14"/>
+        <line num="69" type="stmt" count="14"/>
+        <line num="71" type="stmt" count="14"/>
+        <metrics loc="73" ncloc="46" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="21" elements="22" coveredelements="22"/>
       </file>
     </package>
     <file name="C:\xampp\htdocs\seeren-dev-master\database\src/Table/User/UserInterface.php">
       <metrics loc="48" ncloc="17" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="33" loc="3472" ncloc="1608" classes="18" methods="73" coveredmethods="18" conditionals="0" coveredconditionals="0" statements="295" coveredstatements="40" elements="368" coveredelements="58"/>
+    <metrics files="32" loc="3375" ncloc="1577" classes="22" methods="92" coveredmethods="71" conditionals="0" coveredconditionals="0" statements="359" coveredstatements="249" elements="451" coveredelements="320"/>
   </project>
 </coverage>
