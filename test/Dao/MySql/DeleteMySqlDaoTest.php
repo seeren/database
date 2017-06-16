@@ -53,9 +53,21 @@ class DeleteMySqlDaoTest extends AbstractMySqlDaoTest
     {
         $table = parent::getTable();
         $table->addClause(new Clause(
-            ClauseInterface::WHERE, "column_name",
+            ClauseInterface::WHERE, "host",
+            ClauseInterface::OPE_EQUAL,
+            "host"));
+        $table->addClause(new Clause(
+            ClauseInterface::OR, "column_name",
+            ClauseInterface::OPE_EQUAL,
+            "1"));
+        $table->addClause(new Clause(
+            ClauseInterface::OR, "column_name",
             ClauseInterface::OPE_EQUAL,
             1));
+        $table->addClause(new Clause(
+            ClauseInterface::OR, "column_name",
+            ClauseInterface::OPE_EQUAL,
+            null));
         return $table;
     }
 
@@ -68,7 +80,10 @@ class DeleteMySqlDaoTest extends AbstractMySqlDaoTest
     {
         return "DELETE FROM `"
              . $this->getTable()->get(TableInterface::ATTR_NAME)
-             . "` WHERE column_name = :c0_column_name;";
+             . "` WHERE host = :c0_host "
+             . "OR column_name = :c1_column_name "
+             . "OR column_name = :c2_column_name "
+             . "OR column_name = :c3_column_name;";
     }
 
     /**
@@ -100,6 +115,7 @@ class DeleteMySqlDaoTest extends AbstractMySqlDaoTest
      * @covers \Seeren\Database\Table\Column\AbstractColumn::__construct
      * @covers \Seeren\Database\Table\Column\AbstractColumn::getName
      * @covers \Seeren\Database\Table\Column\StringColumn::__construct
+     * @covers \Seeren\Database\Table\Column\StringColumn::getParam
      * @covers \Seeren\Database\Table\Key\Key::__construct
      * @covers \Seeren\Database\Table\User\User::__construct
      */

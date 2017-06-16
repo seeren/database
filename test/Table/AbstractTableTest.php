@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link https://github.com/seeren/database
- * @version 2.0.1
+ * @version 2.1.1
  */
 
 namespace Seeren\Database\Test\Table;

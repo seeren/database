@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link https://github.com/seeren/database
- * @version 1.0.1
+ * @version 1.1.1
  */
 
 namespace Seeren\Database\Test\Table\User;
@@ -19,7 +19,6 @@ use Seeren\Database\Test\Table\AbstractTableTest;
 use Seeren\Database\Table\User\User;
 use Seeren\Database\Table\TableInterface;
 use ReflectionClass;
-use Seeren\Database\Dal\DalInterface;
 
 /**
  * Class for test User
