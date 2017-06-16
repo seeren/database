@@ -286,6 +286,123 @@ class DummyTableTest extends MasterTableTest
 
    /**
     * @covers \Seeren\Database\Test\Table\DummyTable::__construct
+    * @covers \Seeren\Database\Dal\Dal::__construct
+    * @covers \Seeren\Database\Dal\Dal::getLayer
+    * @covers \Seeren\Database\Dal\Dal::getObject
+    * @covers \Seeren\Database\Dal\Dal::query
+    * @covers \Seeren\Database\Dal\Dal::setLayer
+    * @covers \Seeren\Database\Dal\MySql\MySqlDal::__construct
+    * @covers \Seeren\Database\Dao\AbstractDao::__construct
+    * @covers \Seeren\Database\Dao\AbstractDao::clone
+    * @covers \Seeren\Database\Dao\AbstractDao::close
+    * @covers \Seeren\Database\Dao\AbstractDao::constant
+    * @covers \Seeren\Database\Dao\AbstractDao::query
+    * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::__construct
+    * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::bindParam
+    * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::close
+    * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::getClause
+    * @covers \Seeren\Database\Dao\MySql\DeleteMySqlDao::__construct
+    * @covers \Seeren\Database\Dao\MySql\DeleteMySqlDao::execute
+    * @covers \Seeren\Database\Dao\MySql\DeleteMySqlDao::getSyntax
+    * @covers \Seeren\Database\Dao\MySql\DeleteMySqlDao::query
+    * @covers \Seeren\Database\Table\AbstractTable::__construct
+    * @covers \Seeren\Database\Table\AbstractTable::addClause
+    * @covers \Seeren\Database\Table\AbstractTable::addColumn
+    * @covers \Seeren\Database\Table\AbstractTable::addKey
+    * @covers \Seeren\Database\Table\AbstractTable::get
+    * @covers \Seeren\Database\Table\AbstractTable::set
+    * @covers \Seeren\Database\Table\Clause\Clause::__construct
+    * @covers \Seeren\Database\Table\Clause\Clause::getOperator
+    * @covers \Seeren\Database\Table\Clause\Clause::getSubject
+    * @covers \Seeren\Database\Table\Clause\Clause::getType
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::__construct
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::getName
+    * @covers \Seeren\Database\Table\Column\IntegerColumn::__construct
+    * @covers \Seeren\Database\Table\Column\StringColumn::__construct
+    * @covers \Seeren\Database\Table\Key\Key::__construct
+    * @covers \Seeren\Database\Table\MasterTable::__construct
+    * @covers \Seeren\Database\Table\MasterTable::addClause
+    * @covers \Seeren\Database\Table\MasterTable::delete
+    * @covers \Seeren\Database\Table\MasterTable::get
+    * @covers \Seeren\Database\Table\User\User::__construct
+    */
+   public function testDelete()
+   {
+       parent::testDelete();
+   }
+
+   /**
+    * @covers \Seeren\Database\Test\Table\DummyTable::__construct
+    * @covers \Seeren\Database\Dal\Dal::__construct
+    * @covers \Seeren\Database\Dal\Dal::getLayer
+    * @covers \Seeren\Database\Dal\Dal::getObject
+    * @covers \Seeren\Database\Dal\Dal::query
+    * @covers \Seeren\Database\Dal\MySql\MySqlDal::__construct
+    * @covers \Seeren\Database\Dao\AbstractDao::__construct
+    * @covers \Seeren\Database\Dao\AbstractDao::clone
+    * @covers \Seeren\Database\Dao\AbstractDao::query
+    * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::__construct
+    * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::getClause
+    * @covers \Seeren\Database\Dao\MySql\SelectMySqlDao::__construct
+    * @covers \Seeren\Database\Dao\MySql\SelectMySqlDao::execute
+    * @covers \Seeren\Database\Dao\MySql\SelectMySqlDao::getSyntax
+    * @covers \Seeren\Database\Table\AbstractTable::__construct
+    * @covers \Seeren\Database\Table\AbstractTable::addColumn
+    * @covers \Seeren\Database\Table\AbstractTable::addKey
+    * @covers \Seeren\Database\Table\AbstractTable::get
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::__construct
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::getName
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::getValue
+    * @covers \Seeren\Database\Table\Column\IntegerColumn::__construct
+    * @covers \Seeren\Database\Table\Column\StringColumn::__construct
+    * @covers \Seeren\Database\Table\Key\Key::__construct
+    * @covers \Seeren\Database\Table\MasterTable::__construct
+    * @covers \Seeren\Database\Table\MasterTable::delete
+    * @covers \Seeren\Database\Table\User\User::__construct
+    * @expectedException \RuntimeException
+    */
+   public function testDeleteRuntimeException()
+   {
+       parent::testDeleteRuntimeException();
+   }
+
+   /**
+    * @covers \Seeren\Database\Test\Table\DummyTable::__construct
+    * @covers \Seeren\Database\Dal\Dal::__construct
+    * @covers \Seeren\Database\Dal\Dal::getLayer
+    * @covers \Seeren\Database\Dal\Dal::getObject
+    * @covers \Seeren\Database\Dal\Dal::query
+    * @covers \Seeren\Database\Dal\MySql\MySqlDal::__construct
+    * @covers \Seeren\Database\Dao\AbstractDao::__construct
+    * @covers \Seeren\Database\Dao\AbstractDao::clone
+    * @covers \Seeren\Database\Dao\AbstractDao::query
+    * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::__construct
+    * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::getClause
+    * @covers \Seeren\Database\Dao\MySql\SelectMySqlDao::__construct
+    * @covers \Seeren\Database\Dao\MySql\SelectMySqlDao::execute
+    * @covers \Seeren\Database\Dao\MySql\SelectMySqlDao::getSyntax
+    * @covers \Seeren\Database\Table\AbstractTable::__construct
+    * @covers \Seeren\Database\Table\AbstractTable::addColumn
+    * @covers \Seeren\Database\Table\AbstractTable::addKey
+    * @covers \Seeren\Database\Table\AbstractTable::get
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::__construct
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::getName
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::getValue
+    * @covers \Seeren\Database\Table\Column\IntegerColumn::__construct
+    * @covers \Seeren\Database\Table\Column\StringColumn::__construct
+    * @covers \Seeren\Database\Table\Key\Key::__construct
+    * @covers \Seeren\Database\Table\MasterTable::__construct
+    * @covers \Seeren\Database\Table\MasterTable::select
+    * @covers \Seeren\Database\Table\User\User::__construct
+    * @expectedException \RuntimeException
+    */
+   public function testSelectRuntimeException()
+   {
+       parent::testSelectRuntimeException();
+   }
+
+   /**
+    * @covers \Seeren\Database\Test\Table\DummyTable::__construct
     * @covers \Seeren\Database\Table\AbstractTable::__construct
     * @covers \Seeren\Database\Table\AbstractTable::addColumn
     * @covers \Seeren\Database\Table\AbstractTable::addKey

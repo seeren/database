@@ -10,12 +10,14 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link https://github.com/seeren/database
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 namespace Seeren\Database\Test\Table;
 
 use Seeren\Database\Table\TableInterface;
+use Seeren\Database\Table\Clause\Clause;
+use Seeren\Database\Dao\DaoInterface;
 
 /**
  * Class for test MasterTable
@@ -34,6 +36,35 @@ abstract class MasterTableTest extends AbstractTableTest
      * @return string dependencie name
      */
     abstract protected function getDependencieName(): string;
+
+    /**
+     * Test delete RuntimeException
+     */
+    public function testDelete()
+    {
+        $dal = $this->getDal();
+        $dal->setLayer($this->getPdo());
+        $table = $this->getTable();
+        $table->addClause(new Clause(clause::LIMIT, 1));
+        $table->delete($dal);
+        $this->assertTrue($table->get() instanceof DaoInterface);
+    }
+
+    /**
+     * Test delete RuntimeException
+     */
+    public function testDeleteRuntimeException()
+    {
+        $this->getTable()->delete($this->getDal());
+    }
+
+    /**
+     * Test select RuntimeException
+     */
+    public function testSelectRuntimeException()
+    {
+        $this->getTable()->select($this->getDal());
+    }
 
     /**
      * Test get dependencie

@@ -49,9 +49,23 @@ abstract class AbstractTableTest extends \PHPUnit\Framework\TestCase
      *
      * @return DalInterface dal
      */
-    private function getDal(): DalInterface
+    protected function getDal(): DalInterface
     {
         return (new ReflectionClass(MySqlDal::class))->newInstanceArgs([]);
+    }
+
+    /**
+     * Get PDO
+     */
+    protected function getPdo()
+    {
+        $sth = $this->createMock(PDOStatement::class);
+        $sth->method("execute")->willReturn(true);
+        $sth->method("fetch")->willReturn([]);
+        $sth->method("fetchAll")->willReturn([["host" => "host_name"]]);
+        $pdo = $this->createMock(PDO::class);
+        $pdo->method("prepare")->willReturn($sth);
+        return $pdo;
     }
 
     /**
@@ -74,20 +88,6 @@ abstract class AbstractTableTest extends \PHPUnit\Framework\TestCase
     private function getDao(): DaoInterface
     {
         return (new ReflectionClass(OpenMySqlDao::class))->newInstanceArgs([]);
-    }
-
-    /**
-     * Get PDO
-     */
-    private function getPdo()
-    {
-        $sth = $this->createMock(PDOStatement::class);
-        $sth->method("execute")->willReturn(true);
-        $sth->method("fetch")->willReturn([]);
-        $sth->method("fetchAll")->willReturn([["host" => "host_name"]]);
-        $pdo = $this->createMock(PDO::class);
-        $pdo->method("prepare")->willReturn($sth);
-        return $pdo;
     }
 
     /**
