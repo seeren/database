@@ -70,7 +70,10 @@ abstract class MasterTable extends AbstractTable
             parent::__call(
                 $name,
                 $args,
-                $args[0]->getLayer()->beginTransaction());
+                (array_key_exists(0, $args)
+               ? $args[0]->getLayer()->beginTransaction()
+               : null)
+            );
             foreach ($this->table as $table) {
                 $table->__call($name, $args);
             }
