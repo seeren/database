@@ -16,7 +16,7 @@ class DummyTable extends MasterTable implements TableInterface
     
     public function __construct()
     {
-        parent::__construct();
+        parent::__construct([new User]);
         $this->addColumn(
             new IntegerColumn("id", IntegerColumn::INT, 10, [
                 IntegerColumn::OPT_AUTO_INCREMENT,

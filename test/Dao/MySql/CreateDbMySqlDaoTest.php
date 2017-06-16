@@ -102,6 +102,8 @@ class CreateDbMySqlDaoTest extends AbstractDaoTest
      * @covers \Seeren\Database\Dao\MySql\CreateDbMySqlDao::query
      * @covers \Seeren\Database\Table\AbstractTable::__construct
      * @covers \Seeren\Database\Table\MasterTable::__construct
+     * @covers \Seeren\Database\Table\AbstractTable::get
+     * @covers \Seeren\Database\Table\User\User::__construct
      * @covers \Seeren\Database\Table\AbstractTable::addColumn
      * @covers \Seeren\Database\Table\AbstractTable::addKey
      * @covers \Seeren\Database\Table\Column\AbstractColumn::__construct

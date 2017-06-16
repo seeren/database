@@ -51,6 +51,8 @@ class DummyTableTest extends AbstractTableTest
     * @covers \Seeren\Database\Table\Column\StringColumn::__construct
     * @covers \Seeren\Database\Table\Key\Key::__construct
     * @covers \Seeren\Database\Table\MasterTable::__construct
+    * @covers \Seeren\Database\Table\AbstractTable::get
+    * @covers \Seeren\Database\Table\User\User::__construct
     * @covers \Seeren\Database\Table\MasterTable::__get
     * @covers \Seeren\Database\Table\MasterTable::__set
     */
@@ -75,6 +77,8 @@ class DummyTableTest extends AbstractTableTest
     * @covers \Seeren\Database\Table\Column\StringColumn::__construct
     * @covers \Seeren\Database\Table\Key\Key::__construct
     * @covers \Seeren\Database\Table\MasterTable::__construct
+    * @covers \Seeren\Database\Table\AbstractTable::get
+    * @covers \Seeren\Database\Table\User\User::__construct
     * @covers \Seeren\Database\Table\MasterTable::__get
     * @covers \Seeren\Database\Table\MasterTable::__set
     * @covers \Seeren\Database\Table\MasterTable::get
@@ -96,6 +100,7 @@ class DummyTableTest extends AbstractTableTest
     * @covers \Seeren\Database\Table\Column\StringColumn::__construct
     * @covers \Seeren\Database\Table\Key\Key::__construct
     * @covers \Seeren\Database\Table\MasterTable::__construct
+    * @covers \Seeren\Database\Table\User\User::__construct
     * @covers \Seeren\Database\Table\MasterTable::get
     */
    public function testGet()
@@ -117,6 +122,7 @@ class DummyTableTest extends AbstractTableTest
     * @covers \Seeren\Database\Table\Column\StringColumn::__construct
     * @covers \Seeren\Database\Table\Key\Key::__construct
     * @covers \Seeren\Database\Table\MasterTable::__construct
+    * @covers \Seeren\Database\Table\User\User::__construct
     * @covers \Seeren\Database\Table\MasterTable::addClause
     * @covers \Seeren\Database\Table\MasterTable::get
     */
@@ -141,6 +147,7 @@ class DummyTableTest extends AbstractTableTest
     * @covers \Seeren\Database\Table\Column\StringColumn::__construct
     * @covers \Seeren\Database\Table\Key\Key::__construct
     * @covers \Seeren\Database\Table\MasterTable::__construct
+    * @covers \Seeren\Database\Table\User\User::__construct
     * @covers \Seeren\Database\Table\MasterTable::get
     */
    public function testSet()
@@ -167,6 +174,7 @@ class DummyTableTest extends AbstractTableTest
     * @covers \Seeren\Database\Table\Column\StringColumn::__construct
     * @covers \Seeren\Database\Table\Key\Key::__construct
     * @covers \Seeren\Database\Table\MasterTable::__construct
+    * @covers \Seeren\Database\Table\User\User::__construct
     * @covers \Seeren\Database\Table\MasterTable::addClause
     * @covers \Seeren\Database\Table\MasterTable::clear
     * @covers \Seeren\Database\Table\MasterTable::get
@@ -189,6 +197,8 @@ class DummyTableTest extends AbstractTableTest
     * @covers \Seeren\Database\Table\Column\StringColumn::__construct
     * @covers \Seeren\Database\Table\Key\Key::__construct
     * @covers \Seeren\Database\Table\MasterTable::__construct
+    * @covers \Seeren\Database\Table\AbstractTable::get
+    * @covers \Seeren\Database\Table\User\User::__construct
     * @expectedException \InvalidArgumentException
     */
    public function test__callInvalidArgumentException()
@@ -211,6 +221,8 @@ class DummyTableTest extends AbstractTableTest
     * @covers \Seeren\Database\Table\Key\Key::__construct
     * @covers \Seeren\Database\Table\MasterTable::__call
     * @covers \Seeren\Database\Table\MasterTable::__construct
+    * @covers \Seeren\Database\Table\AbstractTable::get
+    * @covers \Seeren\Database\Table\User\User::__construct
     * @expectedException \RuntimeException
     */
    public function test__callRuntimeException()
@@ -248,11 +260,13 @@ class DummyTableTest extends AbstractTableTest
     * @covers \Seeren\Database\Table\Column\AbstractColumn::getValue
     * @covers \Seeren\Database\Table\Column\IntegerColumn::__construct
     * @covers \Seeren\Database\Table\Column\StringColumn::__construct
+    * @covers \Seeren\Database\Table\Column\StringColumn::setValue
     * @covers \Seeren\Database\Table\Key\Key::__construct
     * @covers \Seeren\Database\Table\MasterTable::__construct
     * @covers \Seeren\Database\Table\MasterTable::__set
     * @covers \Seeren\Database\Table\MasterTable::get
     * @covers \Seeren\Database\Table\MasterTable::select
+    * @covers \Seeren\Database\Table\User\User::__construct
     */
    public function test__call()
    {
