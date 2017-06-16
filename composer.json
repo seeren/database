@@ -3,8 +3,7 @@
 	"description" : "Data mapper and syntax resolvers",
 	"keywords" : [
 		"datamapper",
-		"activerecord",
-		"mysql"
+		"activerecord"
 	],
 	"type" : "library",
 	"license" : "MIT",
