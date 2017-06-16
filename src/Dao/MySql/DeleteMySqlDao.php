@@ -10,14 +10,12 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.2
+ * @version 1.0.3
  */
 
 namespace Seeren\Database\Dao\MySql;
 
 use Seeren\Database\Dao\DaoInterface;
-use Seeren\Database\Dao\MySql\AbstractMySqlDao;
-use Seeren\Database\Dao\MySql\MySqlDaoInterface;
 use Seeren\Database\Dal\DalInterface;
 use Seeren\Database\Table\TableInterface;
 use RuntimeException;
@@ -40,7 +38,6 @@ class DeleteMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
     public function __construct()
     {
         parent::__construct();
-        unset($this->result);
     }
 
     /**
@@ -52,8 +49,7 @@ class DeleteMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
     protected function getSyntax(TableInterface $table): string
     {
        return "DELETE FROM `" . $table->get($table::ATTR_NAME) . "`"
-            . (($clause = $this->getClause($table)) ? " " . $clause : "")
-            . ";";;
+            . (($clause = $this->getClause($table)) ? " " . $clause : "") . ";";
     }
 
     /**
@@ -71,6 +67,7 @@ class DeleteMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
         }
         $this->sth->execute();
         $this->row += $this->sth->rowCount();
+        $this->result[] = $this->row;
     }
 
     /**

@@ -33,17 +33,19 @@ abstract class AbstractMySqlDao extends AbstractDao
 
     protected
         /**
-         * @var array param collection
+         * @var array fetch result
          */
-        $param,
+        $result,
         /**
          * @var PDOStatement statement in process
         */
-        $sth,
+        $sth;
+
+    private
         /**
-         * @var array fetch result
+         * @var array param collection
          */
-        $result;
+        $param;
 
     /**
      * Construct AbstractMySqlDao
@@ -127,8 +129,8 @@ abstract class AbstractMySqlDao extends AbstractDao
     public function close()
     {
         parent::close();
+        $this->param = [];
         unset($this->sth);
-        unset($this->param);
     }
 
 }

@@ -16,8 +16,6 @@
 namespace Seeren\Database\Dao\MySql;
 
 use Seeren\Database\Dao\DaoInterface;
-use Seeren\Database\Dao\MySql\AbstractMySqlDao;
-use Seeren\Database\Dao\MySql\MySqlDaoInterface;
 use Seeren\Database\Dal\DalInterface;
 use Seeren\Database\Table\TableInterface;
 
@@ -39,7 +37,6 @@ class CountMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
     public function __construct()
     {
         parent::__construct();
-        unset($this->result);
     }
 
     /**
@@ -71,6 +68,7 @@ class CountMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
         }
         $this->sth->execute();
         $this->row = (int) current($this->sth->fetch());
+        $this->result[] = $this->row;
     }
 
 }
