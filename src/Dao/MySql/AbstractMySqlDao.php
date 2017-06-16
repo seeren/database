@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 namespace Seeren\Database\Dao\MySql;
@@ -103,7 +103,7 @@ abstract class AbstractMySqlDao extends AbstractDao
            $mySql .= rtrim(" " . $this->constant($clause->getType()) . " "
                    . $clause->getSubject() . " "
                    . $this->constant($clause->getOperator()));
-           if ($clause->getValue()) {
+           if ($clause->getOperator()) {
                $type = isset($column[$clause->getSubject()])
                      ? $column[$clause->getSubject()]->getParam()
                      : (is_int($clause->getValue())
