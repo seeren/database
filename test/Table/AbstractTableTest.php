@@ -23,6 +23,8 @@ use Seeren\Database\Dao\MySql\OpenMySqlDao;
 use Seeren\Database\Dal\DalInterface;
 use Seeren\Database\Dal\MySql\MySqlDal;
 use ReflectionClass;
+use PDOStatement;
+use PDO;
 
 /**
  * Class for test AbstractTable
@@ -72,6 +74,20 @@ abstract class AbstractTableTest extends \PHPUnit\Framework\TestCase
     private function getDao(): DaoInterface
     {
         return (new ReflectionClass(OpenMySqlDao::class))->newInstanceArgs([]);
+    }
+
+    /**
+     * Get PDO
+     */
+    private function getPdo()
+    {
+        $sth = $this->createMock(PDOStatement::class);
+        $sth->method("execute")->willReturn(true);
+        $sth->method("fetch")->willReturn([]);
+        $sth->method("fetchAll")->willReturn([["host" => "host_name"]]);
+        $pdo = $this->createMock(PDO::class);
+        $pdo->method("prepare")->willReturn($sth);
+        return $pdo;
     }
 
     /**
@@ -173,6 +189,18 @@ abstract class AbstractTableTest extends \PHPUnit\Framework\TestCase
     public function test__callRuntimeException()
     {
         $this->getTable()->__call("bad value", [$this->getDal()]);
+    }
+
+    /**
+     * Test __call
+     */
+    public function test__call()
+    {
+        $dal = $this->getDal();
+        $dal->setLayer($this->getPdo());
+        $this->assertTrue(
+            $this->getTable()->select($dal) instanceof TableInterface
+        );
     }
 
 }
