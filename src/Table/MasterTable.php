@@ -43,7 +43,7 @@ abstract class MasterTable extends AbstractTable
      * @param array $table agregate table
      * @return null
      */
-    protected function __construct(array $table = [])
+    protected function __construct(array $table)
     {
         parent::__construct();
         $this->table = [];
