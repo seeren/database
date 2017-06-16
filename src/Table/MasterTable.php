@@ -67,12 +67,12 @@ abstract class MasterTable extends AbstractTable
     public final function __call(string $name, array $args): TableInterface
     {
         try {
+            if (array_key_exists(0, $args)) {
+                $args[0]->getLayer()->beginTransaction();
+            }
             parent::__call(
                 $name,
-                $args,
-                (array_key_exists(0, $args)
-               ? $args[0]->getLayer()->beginTransaction()
-               : null)
+                $args
             );
             foreach ($this->table as $table) {
                 $table->__call($name, $args);
@@ -82,7 +82,9 @@ abstract class MasterTable extends AbstractTable
         } catch (InvalidArgumentException $e) {
             throw $e;
         } catch (RuntimeException $e) {
-            $args[0]->getLayer()->rollBack();
+            if (array_key_exists(0, $args)) {
+                $args[0]->getLayer()->rollBack();
+            }
             throw $e;
         } catch (Throwable $e) {
             throw new RuntimeException(

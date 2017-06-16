@@ -18,6 +18,8 @@ namespace Seeren\Database\Test\Table;
 use Seeren\Database\Table\TableInterface;
 use Seeren\Database\Table\Clause\Clause;
 use Seeren\Database\Dao\DaoInterface;
+use Seeren\Database\Dal\Dal;
+use Seeren\Database\Dal\DalInterface;
 
 /**
  * Class for test MasterTable
@@ -38,6 +40,16 @@ abstract class MasterTableTest extends AbstractTableTest
     abstract protected function getDependencieName(): string;
 
     /**
+     * Get empty dal
+     * 
+     * @return DalInterface dal
+     */
+    private function getEmptyDal(): DalInterface
+    {
+        return (new \ReflectionClass(Dal::class))->newInstanceArgs([]);
+    }
+
+    /**
      * Test delete RuntimeException
      */
     public function testDelete()
@@ -48,6 +60,16 @@ abstract class MasterTableTest extends AbstractTableTest
         $table->addClause(new Clause(clause::LIMIT, 1));
         $table->delete($dal);
         $this->assertTrue($table->get() instanceof DaoInterface);
+    }
+
+    /**
+     * Test delete RuntimeException
+     */
+    public function testDeletRuntimeException()
+    {
+        $dal = $this->getEmptyDal();
+        $dal->setLayer($this->getPdo());
+        $this->getTable()->delete($dal);
     }
 
     /**
