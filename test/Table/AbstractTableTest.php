@@ -180,7 +180,7 @@ abstract class AbstractTableTest extends \PHPUnit\Framework\TestCase
      */
     public function test__callInvalidArgumentException()
     {
-        $this->getTable()->select();
+        $this->getTable()->count();
     }
 
     /**
