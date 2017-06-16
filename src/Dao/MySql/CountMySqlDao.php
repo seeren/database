@@ -68,7 +68,6 @@ class CountMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
         }
         $this->sth->execute();
         $this->row = (int) current($this->sth->fetch());
-        $this->result[] = $this->row;
     }
 
 }

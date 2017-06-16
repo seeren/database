@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.3
+ * @version 1.0.4
  */
 
 namespace Seeren\Database\Dao\MySql;
@@ -18,7 +18,7 @@ namespace Seeren\Database\Dao\MySql;
 use Seeren\Database\Dao\DaoInterface;
 use Seeren\Database\Dal\DalInterface;
 use Seeren\Database\Table\TableInterface;
-use RuntimeException;
+use InvalidArgumentException;
 
 /**
  * Class for provide delete MySql operation
@@ -66,8 +66,7 @@ class DeleteMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
             $this->bindParam($this->sth);
         }
         $this->sth->execute();
-        $this->row += $this->sth->rowCount();
-        $this->result[] = $this->row;
+        $this->row = $this->sth->rowCount();
     }
 
     /**
@@ -77,14 +76,14 @@ class DeleteMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
      * @param DalInterface $dal access layer
      * @return DaoInterface self
      *
-     * @throws RuntimeException if no clause
+     * @throws InvalidArgumentException if no clause
      */
     public function query(
         TableInterface $table,
         DalInterface $dal): DaoInterface
     {
         if ([] === $table->get($table::ATTR_CLAUSE)) {
-            throw new RuntimeException(
+            throw new InvalidArgumentException(
                 "Can't query table: must provide clause");
         }
         return parent::query($table, $dal);

@@ -168,7 +168,7 @@ class CreateMySqlDao extends AbstractDao implements MySqlDaoInterface
     protected function execute(TableInterface $table, DalInterface $dal)
     {
         $dal->getLayer()->query($this->queryString);
-        $this->row++;
+        $this->row = 1;
     }
 
 }

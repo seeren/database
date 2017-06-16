@@ -16,8 +16,6 @@
 namespace Seeren\Database\Dao\MySql;
 
 use Seeren\Database\Dao\DaoInterface;
-use Seeren\Database\Dao\MySql\AbstractMySqlDao;
-use Seeren\Database\Dao\MySql\MySqlDaoInterface;
 use Seeren\Database\Dal\DalInterface;
 use Seeren\Database\Table\TableInterface;
 
@@ -82,7 +80,6 @@ class SelectMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
             foreach ($this->result[0] as $key => $value) {
                 $table->{$key} = $value;
             }
-            unset($this->result);
         }
     }
 

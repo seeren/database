@@ -10,17 +10,15 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.2
+ * @version 1.0.4
  */
 
 namespace Seeren\Database\Dao\MySql;
 
 use Seeren\Database\Dao\DaoInterface;
-use Seeren\Database\Dao\MySql\AbstractMySqlDao;
-use Seeren\Database\Dao\MySql\MySqlDaoInterface;
 use Seeren\Database\Dal\DalInterface;
 use Seeren\Database\Table\TableInterface;
-use RuntimeException;
+use InvalidArgumentException;
 
 /**
  * Class for provide update MySql operation
@@ -40,7 +38,6 @@ class UpdateMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
     public function __construct()
     {
         parent::__construct();
-        unset($this->result);
     }
 
     /**
@@ -53,7 +50,7 @@ class UpdateMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
     {
         $mySql = "";
         foreach ($table->get($table::ATTR_COLUMN) as $key => $value) {
-            if (null !== $value->getValue()) {
+            if ($value->getValue()) {
                 $id = ":" . $key;
                 $mySql .= "`" . $key . "`=" . $id . ", ";
                 $this->setParam($id, $value->getValue(), $value->getParam());
@@ -78,7 +75,7 @@ class UpdateMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
             $this->bindParam($this->sth);
         }
         $this->sth->execute();
-        $this->row += $this->sth->rowCount();
+        $this->row = $this->sth->rowCount();
     }
 
     /**
@@ -88,14 +85,14 @@ class UpdateMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
      * @param DalInterface $dal access layer
      * @return DaoInterface self
      * 
-     * @throws RuntimeException if no clause
+     * @throws InvalidArgumentException if no clause
      */
     public function query(
         TableInterface $table,
         DalInterface $dal): DaoInterface
     {
         if ([] === $table->get($table::ATTR_CLAUSE)) {
-            throw new RuntimeException(
+            throw new InvalidArgumentException(
                 "Can't query table: must provide clause");
         }
         return parent::query($table, $dal);

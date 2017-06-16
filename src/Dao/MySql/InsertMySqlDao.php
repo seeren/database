@@ -10,14 +10,12 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.2
+ * @version 1.0.3
  */
 
 namespace Seeren\Database\Dao\MySql;
 
 use Seeren\Database\Dao\DaoInterface;
-use Seeren\Database\Dao\MySql\AbstractMySqlDao;
-use Seeren\Database\Dao\MySql\MySqlDaoInterface;
 use Seeren\Database\Dal\DalInterface;
 use Seeren\Database\Table\TableInterface;
 
@@ -39,7 +37,6 @@ class InsertMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
     public function __construct()
     {
         parent::__construct();
-        unset($this->result);
     }
 
     /**
@@ -63,7 +60,9 @@ class InsertMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
         return "INSERT INTO "
              . "`" . $table->get(TableInterface::ATTR_NAME) . "`"
              . "(" . substr($insertColumn, 0, -2) . ") "
-             . "VALUES " . "(" . substr($insertBind, 0, -2) . ")";
+             . "VALUES " . "(" . substr($insertBind, 0, -2) . ")"
+             . (($clause = $this->getClause($table)) ? " " . $clause : "")
+             . ";";
     }
 
     /**
@@ -80,7 +79,7 @@ class InsertMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
             $this->bindParam($this->sth);
         }
         $this->sth->execute();
-        $this->row++;
+        $this->row = $this->sth->rowCount();
     }
 
 }
