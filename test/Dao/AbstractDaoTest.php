@@ -26,6 +26,7 @@ use Seeren\Database\Table\Column\IntegerColumn;
 use Seeren\Database\Table\Key\Key;
 use ReflectionClass;
 use PDOException;
+use PDOStatement;
 use PDO;
 
 /**
@@ -80,7 +81,12 @@ abstract class AbstractDaoTest extends \PHPUnit\Framework\TestCase
      */
     protected function getPdo()
     {
-        return $this->createMock(PDO::class);
+        $sth = $this->createMock(PDOStatement::class);
+        $sth->method("execute")->willReturn(true);
+        $sth->method("fetch")->willReturn([]);
+        $pdo = $this->createMock(PDO::class);
+        $pdo->method("prepare")->willReturn($sth);
+        return $pdo;
     }
 
     /**
