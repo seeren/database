@@ -18,7 +18,7 @@ namespace Seeren\Database\Test\Dao\MySql;
 use Seeren\Database\Dao\DaoInterface;
 use Seeren\Database\Test\Dao\AbstractDaoTest;
 use Seeren\Database\Dao\MySql\CreateMySqlDao;
-use Seeren\Database\Test\Dao\DummyTable;
+use Seeren\Database\Test\Table\DummyTable;
 use ReflectionClass;
 use PDOException;
 
@@ -112,6 +112,8 @@ class CreateMySqlDaoTest extends AbstractDaoTest
      * @covers \Seeren\Database\Dao\MySql\CreateMySqlDao::getColumnSyntaxe
      * @covers \Seeren\Database\Dao\MySql\CreateMySqlDao::getSyntax
      * @covers \Seeren\Database\Table\AbstractTable::__construct
+     * @covers \Seeren\Database\Table\MasterTable::__construct
+     * @covers \Seeren\Database\Table\MasterTable::get
      * @covers \Seeren\Database\Table\AbstractTable::addColumn
      * @covers \Seeren\Database\Table\AbstractTable::addKey
      * @covers \Seeren\Database\Table\AbstractTable::get

@@ -16,10 +16,13 @@
 namespace Seeren\Database\Test\Dal;
 
 use Seeren\Database\Dal\DalInterface;
+use Seeren\Database\Dao\DaoInterface;
 use Seeren\Database\Table\TableInterface;
 use Seeren\Database\Table\User\User;
 use ReflectionClass;
+use PDOStatement;
 use PDO;
+use Seeren\Database\Dal\Dal;
 
 /**
  * Class for test Dal
@@ -54,7 +57,13 @@ abstract class AbstractDalTest extends \PHPUnit\Framework\TestCase
      */
     private function getPdo()
     {
-        return $this->createMock(PDO::class);
+        $sth = $this->createMock(PDOStatement::class);
+        $sth->method("execute")->willReturn(true);
+        $sth->method("fetch")->willReturn([]);
+        $sth->method("fetchAll")->willReturn([["host" => "host_name"]]);
+        $pdo = $this->createMock(PDO::class);
+        $pdo->method("prepare")->willReturn($sth);
+        return $pdo;
     }
 
     /**
@@ -82,6 +91,18 @@ abstract class AbstractDalTest extends \PHPUnit\Framework\TestCase
     public function testQueryRuntimeException()
     {
         $this->getDal()->query($this->getTable(), "bad value");
+    }
+
+    /**
+     * Test query
+     */
+    public function testQuery()
+    {
+        $table = $this->getTable();
+        $dal = $this->getDal();
+        $dal->setLayer($this->getPdo());
+        $dal->query($table, Dal::SELECT);
+        $this->assertTrue($table->get() instanceof DaoInterface);
     }
 
     /**

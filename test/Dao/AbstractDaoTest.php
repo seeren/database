@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link https://github.com/seeren/database
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 namespace Seeren\Database\Test\Dao;
@@ -20,10 +20,6 @@ use Seeren\Database\Table\TableInterface;
 use Seeren\Database\Table\User\User;
 use Seeren\Database\Dal\DalInterface;
 use Seeren\Database\Dal\Dal;
-use Seeren\Database\Table\AbstractTable;
-use Seeren\Database\Table\Column\StringColumn;
-use Seeren\Database\Table\Column\IntegerColumn;
-use Seeren\Database\Table\Key\Key;
 use ReflectionClass;
 use PDOException;
 use PDOStatement;
@@ -84,6 +80,7 @@ abstract class AbstractDaoTest extends \PHPUnit\Framework\TestCase
         $sth = $this->createMock(PDOStatement::class);
         $sth->method("execute")->willReturn(true);
         $sth->method("fetch")->willReturn([]);
+        $sth->method("fetchAll")->willReturn([["host" => "host_name"]]);
         $pdo = $this->createMock(PDO::class);
         $pdo->method("prepare")->willReturn($sth);
         return $pdo;
@@ -140,34 +137,6 @@ abstract class AbstractDaoTest extends \PHPUnit\Framework\TestCase
             $dao->queryString === ""
          && $dao->row === 0
          && $dao->foo === null);
-    }
-
-}
-
-class DummyTable extends AbstractTable implements TableInterface
-{
-
-    const NAME = "dummy";
-
-    public function __construct()
-    {
-        parent::__construct();
-        $this->addColumn(
-            new IntegerColumn("id", IntegerColumn::INT, 10, [
-                IntegerColumn::OPT_AUTO_INCREMENT,
-                IntegerColumn::OPT_NOT_NULL])
-            );
-        $this->addColumn(
-            new StringColumn("user", StringColumn::CHAR, 80, [
-                StringColumn::OPT_NOT_NULL,
-                StringColumn::OPT_DEFAULT_STRING])
-            );
-        $this->addKey(new Key(Key::PRIMARY, ["id"]));
-        $this->addKey(new Key(
-            Key::FOREIGN,
-            ["user"],
-            User::NAME,
-            [User::COL_USER]));
     }
 
 }

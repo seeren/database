@@ -127,9 +127,9 @@ class DeleteMySqlDaoTest extends AbstractMySqlDaoTest
      * @covers \Seeren\Database\Table\Column\StringColumn::__construct
      * @covers \Seeren\Database\Table\Key\Key::__construct
      * @covers \Seeren\Database\Table\User\User::__construct
-     * @expectedException \RuntimeException
+     * @expectedException \InvalidArgumentException
      */
-    public function testGetDefaultSyntaxRuntimeException()
+    public function testGetDefaultSyntaxInvalidArgumentException()
     {
         $dao = $this->getDao();
         $table = $this->getTable();
