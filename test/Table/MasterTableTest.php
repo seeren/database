@@ -15,6 +15,8 @@
 
 namespace Seeren\Database\Test\Table;
 
+use Seeren\Database\Table\TableInterface;
+
 /**
  * Class for test MasterTable
  * 
@@ -26,5 +28,35 @@ namespace Seeren\Database\Test\Table;
 abstract class MasterTableTest extends AbstractTableTest
 {
 
- 
+    /**
+     * Get dependencie name
+     *
+     * @return string dependencie name
+     */
+    abstract protected function getDependencieName(): string;
+
+    /**
+     * Test get dependencie
+     */
+    public function testGetDependencie()
+    {
+        $this->assertTrue($this->getTable()->get($this->getDependencieName())
+               instanceof TableInterface
+        );
+    }
+
+    /**
+     * Test get dependencie
+     */
+    public function testGetDependencieColumnValue()
+    {
+        $table = $this->getTable();
+        $column = current($table
+            ->get($this->getDependencieName())
+            ->get(TableInterface::ATTR_COLUMN));
+        $emptyValue = $table->{$column->getName()};
+        $table->{$column->getName()} = 1;
+        $this->assertTrue($emptyValue !== $table->{$column->getName()});
+    }
+
 }

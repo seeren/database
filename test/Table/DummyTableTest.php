@@ -17,6 +17,7 @@ namespace Seeren\Database\Test\Table;
 
 use Seeren\Database\Table\TableInterface;
 use ReflectionClass;
+use Seeren\Database\Table\User\User;
 
 /**
  * Class for test DummyTable
@@ -25,7 +26,7 @@ use ReflectionClass;
  * @package Database
  * @subpackage Test\Table
  */
-class DummyTableTest extends AbstractTableTest
+class DummyTableTest extends MasterTableTest
 {
 
     /**
@@ -36,6 +37,16 @@ class DummyTableTest extends AbstractTableTest
     protected function getTable(): TableInterface
    {
        return (new ReflectionClass(DummyTable::class))->newInstanceArgs([]);
+   }
+
+   /**
+    * Get dependencie name
+    *
+    * @return string dependencie name
+    */
+   protected function getDependencieName(): string
+   {
+       return User::NAME;
    }
 
    /**
@@ -271,6 +282,52 @@ class DummyTableTest extends AbstractTableTest
    public function test__call()
    {
        parent::test__call();
+   }
+
+   /**
+    * @covers \Seeren\Database\Test\Table\DummyTable::__construct
+    * @covers \Seeren\Database\Table\AbstractTable::__construct
+    * @covers \Seeren\Database\Table\AbstractTable::addColumn
+    * @covers \Seeren\Database\Table\AbstractTable::addKey
+    * @covers \Seeren\Database\Table\AbstractTable::get
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::__construct
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::getName
+    * @covers \Seeren\Database\Table\Column\IntegerColumn::__construct
+    * @covers \Seeren\Database\Table\Column\StringColumn::__construct
+    * @covers \Seeren\Database\Table\Key\Key::__construct
+    * @covers \Seeren\Database\Table\MasterTable::__construct
+    * @covers \Seeren\Database\Table\MasterTable::get
+    * @covers \Seeren\Database\Table\User\User::__construct
+    */
+   public function testGetDependencie()
+   {
+       parent::testGetDependencie();
+   }
+
+   /**
+    * @covers \Seeren\Database\Test\Table\DummyTable::__construct
+    * @covers \Seeren\Database\Table\AbstractTable::__construct
+    * @covers \Seeren\Database\Table\AbstractTable::__get
+    * @covers \Seeren\Database\Table\AbstractTable::__set
+    * @covers \Seeren\Database\Table\AbstractTable::addColumn
+    * @covers \Seeren\Database\Table\AbstractTable::addKey
+    * @covers \Seeren\Database\Table\AbstractTable::get
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::__construct
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::getName
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::getValue
+    * @covers \Seeren\Database\Table\Column\IntegerColumn::__construct
+    * @covers \Seeren\Database\Table\Column\StringColumn::__construct
+    * @covers \Seeren\Database\Table\Column\StringColumn::setValue
+    * @covers \Seeren\Database\Table\Key\Key::__construct
+    * @covers \Seeren\Database\Table\MasterTable::__construct
+    * @covers \Seeren\Database\Table\MasterTable::__get
+    * @covers \Seeren\Database\Table\MasterTable::__set
+    * @covers \Seeren\Database\Table\MasterTable::get
+    * @covers \Seeren\Database\Table\User\User::__construct
+    */
+   public function testGetDependencieColumnValue()
+   {
+       parent::testGetDependencieColumnValue();
    }
 
 }
