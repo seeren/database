@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link https://github.com/seeren/database
- * @version 1.0.2
+ * @version 2.0.1
  */
 
 namespace Seeren\Database\Test\Table;
@@ -50,7 +50,20 @@ abstract class MasterTableTest extends AbstractTableTest
     }
 
     /**
-     * Test delete RuntimeException
+     * Test __call
+     */
+    public function test__call()
+    {
+        parent::test__call();
+        $dal = $this->getDal();
+        $dal->setLayer($this->getPdo());
+        $this->assertTrue(
+            $this->getTable()->select($dal) instanceof TableInterface
+        );
+    }
+
+    /**
+     * Test delete
      */
     public function testDelete()
     {
@@ -63,22 +76,15 @@ abstract class MasterTableTest extends AbstractTableTest
     }
 
     /**
-     * Test delete RuntimeException
+     * Test delete RunTimeException
      */
-    public function testDeletRuntimeException()
+    public function testDeleteRunTimeException()
     {
         $dal = $this->getEmptyDal();
         $dal->setLayer($this->getPdo());
         $this->getTable()->delete($dal);
     }
 
-    /**
-     * Test delete RuntimeException
-     */
-    public function testDeleteRuntimeException()
-    {
-        $this->getTable()->delete($this->getDal());
-    }
 
     /**
      * Test select RuntimeException
