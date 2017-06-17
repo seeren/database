@@ -14,7 +14,7 @@ composer require seeren/database dev-master
 
 ## Table Usage
 #### `Seeren\Table\TableInterface`
-A database table can be manipulated as object without write query syntax and without an entity manager for persist a scheme
+A database table can be manipulated as object without write query syntax and without manager. For query operations the table need a layer who provide database connection and syntax resolvers
 ```php
 class MyTable extends AbstractTable implements TableInterface
 {
@@ -32,9 +32,9 @@ class MyTable extends AbstractTable implements TableInterface
     }
 }
 ```
-Table do not use annotations for his structure description and getters setters are provided. For query operations the table need a layer who provide database connection and syntax resolvers
+
  #### `Seeren\Table\User\User`
- The user table can be used for define database access rights
+ The user table can be used for define database access rights. Extending User is like using a configuration file that can be class loaded. User implementations can be used for open a connection, create, use or delete a database
  ```php
 class MyUser extends User
 {
@@ -49,7 +49,6 @@ class MyUser extends User
     }
 }
 ```
-Extending User correspond to use a configuration file that can be class loaded. User implementations can be used for open a connection, create, use or delete a database
 
 ## Layer Usage
 #### `Seeren\Dal\DalInterface`
@@ -65,20 +64,18 @@ $table->foo = "foo";
 $table->bar = "bar";
 $table->insert($layer);
 ```
-Layer can use tables for execute database operations
+Layer can use tables for execute database operations. DalInterface provide severals default operations like create, insert, select, update
 ```php
 $layer->query($table, "insert");
 ```
-Layer is a factory of resolvers that use the table structure for resolve and execute the query syntaxe for an operation. DalInterface provide severals default operations like create, insert, select, update
 
 ## Resolvers Usage
 #### `Seeren\DaO\DaoInterface`
-Syntax resolvers are available using the getObject method of a layer
+Syntax resolvers are available using the getObject method of a layer. Object query method is one of the tree way to execute the query operations
 ```php
 $select = $layer->getObject("select");
 $select->query($table, $layer);
 ```
-Object query method is one of the tree way to execute the query operations
 
 ## Run Unit tests
 Install dependencies
