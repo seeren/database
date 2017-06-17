@@ -53,7 +53,7 @@ Extending User correspond to use a configuration file that can be class loaded. 
 
 ## Layer Usage
 #### `Seeren\Dal\DalInterface`
-The layer handle database connection. You can use setLayer for provide PDO object of use the User class and the open  operation
+The layer handle database connection. You can use setLayer for provide PDO object or use the User class and the open  operation
 ```php
 $layer = new MySqlDal;
 $user->open($layer);
