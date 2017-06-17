@@ -199,7 +199,7 @@ abstract class AbstractTableTest extends \PHPUnit\Framework\TestCase
         $dal = $this->getDal();
         $dal->setLayer($this->getPdo());
         $this->assertTrue(
-            $this->getTable()->count($dal) instanceof TableInterface
+            $this->getTable()->select($dal) instanceof TableInterface
         );
     }
 

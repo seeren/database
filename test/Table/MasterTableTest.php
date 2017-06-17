@@ -76,9 +76,9 @@ abstract class MasterTableTest extends AbstractTableTest
     }
 
     /**
-     * Test delete RunTimeException
+     * Test delete RuntimeException
      */
-    public function testDeleteRunTimeException()
+    public function testDeleteRuntimeException()
     {
         $dal = $this->getEmptyDal();
         $dal->setLayer($this->getPdo());

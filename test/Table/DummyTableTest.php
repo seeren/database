@@ -16,8 +16,8 @@
 namespace Seeren\Database\Test\Table;
 
 use Seeren\Database\Table\TableInterface;
-use ReflectionClass;
 use Seeren\Database\Table\User\User;
+use ReflectionClass;
 
 /**
  * Class for test DummyTable
@@ -355,11 +355,11 @@ class DummyTableTest extends MasterTableTest
     * @covers \Seeren\Database\Table\MasterTable::__construct
     * @covers \Seeren\Database\Table\MasterTable::delete
     * @covers \Seeren\Database\Table\User\User::__construct
-    * @expectedException \RunTimeException
+    * @expectedException \RuntimeException
     */
-   public function testDeleteRunTimeException()
+   public function testDeleteRuntimeException()
    {
-       parent::testDeleteRunTimeException();
+       parent::testDeleteRuntimeException();
    }
 
    /**

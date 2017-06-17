@@ -210,9 +210,9 @@ class UserTest extends AbstractTableTest
     * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::bindParam
     * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::close
     * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::getClause
-    * @covers \Seeren\Database\Dao\MySql\CountMySqlDao::__construct
-    * @covers \Seeren\Database\Dao\MySql\CountMySqlDao::execute
-    * @covers \Seeren\Database\Dao\MySql\CountMySqlDao::getSyntax
+    * @covers \Seeren\Database\Dao\MySql\SelectMySqlDao::__construct
+    * @covers \Seeren\Database\Dao\MySql\SelectMySqlDao::execute
+    * @covers \Seeren\Database\Dao\MySql\SelectMySqlDao::getSyntax
     * @covers \Seeren\Database\Table\AbstractTable::__call
     * @covers \Seeren\Database\Table\AbstractTable::__construct
     * @covers \Seeren\Database\Table\AbstractTable::__set
