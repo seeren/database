@@ -22,7 +22,7 @@ class MyTable extends AbstractTable implements TableInterface
     public function __construct()
     {
         parent::__construct();
-        $this->addColumn(new StringColumn("foo", IntegerColumn::INT, 10));
+        $this->addColumn(new StringColumn("foo", StringColumn::CHAR, 80));
         $this->addColumn(
             new StringColumn("bar", StringColumn::CHAR, 80, [
                 StringColumn::OPT_NOT_NULL
