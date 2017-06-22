@@ -11,7 +11,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 namespace Seeren\Database\Table\Column;
@@ -30,11 +30,11 @@ interface IntegerColumnInterface extends ColumnInterface
         /**
          * @var string type name
          */
-        TINYINT = "TINYINT",
+        TINYINT   = "TINYINT",
         /**
          * @var string type name
          */
-        SMALLINT = "SMALLINT",
+        SMALLINT  = "SMALLINT",
         /**
          * @var string type name
          */
@@ -42,10 +42,10 @@ interface IntegerColumnInterface extends ColumnInterface
         /**
          * @var string type name
          */
-        INT = "INT",
+        INT       = "INT",
         /**
          * @var string type name
          */
-        BIGINT = "BIGINT";
+        BIGINT    = "BIGINT";
 
 }

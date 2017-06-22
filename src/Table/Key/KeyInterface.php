@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 namespace Seeren\Database\Table\Key;
@@ -33,15 +33,15 @@ interface KeyInterface
         /**
          * @var string type
          */
-        KEY = "KEY",
+        KEY     = "KEY",
         /**
          * @var string type
          */
-        INDEX = "INDEX",
+        INDEX   = "INDEX",
         /**
          * @var string type
          */
-        UNIQUE = "UNIQUE",
+        UNIQUE  = "UNIQUE",
         /**
          * @var string type
          */

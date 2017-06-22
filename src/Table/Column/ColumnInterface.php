@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 namespace Seeren\Database\Table\Column;
@@ -29,19 +29,19 @@ interface ColumnInterface
         /**
          * @var string option name
          */
-        OPT_NULL = "NULL",
+        OPT_NULL             = "NULL",
         /**
          * @var string option name
          */
-        OPT_NOT_NULL = "NOT_NULL",
+        OPT_NOT_NULL         = "NOT_NULL",
         /**
          * @var string option name
          */
-        OPT_DEFAULT_NULL = "DEFAULT_NULL",
+        OPT_DEFAULT_NULL     = "DEFAULT_NULL",
         /**
          * @var string option name
          */
-        OPT_DEFAULT_STRING = "DEFAULT_STRING",
+        OPT_DEFAULT_STRING    = "DEFAULT_STRING",
         /**
          * @var string option name
          */
@@ -49,15 +49,15 @@ interface ColumnInterface
         /**
          * @var string option name
          */
-        OPT_BINARY = "BINARY",
+        OPT_BINARY            = "BINARY",
         /**
          * @var string option name
          */
-        OPT_UNSIGNED = "UNSIGNED",
+        OPT_UNSIGNED          = "UNSIGNED",
         /**
          * @var string option name
          */
-        OPT_AUTO_INCREMENT = "AUTO_INCREMENT";
+        OPT_AUTO_INCREMENT    = "AUTO_INCREMENT";
 
     /**
      * Get name

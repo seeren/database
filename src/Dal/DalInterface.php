@@ -33,11 +33,11 @@ interface DalInterface
         /**
          * @var string operation name
          */
-        COUNT = "count",
+        COUNT    = "count",
         /**
          * @var string operation name
          */
-        CREATE = "create",
+        CREATE   = "create",
         /**
          * @var string operation name
          */
@@ -45,35 +45,35 @@ interface DalInterface
         /**
          * @var string operation name
          */
-        DELETE = "delete",
+        DELETE    = "delete",
         /**
          * @var string operation name
          */
-        DROP = "drop",
+        DROP      = "drop",
         /**
          * @var string operation name
          */
-        DROP_DB = "drop_db",
+        DROP_DB   = "drop_db",
         /**
          * @var string operation name
          */
-        INSERT = "insert",
+        INSERT    = "insert",
         /**
          * @var string operation name
          */
-        OPEN = "open",
+        OPEN      = "open",
         /**
          * @var string operation name
          */
-        SELECT = "select",
+        SELECT    = "select",
         /**
          * @var string operation name
          */
-        UPDATE = "update",
+        UPDATE    = "update",
         /**
          * @var string operation name
          */
-        USE_DB = "use_db";
+        USE_DB    = "use_db";
 
     /**
      * Query table for operation

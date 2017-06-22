@@ -30,11 +30,11 @@ interface StringColumnInterface extends ColumnInterface
         /**
          * @var string type name
          */
-        TINYTEXT = "TINYTEXT",
+        TINYTEXT   = "TINYTEXT",
         /**
          * @var string type name
          */
-        TEXT = "TEXT",
+        TEXT       = "TEXT",
         /**
          * @var string type name
          */
@@ -42,14 +42,14 @@ interface StringColumnInterface extends ColumnInterface
         /**
          * @var string type name
          */
-        LONGTEXT = "LONGTEXT",
+        LONGTEXT   = "LONGTEXT",
         /**
          * @var string type name
          */
-        CHAR = "CHAR",
+        CHAR       = "CHAR",
         /**
          * @var string type name
          */
-        VARCHAR = "VARCHAR";
+        VARCHAR    = "VARCHAR";
 
 }

@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 namespace Seeren\Database\Table;
@@ -32,7 +32,7 @@ interface TableInterface
         /**
          * @var string const name
          */
-        ATTR_NAME = "NAME",
+        ATTR_NAME   = "NAME",
         /**
          * @var string const name
          */
@@ -44,7 +44,7 @@ interface TableInterface
         /**
          * @var string attribut name
          */
-        ATTR_KEY = "key",
+        ATTR_KEY    = "key",
         /**
          * @var string attribut name
          */

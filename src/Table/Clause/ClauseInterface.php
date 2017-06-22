@@ -29,31 +29,31 @@ interface ClauseInterface
         /**
          * @var string type name
          */
-        AND = "AND",
+        AND             = "AND",
         /**
          * @var string type name
          */
-        JOIN = "JOIN",
+        JOIN            = "JOIN",
         /**
          * @var string type name
          */
-        LIMIT = "LIMIT",
+        LIMIT           = "LIMIT",
         /**
          * @var string type name
          */
-        OR = "OR",
+        OR              = "OR",
         /**
          * @var string type name
          */
-        ORDER_BY = "ORDER_BY",
+        ORDER_BY        = "ORDER_BY",
         /**
          * @var string type name
          */
-        WHERE = "WHERE",
+        WHERE           = "WHERE",
         /**
          * @var string operator name
          */
-        OP_IS_NULL = "IS_NULL",
+        OP_IS_NULL      = "IS_NULL",
         /**
          * @var string operator name
          */
@@ -61,35 +61,35 @@ interface ClauseInterface
         /**
          * @var string operator name
          */
-        OPE_EQUAL = "EQUAL",
+        OPE_EQUAL       = "EQUAL",
         /**
          * @var string operator name
          */
-        OPE_INEQUAL = "INEQUAL",
+        OPE_INEQUAL     = "INEQUAL",
         /**
          * @var string operator name
          */
-        OPE_SUP = "SUP",
+        OPE_SUP         = "SUP",
         /**
          * @var string operator name
          */
-        OPE_SUP_EQUAL = "SUP_EQUAL",
+        OPE_SUP_EQUAL   = "SUP_EQUAL",
         /**
          * @var string operator name
          */
-        OPE_INF = "INF",
+        OPE_INF         = "INF",
         /**
          * @var string operator name
          */
-        OPE_INF_EQUAL = "INF_EQUAL",
+        OPE_INF_EQUAL   = "INF_EQUAL",
         /**
          * @var string operator name
          */
-        OPE_ASC = "ASC",
+        OPE_ASC         = "ASC",
         /**
          * @var string operator name
          */
-        OPE_DESC = "DESC";
+        OPE_DESC        = "DESC";
 
     /**
      * Get type

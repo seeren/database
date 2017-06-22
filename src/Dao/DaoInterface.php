@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 namespace Seeren\Database\Dao;
@@ -32,11 +32,11 @@ interface DaoInterface
         /**
          * @var string attribut name
          */
-        ATTR_ROW = "row",
+        ATTR_ROW    = "row",
         /**
          * @var string attribut name
          */
-        ATTR_PARAM = "param",
+        ATTR_PARAM  = "param",
         /**
          * @var string attribut name
          */

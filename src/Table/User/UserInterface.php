@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 namespace Seeren\Database\Table\User;
@@ -43,6 +43,6 @@ interface UserInterface extends TableInterface
         /**
          * @var string column name
          */
-        COL_DB = "dbname";
+        COL_DB  = "dbname";
 
 }
