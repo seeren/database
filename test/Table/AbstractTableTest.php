@@ -188,7 +188,9 @@ abstract class AbstractTableTest extends \PHPUnit\Framework\TestCase
      */
     public function test__callRuntimeException()
     {
-        $this->getTable()->__call("bad value", [$this->getDal()]);
+        $dal = $this->getDal();
+        $dal->setLayer($this->getPdo());
+        $this->getTable()->__call("bad value", [$dal]);
     }
 
     /**

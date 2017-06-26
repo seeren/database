@@ -221,7 +221,11 @@ class DummyTableTest extends MasterTableTest
     * @covers \Seeren\Database\Test\Table\DummyTable::__construct
     * @covers \Seeren\Database\Dal\Dal::__construct
     * @covers \Seeren\Database\Dal\Dal::getLayer
+    * @covers \Seeren\Database\Dal\Dal::getObject
+    * @covers \Seeren\Database\Dal\Dal::query
+    * @covers \Seeren\Database\Dal\Dal::setLayer
     * @covers \Seeren\Database\Dal\MySql\MySqlDal::__construct
+    * @covers \Seeren\Database\Table\AbstractTable::__call
     * @covers \Seeren\Database\Table\AbstractTable::__construct
     * @covers \Seeren\Database\Table\AbstractTable::addColumn
     * @covers \Seeren\Database\Table\AbstractTable::addKey

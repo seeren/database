@@ -176,6 +176,7 @@ class UserTest extends AbstractTableTest
    /**
     * @covers \Seeren\Database\Table\User\User::__construct
     * @covers \Seeren\Database\Dal\Dal::__construct
+    * @covers \Seeren\Database\Dal\Dal::setLayer
     * @covers \Seeren\Database\Dal\Dal::getObject
     * @covers \Seeren\Database\Dal\Dal::query
     * @covers \Seeren\Database\Dal\MySql\MySqlDal::__construct
