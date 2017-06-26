@@ -70,7 +70,7 @@ $layer->query($table, "insert");
 ```
 
 ## Resolvers Usage
-#### `Seeren\DaO\DaoInterface`
+#### `Seeren\Dao\DaoInterface`
 Syntax resolvers are available using the getObject method of a layer. Object query method is one of the tree way to execute the query operations
 ```php
 $select = $layer->getObject("select");

@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.2.3
+ * @version 1.2.4
  */
 
 namespace Seeren\Database\Table;
@@ -61,19 +61,15 @@ abstract class MasterTable extends AbstractTable
      * @param array methode arguments
      * @return TableInterface self
      *
-     * @throws InvalidArgumentException for no layer
      * @throws RuntimeException on error or layer exception
      */
     public final function __call(string $name, array $args): TableInterface
     {
+        if (array_key_exists(0, $args)) {
+            $args[0]->getLayer()->beginTransaction();
+        }
         try {
-            if (array_key_exists(0, $args)) {
-                $args[0]->getLayer()->beginTransaction();
-            }
-            parent::__call(
-                $name,
-                $args
-            );
+            parent::__call($name, $args);
             foreach ($this->table as $table) {
                 $table->__call($name, $args);
             }
@@ -81,12 +77,10 @@ abstract class MasterTable extends AbstractTable
             return $this;
         } catch (InvalidArgumentException $e) {
             throw $e;
-        } catch (RuntimeException $e) {
+        } catch (Throwable $e) {
             if (array_key_exists(0, $args)) {
                 $args[0]->getLayer()->rollBack();
             }
-            throw $e;
-        } catch (Throwable $e) {
             throw new RuntimeException(
                 "Can't call " . static::class . "::" . $name
               . ": " . $e->getMessage());
