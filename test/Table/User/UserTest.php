@@ -19,6 +19,7 @@ use Seeren\Database\Test\Table\AbstractTableTest;
 use Seeren\Database\Table\User\User;
 use Seeren\Database\Table\TableInterface;
 use ReflectionClass;
+use stdClass;
 
 /**
  * Class for test User
@@ -231,6 +232,26 @@ class UserTest extends AbstractTableTest
    public function test__call()
    {
        parent::test__call();
+   }
+
+   /**
+    * @covers \Seeren\Database\Table\User\User::__construct
+    * @covers \Seeren\Database\Table\AbstractTable::__construct
+    * @covers \Seeren\Database\Table\AbstractTable::addColumn
+    * @covers \Seeren\Database\Table\AbstractTable::addKey
+    * @covers \Seeren\Database\Table\AbstractTable::get
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::__construct
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::getName
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::getValue
+    * @covers \Seeren\Database\Table\Column\StringColumn::__construct
+    * @covers \Seeren\Database\Table\Key\Key::__construct
+    * @covers \Seeren\Database\Table\User\User::jsonSerialize
+    */
+   public function testJsonEncode()
+   {
+       $this->assertTrue(
+           json_decode(json_encode($this->getTable())) instanceof stdClass
+       );
    }
 
 }
