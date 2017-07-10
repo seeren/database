@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.1
+ * @version 1.1.1
  */
 
 namespace Seeren\Database\Table\User;
@@ -18,6 +18,7 @@ namespace Seeren\Database\Table\User;
 use Seeren\Database\Table\AbstractTable;
 use Seeren\Database\Table\Column\StringColumn;
 use Seeren\Database\Table\Key\Key;
+use JsonSerializable;
 
 /**
  * Class for represent a database user
@@ -26,7 +27,7 @@ use Seeren\Database\Table\Key\Key;
  * @package Database
  * @subpackage Table/User
  */
-class User extends AbstractTable implements UserInterface
+class User extends AbstractTable implements UserInterface, JsonSerializable
 {
 
     const
@@ -68,6 +69,19 @@ class User extends AbstractTable implements UserInterface
         $this->addKey(
             new Key(Key::INDEX, [self::COL_PSWD])
         );
+    }
+
+    /**
+     * Json serialize
+     *
+     * @return array data to json encode
+     */
+    public function jsonSerialize() {
+        $json = [];
+        foreach ($this->get(self::ATTR_COLUMN) as $key => $value) {
+            $json[$key] = $value->getValue();
+        }
+        return $json;
     }
 
 }
