@@ -10,10 +10,12 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.2
+ * @version 2.0.2
  */
 
 namespace Seeren\Database\Table\Column;
+
+use JsonSerializable;
 
 /**
  * Interface for represent a table column
@@ -22,7 +24,7 @@ namespace Seeren\Database\Table\Column;
  * @package Database
  * @subpackage Table\Column
  */
-interface ColumnInterface
+interface ColumnInterface extends JsonSerializable
 {
 
     const
