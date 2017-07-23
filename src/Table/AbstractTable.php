@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.4
+ * @version 1.1.4
  */
 
 namespace Seeren\Database\Table;
@@ -184,6 +184,16 @@ abstract class AbstractTable
     {
         $this->object = null;
         $this->clause   = [];
+    }
+
+    /**
+     * Json serialize
+     *
+     * @return array data to json encode
+     */
+    public function jsonSerialize()
+    {
+        return $this->get(TableInterface::ATTR_COLUMN);
     }
 
 }

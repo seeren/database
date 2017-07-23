@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.2.4
+ * @version 1.3.4
  */
 
 namespace Seeren\Database\Table;
@@ -205,6 +205,16 @@ abstract class MasterTable extends AbstractTable
         foreach ($this->table as $table) {
             $table->clear();
         }
+    }
+
+    /**
+     * Json serialize
+     *
+     * @return array data to json encode
+     */
+    public final function jsonSerialize()
+    {
+        return parent::jsonSerialize() + $this->table;
     }
 
 }

@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.2
+ * @version 1.1.2
  */
 
 namespace Seeren\Database\Table\Column;
@@ -121,6 +121,16 @@ abstract class AbstractColumn
     public final function getOption(): array
     {
         return $this->option;
+    }
+
+    /**
+     * Json serialize
+     *
+     * @return array data to json encode
+     */
+    public final function jsonSerialize()
+    {
+        return $this->value;
     }
 
 }
