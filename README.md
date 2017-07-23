@@ -14,7 +14,7 @@ composer require seeren/database dev-master
 
 ## Table Usage
 #### `Seeren\Table\TableInterface`
-A database table can be manipulated as object without write query syntax and without manager. For query operations the table need a layer who provide database connection and syntax resolvers
+A database table can be manipulated as object without write query syntax and without manager
 ```php
 class MyTable extends AbstractTable implements TableInterface
 {
@@ -32,9 +32,13 @@ class MyTable extends AbstractTable implements TableInterface
     }
 }
 ```
+Tables can be encoded to json
+```php
+echo json_encode($table);
+```
 
  #### `Seeren\Table\User\User`
- The user table can be used for define database access rights. Extending User is like using a configuration file that can be class loaded. User implementations can be used for open a connection, create, use or delete a database
+ The user table can be used for define database access rights. User implementations can be used for open a connection, create, use or delete a database
  ```php
 class MyUser extends User
 {
