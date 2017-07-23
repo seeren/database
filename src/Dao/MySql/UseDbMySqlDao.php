@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 namespace Seeren\Database\Dao\MySql;
@@ -56,11 +56,10 @@ class UseDbMySqlDao extends AbstractDao implements MySqlDaoInterface
     /**
      * Template method Execute operation
      *
-     * @param TableInterface $table table
      * @param DalInterface $dal access layer
      * @return null
      */
-    protected function execute(TableInterface $table, DalInterface $dal)
+    protected function execute(DalInterface $dal)
     {
         $dal->getLayer()->query($this->queryString);
         $this->row++;

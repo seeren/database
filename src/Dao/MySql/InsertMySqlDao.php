@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.3
+ * @version 1.0.4
  */
 
 namespace Seeren\Database\Dao\MySql;
@@ -68,11 +68,10 @@ class InsertMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
     /**
      * Template method Execute operation
      *
-     * @param TableInterface $table table
      * @param DalInterface $dal access layer
      * @return DaoInterface self
      */
-    protected function execute(TableInterface $table, DalInterface $dal)
+    protected function execute(DalInterface $dal)
     {
         if (!$this->sth || $this->queryString !== $this->sth->queryString) {
             $this->sth = $dal->getLayer()->prepare($this->queryString);

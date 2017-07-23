@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.2
+ * @version 1.0.3
  */
 
 namespace Seeren\Database\Dao;
@@ -49,13 +49,10 @@ abstract class AbstractDao
     /**
      * Template method Execute operation
      *
-     * @param TableInterface $table table
      * @param DalInterface $dal access layer
      * @return null
      */
-    abstract protected function execute(
-        TableInterface $table,
-        DalInterface $dal);
+    abstract protected function execute(DalInterface $dal);
 
     /**
      * Construct AbstractDao
@@ -92,7 +89,7 @@ abstract class AbstractDao
         DalInterface $dal): DaoInterface
     {
         $this->queryString = $this->getSyntax($table);
-        $this->execute($table, $dal);
+        $this->execute($dal, $table);
         return $this;
     }
 

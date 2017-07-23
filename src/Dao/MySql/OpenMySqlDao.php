@@ -61,11 +61,11 @@ class OpenMySqlDao extends AbstractDao implements MySqlDaoInterface
     /**
      * Template method Execute operation
      *
-     * @param TableInterface $table table
      * @param DalInterface $dal access layer
+     * @param TableInterface $table table
      * @return null
      */
-    protected function execute(TableInterface $table, DalInterface $dal)
+    protected function execute(DalInterface $dal, TableInterface $table = null)
     {
         $dal->setLayer(new PDO(
             $this->__toString(),
