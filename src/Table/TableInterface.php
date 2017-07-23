@@ -10,13 +10,14 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.2
+ * @version 2.0.2
  */
 
 namespace Seeren\Database\Table;
 
 use Seeren\Database\Table\Clause\ClauseInterface;
 use Seeren\Database\Dao\DaoInterface;
+use JsonSerializable;
 
 /**
  * Interface for map table in object
@@ -25,7 +26,7 @@ use Seeren\Database\Dao\DaoInterface;
  * @package Database
  * @subpackage Table
  */
-interface TableInterface
+interface TableInterface extends JsonSerializable
 {
 
     const
