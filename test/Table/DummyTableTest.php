@@ -447,4 +447,27 @@ class DummyTableTest extends MasterTableTest
        parent::testGetDependencieColumnValue();
    }
 
+   /**
+    * @covers \Seeren\Database\Test\Table\DummyTable::__construct
+    * @covers \Seeren\Database\Table\AbstractTable::__construct
+    * @covers \Seeren\Database\Table\AbstractTable::addColumn
+    * @covers \Seeren\Database\Table\AbstractTable::addKey
+    * @covers \Seeren\Database\Table\AbstractTable::get
+    * @covers \Seeren\Database\Table\AbstractTable::jsonSerialize
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::__construct
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::getName
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::jsonSerialize
+    * @covers \Seeren\Database\Table\Column\IntegerColumn::__construct
+    * @covers \Seeren\Database\Table\Column\StringColumn::__construct
+    * @covers \Seeren\Database\Table\Key\Key::__construct
+    * @covers \Seeren\Database\Table\MasterTable::__construct
+    * @covers \Seeren\Database\Table\MasterTable::get
+    * @covers \Seeren\Database\Table\MasterTable::jsonSerialize
+    * @covers \Seeren\Database\Table\User\User::__construct
+    */
+   public function testJsonEncode()
+   {
+       parent::testJsonEncode();
+   }
+
 }

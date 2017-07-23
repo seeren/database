@@ -240,18 +240,18 @@ class UserTest extends AbstractTableTest
     * @covers \Seeren\Database\Table\AbstractTable::addColumn
     * @covers \Seeren\Database\Table\AbstractTable::addKey
     * @covers \Seeren\Database\Table\AbstractTable::get
+    * @covers \Seeren\Database\Table\AbstractTable::jsonSerialize
     * @covers \Seeren\Database\Table\Column\AbstractColumn::__construct
     * @covers \Seeren\Database\Table\Column\AbstractColumn::getName
     * @covers \Seeren\Database\Table\Column\AbstractColumn::getValue
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::jsonSerialize
     * @covers \Seeren\Database\Table\Column\StringColumn::__construct
     * @covers \Seeren\Database\Table\Key\Key::__construct
     * @covers \Seeren\Database\Table\User\User::jsonSerialize
     */
    public function testJsonEncode()
    {
-       $this->assertTrue(
-           json_decode(json_encode($this->getTable())) instanceof stdClass
-       );
+       parent::testJsonEncode();
    }
 
 }

@@ -23,6 +23,7 @@ use Seeren\Database\Dao\MySql\OpenMySqlDao;
 use Seeren\Database\Dal\DalInterface;
 use Seeren\Database\Dal\MySql\MySqlDal;
 use ReflectionClass;
+use stdClass;
 use PDOStatement;
 use PDO;
 
@@ -202,6 +203,16 @@ abstract class AbstractTableTest extends \PHPUnit\Framework\TestCase
         $dal->setLayer($this->getPdo());
         $this->assertTrue(
             $this->getTable()->count($dal) instanceof TableInterface
+        );
+    }
+
+    /**
+     * Test json encode
+     */
+    public function testJsonEncode()
+    {
+        $this->assertTrue(
+            json_decode(json_encode($this->getTable())) instanceof stdClass
         );
     }
 
