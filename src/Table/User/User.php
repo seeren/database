@@ -1,14 +1,13 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Table\User\User class
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
  * @version 1.2.1
  */
@@ -30,44 +29,43 @@ class User extends AbstractTable implements UserInterface
 {
 
     const
+
         /**
-         * @var string table name
+         * @var string
          */
         NAME = "user";
 
     /**
-     * Construct UserTable
-     * 
-     * @return null
+     * @constructor
      */
     public function __construct()
     {
         parent::__construct();
         $this->addColumn(
-            new StringColumn(self::COL_HOST, StringColumn::CHAR, 60, [
+            new StringColumn(self::COL_HOST, StringColumn::CHAR, 64, [
                 StringColumn::OPT_NOT_NULL,
-                StringColumn::OPT_DEFAULT_STRING])
+                StringColumn::OPT_DEFAULT_STRING
+            ])
         );
         $this->addColumn(
-            new StringColumn(self::COL_USER, StringColumn::CHAR, 80, [
+            new StringColumn(self::COL_USER, StringColumn::CHAR, 64, [
                 StringColumn::OPT_NOT_NULL,
-                StringColumn::OPT_DEFAULT_STRING])
+                StringColumn::OPT_DEFAULT_STRING
+            ])
         );
         $this->addColumn(
-            new StringColumn(self::COL_PSWD, StringColumn::CHAR, 41, [
+            new StringColumn(self::COL_PSWD, StringColumn::CHAR, 64, [
                 StringColumn::OPT_NOT_NULL,
-                StringColumn::OPT_DEFAULT_STRING])
+                StringColumn::OPT_DEFAULT_STRING
+            ])
         );
         $this->addColumn(
             new StringColumn(self::COL_DB, StringColumn::CHAR, 32, [
-                StringColumn::OPT_DEFAULT_NULL])
+                StringColumn::OPT_DEFAULT_NULL
+            ])
         );
-        $this->addKey(
-            new Key(Key::PRIMARY, [self::COL_HOST, self::COL_USER])
-        );
-        $this->addKey(
-            new Key(Key::INDEX, [self::COL_PSWD])
-        );
+        $this->addKey(new Key(Key::PRIMARY, [self::COL_HOST, self::COL_USER]));
+        $this->addKey(new Key(Key::INDEX, [self::COL_PSWD]));
     }
 
 }

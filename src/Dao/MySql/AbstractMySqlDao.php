@@ -1,14 +1,13 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Dao\MySql\AbstractMySqlDao class
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
  * @version 1.0.2
  */
@@ -32,25 +31,25 @@ abstract class AbstractMySqlDao extends AbstractDao
 {
 
     protected
+
         /**
-         * @var array fetch result
+         * @var array
          */
         $result,
+
         /**
-         * @var PDOStatement statement in process
+         * @var PDOStatement
         */
         $sth;
 
     private
         /**
-         * @var array param collection
+         * @var array
          */
         $param;
 
     /**
-     * Construct AbstractMySqlDao
-     *
-     * @return null
+     * @constructor
      */
     protected function __construct()
     {
@@ -60,12 +59,9 @@ abstract class AbstractMySqlDao extends AbstractDao
     }
 
     /**
-     * Set queryString param
-     *
-     * @param string $key param key
-     * @param mixed $value param value
-     * @param int $type param type
-     * @return null
+     * @param string $key
+     * @param mixed $value
+     * @param int $type
      */
     protected final function setParam(string $key, $value, int $type)
     {
@@ -77,10 +73,7 @@ abstract class AbstractMySqlDao extends AbstractDao
     }
 
     /**
-     * Bind queryString param
-     *
-     * @param PDOStatement $sth operation statement
-     * @return null
+     * @param PDOStatement $sth
      */
     protected final function bindParam(PDOStatement $sth)
     {

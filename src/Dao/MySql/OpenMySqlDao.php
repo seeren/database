@@ -1,14 +1,13 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Dao\MySql\OpenMySqlDao class
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
  * @version 1.0.2
  */
@@ -34,9 +33,7 @@ class OpenMySqlDao extends AbstractDao implements MySqlDaoInterface
 {
 
     /**
-     * Construct OpenMySqlDao
-     *
-     * @return null
+     * @constructor
      */
     public function __construct()
     {
@@ -44,10 +41,8 @@ class OpenMySqlDao extends AbstractDao implements MySqlDaoInterface
     }
 
     /**
-     * Template method Get MSql syntaxe
-     *
-     * @param TableInterface $table table
-     * @return string Myql operation for table
+     * {@inheritDoc}
+     * @see \Seeren\Database\Dao\AbstractDao::getSyntax()
      */
     protected function getSyntax(TableInterface $table): string
     {
@@ -59,11 +54,8 @@ class OpenMySqlDao extends AbstractDao implements MySqlDaoInterface
     }
 
     /**
-     * Template method Execute operation
-     *
-     * @param DalInterface $dal access layer
-     * @param TableInterface $table table
-     * @return null
+     * {@inheritDoc}
+     * @see \Seeren\Database\Dao\AbstractDao::execute()
      */
     protected function execute(DalInterface $dal, TableInterface $table = null)
     {
@@ -79,13 +71,8 @@ class OpenMySqlDao extends AbstractDao implements MySqlDaoInterface
     }
 
     /**
-     * Query table for dal
-     *
-     * @param TableInterface $table table
-     * @param DalInterface $dal access layer
-     * @return DaoInterface self
-     * 
-     * @throws InvalidArgumentException for no user interface
+     * {@inheritDoc}
+     * @see \Seeren\Database\Dao\AbstractDao::query()
      */
     public function query(
         TableInterface $table,

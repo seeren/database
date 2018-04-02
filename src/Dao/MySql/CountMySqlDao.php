@@ -1,21 +1,19 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Dao\MySql\CountMySqlDao class
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
  * @version 1.0.3
  */
 
 namespace Seeren\Database\Dao\MySql;
 
-use Seeren\Database\Dao\DaoInterface;
 use Seeren\Database\Dal\DalInterface;
 use Seeren\Database\Table\TableInterface;
 
@@ -30,9 +28,7 @@ class CountMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
 {
 
     /**
-     * Construct CountMySqlDao
-     *
-     * @return null
+     * @constructor
      */
     public function __construct()
     {
@@ -40,10 +36,8 @@ class CountMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
     }
 
     /**
-     * Template method Get MSql syntaxe
-     *
-     * @param TableInterface $table table
-     * @return string Myql operation for table
+     * {@inheritDoc}
+     * @see \Seeren\Database\Dao\AbstractDao::getSyntax()
      */
     protected function getSyntax(TableInterface $table): string
     {
@@ -54,10 +48,8 @@ class CountMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
     }
 
     /**
-     * Template method Execute operation
-     *
-     * @param DalInterface $dal access layer
-     * @return DaoInterface self
+     * {@inheritDoc}
+     * @see \Seeren\Database\Dao\AbstractDao::execute()
      */
     protected function execute(DalInterface $dal)
     {

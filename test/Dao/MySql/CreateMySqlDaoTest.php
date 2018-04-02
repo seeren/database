@@ -50,9 +50,9 @@ class CreateMySqlDaoTest extends AbstractDaoTest
     protected function getDefaultSyntax(): string
     {
         return "CREATE TABLE IF NOT EXISTS `user` (" . "\n"
-            . "`host` CHAR(60) NOT NULL DEFAULT ''," . "\n"
-            . "`user` CHAR(80) NOT NULL DEFAULT ''," . "\n"
-            . "`password` CHAR(41) NOT NULL DEFAULT ''," . "\n"
+            . "`host` CHAR(64) NOT NULL DEFAULT ''," . "\n"
+            . "`user` CHAR(64) NOT NULL DEFAULT ''," . "\n"
+            . "`password` CHAR(64) NOT NULL DEFAULT ''," . "\n"
             . "`dbname` CHAR(32) DEFAULT NULL" . "\n"
             . ") ENGINE=innoDB CHARSET=utf8;" . "\n"
             . "ALTER TABLE `user`" . "\n"

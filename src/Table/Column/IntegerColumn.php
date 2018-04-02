@@ -1,14 +1,13 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Table\Column\IntegerColumn class
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
  * @version 1.0.1
  */
@@ -28,13 +27,10 @@ class IntegerColumn extends AbstractColumn implements IntegerColumnInterface
 {
 
     /**
-     * Construct IntegerColumn
-     * 
      * @param string $name name
      * @param string $type type
      * @param int $size size
      * @param array $option option collection
-     * @return null
      */
     public function __construct(
         string $name,
@@ -49,10 +45,8 @@ class IntegerColumn extends AbstractColumn implements IntegerColumnInterface
     }
 
     /**
-     * Set value
-     *
-     * @param mixed $value value
-     * @return null
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\Column\ColumnInterface::setValue()
      */
     public final function setValue($value)
     {
@@ -60,9 +54,8 @@ class IntegerColumn extends AbstractColumn implements IntegerColumnInterface
     }
 
     /**
-     * Get PDO param
-     *
-     * @return int const value
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\Column\ColumnInterface::getParam()
      */
     public final function getParam(): int
     {

@@ -1,14 +1,13 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Table\Column\StringColumn class
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
  * @version 1.0.2
  */
@@ -27,13 +26,10 @@ class StringColumn extends AbstractColumn implements StringColumnInterface
 {
 
     /**
-     * Construct StringColumn
-     * 
      * @param string $name name
      * @param string $type type
      * @param int $size size
      * @param array $option option collection
-     * @return null
      */
     public function __construct(
         string $name,
@@ -48,10 +44,8 @@ class StringColumn extends AbstractColumn implements StringColumnInterface
     }
 
     /**
-     * Set value
-     *
-     * @param mixed $value value
-     * @return null
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\Column\ColumnInterface::setValue()
      */
     public final function setValue($value)
     {
@@ -59,9 +53,8 @@ class StringColumn extends AbstractColumn implements StringColumnInterface
     }
 
     /**
-     * Get PDO param
-     *
-     * @return int const value
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\Column\ColumnInterface::getParam()
      */
     public final function getParam(): int
     {

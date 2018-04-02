@@ -1,14 +1,13 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Dal\Dal class
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
  * @version 1.0.2
  */
@@ -32,20 +31,19 @@ class Dal implements DalInterface
 {
 
     private
+
         /**
-         * @var PDO database layer
+         * @var PDO
          */
         $layer,
+
         /**
-         * @var array namespace collection
+         * @var array
          */
         $object;
 
     /**
-     * Construct Dal
-     * 
-     * @param array $strategy Dao::class collection
-     * @return null
+     * @param array $strategy
      */
     public function __construct(array $object = [])
     {
@@ -58,11 +56,8 @@ class Dal implements DalInterface
     }
 
     /**
-     * Get layer
-     *
-     * @return PDO database layer
-     *
-     * @throws RuntimeException on null
+     * {@inheritDoc}
+     * @see \Seeren\Database\Dal\DalInterface::getLayer()
      */
     public final function getLayer(): PDO
     {
@@ -73,10 +68,8 @@ class Dal implements DalInterface
     }
 
     /**
-     * Set layer
-     *
-     * @param PDO $dbh layer
-     * @return null
+     * {@inheritDoc}
+     * @see \Seeren\Database\Dal\DalInterface::setLayer()
      */
     public final function setLayer(PDO $dbh)
     {
@@ -84,13 +77,8 @@ class Dal implements DalInterface
     }
 
     /**
-     * Query table for operation
-     *
-     * @param TableInterface $table table
-     * @param string $operation operation name
-     * @return DalInterface self
-     * 
-     * @throws RuntimeException on faillure
+     * {@inheritDoc}
+     * @see \Seeren\Database\Dal\DalInterface::query()
      */
     public function query(
         TableInterface $table,
@@ -105,12 +93,8 @@ class Dal implements DalInterface
     }
 
     /**
-     * Get object for operation
-     *
-     * @param string $operation operation name
-     * @return DaoInterface access object
-     *
-     * @throws RuntimeException on operation unreachable
+     * {@inheritDoc}
+     * @see \Seeren\Database\Dal\DalInterface::getObject()
      */
     public function getObject(string $operation): DaoInterface
     {
@@ -122,7 +106,8 @@ class Dal implements DalInterface
             return $this->getObject($operation);
         } catch (Throwable $e) {
             throw new RuntimeException(
-                "Can't get object: operation unreachable");
+                "Can't get object: operation unreachable"
+            );
         }
     }
 

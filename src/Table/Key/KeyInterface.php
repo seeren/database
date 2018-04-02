@@ -1,23 +1,21 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Table\Key\KeyInterface interface
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
  * @version 1.0.2
  */
-
 namespace Seeren\Database\Table\Key;
 
 /**
  * Interface for represent a table key
- * 
+ *
  * @category Seeren
  * @package Database
  * @subpackage Table\Key
@@ -26,24 +24,29 @@ interface KeyInterface
 {
 
     const
+
         /**
-         * @var string type
+         * @var string
          */
         PRIMARY = "PRIMARY",
+        
         /**
-         * @var string type
+         * @var string
          */
-        KEY     = "KEY",
+        KEY = "KEY",
+        
         /**
-         * @var string type
+         * @var string
          */
-        INDEX   = "INDEX",
+        INDEX = "INDEX",
+        
         /**
-         * @var string type
+         * @var string
          */
-        UNIQUE  = "UNIQUE",
+        UNIQUE = "UNIQUE",
+        
         /**
-         * @var string type
+         * @var string
          */
         FOREIGN = "FOREIGN";
 
@@ -74,5 +77,4 @@ interface KeyInterface
      * @return array foreigner subject name collection
      */
     public function getForeignerSubject(): array;
-
 }

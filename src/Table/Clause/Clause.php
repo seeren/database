@@ -1,21 +1,18 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Table\Clause\Clause class
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
  * @version 1.0.1
  */
 
 namespace Seeren\Database\Table\Clause;
-
-use Seeren\Database\Table\Clause\Clause;
 
 /**
  * Class for represent a table clause
@@ -28,31 +25,32 @@ class Clause implements ClauseInterface
 {
 
     protected
+
         /**
-         * @var string type
+         * @var string
          */
         $type,
+        
         /**
-         * @var string subject
+         * @var string
          */
         $subject,
+        
         /**
-         * @var string operator
+         * @var string
          */
         $operator,
+        
         /**
-         * @var mixed value
+         * @var string
          */
         $value;
 
     /**
-     * Construct Clause
-     * 
      * @param string $type type
      * @param string $subject subject
      * @param string $operator operator
      * @param mixed $value value
-     * @return null
      */
     public function __construct(
         string $type,
@@ -62,16 +60,13 @@ class Clause implements ClauseInterface
     {
         $this->type = defined("static::" . $type) ? $type : "";
         $this->subject = (string) $subject;
-        $this->operator = defined("static::OPE_" . $operator)
-                        ? $operator
-                        : "";
+        $this->operator = defined("static::OPE_" . $operator) ? $operator : "";
         $this->value = $value;
     }
 
     /**
-     * Get type
-     *
-     * @return string type
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\Clause\ClauseInterface::getType()
      */
     public final function getType(): string
     {
@@ -79,9 +74,8 @@ class Clause implements ClauseInterface
     }
 
     /**
-     * Get subject
-     *
-     * @return string subject
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\Clause\ClauseInterface::getSubject()
      */
     public final function getSubject(): string
     {
@@ -89,9 +83,8 @@ class Clause implements ClauseInterface
     }
 
     /**
-     * Get operator
-     *
-     * @return string operator
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\Clause\ClauseInterface::getOperator()
      */
     public final function getOperator(): string
     {
@@ -99,9 +92,8 @@ class Clause implements ClauseInterface
     }
 
     /**
-     * Get value
-     *
-     * @return mixed value
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\Clause\ClauseInterface::getValue()
      */
     public final function getValue()
     {
@@ -109,9 +101,8 @@ class Clause implements ClauseInterface
     }
 
     /**
-     * Set value
-     *
-     * @return null
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\Clause\ClauseInterface::setValue()
      */
     public final function setValue($value)
     {

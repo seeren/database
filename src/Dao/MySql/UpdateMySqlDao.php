@@ -1,14 +1,13 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Dao\MySql\UpdateMySqlDao class
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
  * @version 1.0.4
  */
@@ -31,9 +30,7 @@ class UpdateMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
 {
 
     /**
-     * Construct UpdateMySqlDao
-     *
-     * @return null
+     * @constructor
      */
     public function __construct()
     {
@@ -41,10 +38,8 @@ class UpdateMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
     }
 
     /**
-     * Template method Get MSql syntaxe
-     *
-     * @param TableInterface $table table
-     * @return string Myql operation for table
+     * {@inheritDoc}
+     * @see \Seeren\Database\Dao\AbstractDao::getSyntax()
      */
     protected function getSyntax(TableInterface $table): string
     {
@@ -62,10 +57,8 @@ class UpdateMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
     }
 
     /**
-     * Template method Execute operation
-     *
-     * @param DalInterface $dal access layer
-     * @return null
+     * {@inheritDoc}
+     * @see \Seeren\Database\Dao\AbstractDao::execute()
      */
     protected function execute(DalInterface $dal)
     {
@@ -78,13 +71,8 @@ class UpdateMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
     }
 
     /**
-     * Query table for dal
-     *
-     * @param TableInterface $table table
-     * @param DalInterface $dal access layer
-     * @return DaoInterface self
-     * 
-     * @throws InvalidArgumentException if no clause
+     * {@inheritDoc}
+     * @see \Seeren\Database\Dao\AbstractDao::query()
      */
     public function query(
         TableInterface $table,

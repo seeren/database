@@ -1,7 +1,6 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Table\Column\AbstractColumn class
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
@@ -22,39 +21,41 @@ namespace Seeren\Database\Table\Column;
  * @package Database
  * @subpackage Table\Column
  */
-abstract class AbstractColumn
+abstract class AbstractColumn implements ColumnInterface
 {
 
     protected
+
         /**
-         * @var string name
+         * @var string
          */
         $name,
+
         /**
-         * @var string type
+         * @var string
          */
         $type,
+
         /**
-         * @var int size
+         * @var int
          */
         $size,
+
         /**
-         * @var array option collection
+         * @var array
          */
         $option,
+
         /**
-         * @var mixed value
+         * @var mixed
          */
         $value;
 
     /**
-     * Construct AbstractColumn
-     * 
      * @param string $name name
      * @param string $type type
      * @param int $size size
      * @param array $option option collection
-     * @return null
      */
     protected function __construct(
         string $name,
@@ -74,9 +75,8 @@ abstract class AbstractColumn
     }
 
     /**
-     * Get name
-     *
-     * @return string name
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\Column\ColumnInterface::getName()
      */
     public final function getName(): string
     {
@@ -84,9 +84,8 @@ abstract class AbstractColumn
     }
 
     /**
-     * Get value
-     *
-     * @return mixed value
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\Column\ColumnInterface::getValue()
      */
     public final function getValue()
     {
@@ -94,9 +93,8 @@ abstract class AbstractColumn
     }
 
     /**
-     * Get type
-     *
-     * @return string type
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\Column\ColumnInterface::getType()
      */
     public final function getType(): string
     {
@@ -104,9 +102,8 @@ abstract class AbstractColumn
     }
 
     /**
-     * Get size
-     *
-     * @return int size
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\Column\ColumnInterface::getSize()
      */
     public final function getSize(): int
     {
@@ -114,9 +111,8 @@ abstract class AbstractColumn
     }
 
     /**
-     * Get option
-     *
-     * @return array option
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\Column\ColumnInterface::getOption()
      */
     public final function getOption(): array
     {
@@ -124,9 +120,8 @@ abstract class AbstractColumn
     }
 
     /**
-     * Json serialize
-     *
-     * @return array data to json encode
+     * {@inheritDoc}
+     * @see JsonSerializable::jsonSerialize()
      */
     public final function jsonSerialize()
     {

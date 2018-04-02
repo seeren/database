@@ -1,25 +1,23 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Dao\MySql\MySqlDaoInterface class
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
  * @version 1.0.2
  */
-
 namespace Seeren\Database\Dao\MySql;
 
 use Seeren\Database\Dao\DaoInterface;
 
 /**
  * Interface for represent MySql syntaxe
- * 
+ *
  * @category Seeren
  * @package Database
  * @subpackage Dao\MySql
@@ -28,165 +26,205 @@ interface MySqlDaoInterface extends DaoInterface
 {
 
     const
+
         /**
-         * @var string column option
+         * @var string
          */
-        NULL              = "NULL",
+        NULL = "NULL",
+        
         /**
-         * @var string column option
+         * @var string
          */
-        NOT_NULL          = "NOT NULL",
+        NOT_NULL = "NOT NULL",
+        
         /**
-         * @var string column option
-        */
-        DEFAULT_NULL      = "DEFAULT NULL",
-        /**
-         * @var string column option
+         * @var string
          */
-        DEFAULT_STRING    = "DEFAULT ''",
+        DEFAULT_NULL = "DEFAULT NULL",
+        
         /**
-         * @var string column option
+         * @var string
+         */
+        DEFAULT_STRING = "DEFAULT ''",
+        
+        /**
+         * @var string
          */
         DEFAULT_TIMESTAMP = "DEFAULT CURRENT_TIMESTAMP",
+        
         /**
-         * @var string column option
+         * @var string
          */
-        BINARY            = "BINARY",
+        BINARY = "BINARY",
+        
         /**
-         * @var string column option
+         * @var string
          */
-        UNSIGNED          = "UNSIGNED",
+        UNSIGNED = "UNSIGNED",
+        
         /**
-         * @var string column option
+         * @var string
          */
-        AUTO_INCREMENT    = "",
+        AUTO_INCREMENT = "",
+        
         /**
-         * @var string column type
+         * @var string
          */
-        TINYTEXT          = "TINYTEXT",
+        TINYTEXT = "TINYTEXT",
+        
         /**
-         * @var string column type
+         * @var string
          */
-        TEXT              = "TEXT",
+        TEXT = "TEXT",
+        
         /**
-         * @var string column type
+         * @var string
          */
-        MEDIUMTEXT        = "MEDIUMTEXT",
+        MEDIUMTEXT = "MEDIUMTEXT",
+        
         /**
-         * @var string column type
+         * @var string
          */
-        LONGTEXT          = "LONGTEXT",
+        LONGTEXT = "LONGTEXT",
+        
         /**
-         * @var string column type
+         * @var string
          */
-        CHAR              = "CHAR",
+        CHAR = "CHAR",
+        
         /**
-         * @var string column type
+         * @var string
          */
-        VARCHAR           = "VARCHAR",
+        VARCHAR = "VARCHAR",
+        
         /**
-         * @var string column type
+         * @var string
          */
-        TINYINT           = "TINYINT",
+        TINYINT = "TINYINT",
+        
         /**
-         * @var string column type
+         * @var string
          */
-        SMALLINT          = "SMALLINT",
+        SMALLINT = "SMALLINT",
+        
         /**
-         * @var string column type
+         * @var string
          */
-        MEDIUMINT         = "MEDIUMINT",
+        MEDIUMINT = "MEDIUMINT",
+        
         /**
-         * @var string column type
+         * @var string
          */
-        INT               = "INT",
+        INT = "INT",
+        
         /**
-         * @var string column type
+         * @var string
          */
-        BIGINT            = "BIGINT",
+        BIGINT = "BIGINT",
+        
         /**
-         * @var string clause type
+         * @var string
          */
-        AND               = "AND",
+        AND = "AND",
+        
         /**
-         * @var string clause type
-        */
-        JOIN              = "JOIN",
-        /**
-         * @var string clause type
-        */
-        LIMIT             = "LIMIT",
-        /**
-         * @var string clause type
-        */
-        OR                = "OR",
-        /**
-         * @var string clause type
-        */
-        ORDER_BY          = "ORDER BY",
-        /**
-         * @var string clause type
-        */
-        WHERE             = "WHERE",
-        /**
-         * @var string clause operator
+         * @var string
          */
-        IS_NULL           = "IS NULL",
+        JOIN = "JOIN",
+        
         /**
-         * @var string clause operator
+         * @var string
          */
-        IS_NOT_NULL       = "IS NOT NULL",
+        LIMIT = "LIMIT",
+        
         /**
-         * @var string clause operator
+         * @var string
          */
-        EQUAL             = "=",
+        OR = "OR",
+        
         /**
-         * @var string clause operator
+         * @var string
          */
-        INEQUAL           = "!=",
+        ORDER_BY = "ORDER BY",
+        
         /**
-         * @var string clause operator
+         * @var string
          */
-        SUP               = ">",
+        WHERE = "WHERE",
+        
         /**
-         * @var string clause operator
+         * @var string
          */
-        SUP_EQUAL         = ">=",
+        IS_NULL = "IS NULL",
+        
         /**
-         * @var string clause operator
+         * @var string
          */
-        INF               = "<",
+        IS_NOT_NULL = "IS NOT NULL",
+        
         /**
-         * @var string clause operator
+         * @var string
          */
-        INF_EQUAL         = "<",
+        EQUAL = "=",
+        
         /**
-         * @var string clause operator
+         * @var string
          */
-        ASC               = "ASC",
+        INEQUAL = "!=",
+        
         /**
-         * @var string clause operator
+         * @var string
          */
-        DESC              = "DESC",
+        SUP = ">",
+        
         /**
-         * @var string key type
+         * @var string
          */
-        PRIMARY           = "PRIMARY KEY",
+        SUP_EQUAL = ">=",
+        
         /**
-         * @var string key type
+         * @var string
          */
-        KEY               = "KEY",
+        INF = "<",
+        
         /**
-         * @var string key type
+         * @var string
          */
-        INDEX             = "KEY",
+        INF_EQUAL = "<",
+        
         /**
-         * @var string key type
+         * @var string
          */
-        UNIQUE            = "UNIQUE KEY",
+        ASC = "ASC",
+        
         /**
-         * @var string key type
+         * @var string
          */
-        FOREIGN           = "FOREIGN KEY";
+        DESC = "DESC",
+        
+        /**
+         * @var string
+         */
+        PRIMARY = "PRIMARY KEY",
+        
+        /**
+         * @var string
+         */
+        KEY = "KEY",
+        
+        /**
+         * @var string
+         */
+        INDEX = "KEY",
+        
+        /**
+         * @var string
+         */
+        UNIQUE = "UNIQUE KEY",
+        
+        /**
+         * @var string
+         */
+        FOREIGN = "FOREIGN KEY";
 
 }

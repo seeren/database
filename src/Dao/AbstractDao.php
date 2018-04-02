@@ -1,14 +1,13 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Dao\AbstractDao class
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
  * @version 1.0.3
  */
@@ -29,35 +28,31 @@ abstract class AbstractDao
 {
 
     protected
+
         /**
-         * @var string query string
+         * @var string
          */
         $queryString,
+
         /**
-         * @var int row number
+         * @var int
          */
         $row;
 
     /**
-     * Template method Get MSql syntaxe
-     *
-     * @param TableInterface $table table
-     * @return string Myql operation for table
+     * @param TableInterface $table
+     * @return string
      */
     abstract protected function getSyntax(TableInterface $table): string;
 
     /**
-     * Template method Execute operation
-     *
-     * @param DalInterface $dal access layer
+     * @param DalInterface $dal
      * @return null
      */
     abstract protected function execute(DalInterface $dal);
 
     /**
-     * Construct AbstractDao
-     *
-     * @return null
+     * @constructor
      */
     protected function __construct()
     {
@@ -66,8 +61,6 @@ abstract class AbstractDao
     }
 
     /**
-     * Get constant
-     *
      * @param string $name const name
      * @return string static const
      */
@@ -78,11 +71,8 @@ abstract class AbstractDao
     }
 
     /**
-     * Query table for dal
-     *
-     * @param TableInterface $table table
-     * @param DalInterface $dal access layer
-     * @return DaoInterface this
+     * {@inheritDoc}
+     * @see \Seeren\Database\Dao\DaoInterface::query()
      */
     public function query(
         TableInterface $table,
@@ -94,9 +84,8 @@ abstract class AbstractDao
     }
 
     /**
-     * Close
-     *
-     * @return null
+     * {@inheritDoc}
+     * @see \Seeren\Database\Dao\DaoInterface::close()
      */
     public function close()
     {
@@ -104,10 +93,8 @@ abstract class AbstractDao
     }
 
     /**
-     * Get an instance
-     *
-     * @return DaoInterface instance
-     *
+     * {@inheritDoc}
+     * @see \Seeren\Database\Dao\DaoInterface::clone()
      */
     public final function clone(): DaoInterface
     {
@@ -115,9 +102,8 @@ abstract class AbstractDao
     }
 
     /**
-     * Get string representation
-     *
-     * @return string representation
+     * {@inheritDoc}
+     * @see \Seeren\Database\Dao\DaoInterface::__toString()
      */
     public final function __toString(): string
     {
@@ -125,10 +111,8 @@ abstract class AbstractDao
     }
 
     /**
-     * Get attribut
-     *
-     * @param string $name attribut name
-     * @return null
+     * {@inheritDoc}
+     * @see \Seeren\Database\Dao\DaoInterface::__get()
      */
     public final function __get($name)
     {

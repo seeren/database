@@ -1,14 +1,13 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Dal\MySql\MySqlDal class
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
  * @version 1.0.2
  */
@@ -39,9 +38,7 @@ class MySqlDal extends Dal
 {
 
     /**
-     * Construct MySqlDal
-     * 
-     * @return null
+     * @constructor
      */
     public function __construct()
     {

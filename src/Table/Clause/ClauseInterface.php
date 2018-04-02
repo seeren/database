@@ -1,23 +1,21 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Table\Clause\ClauseInterface interface
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
  * @version 1.0.1
  */
-
 namespace Seeren\Database\Table\Clause;
 
 /**
  * Interface for represent a table clause
- * 
+ *
  * @category Seeren
  * @package Database
  * @subpackage Table\Clause
@@ -26,70 +24,86 @@ interface ClauseInterface
 {
 
     const
+
         /**
-         * @var string type name
+         * @var string
          */
-        AND             = "AND",
+        AND = "AND",
+        
         /**
-         * @var string type name
+         * @var string
          */
-        JOIN            = "JOIN",
+        JOIN = "JOIN",
+        
         /**
-         * @var string type name
+         * @var string
          */
-        LIMIT           = "LIMIT",
+        LIMIT = "LIMIT",
+        
         /**
-         * @var string type name
+         * @var string
          */
-        OR              = "OR",
+        OR = "OR",
+        
         /**
-         * @var string type name
+         * @var string
          */
-        ORDER_BY        = "ORDER_BY",
+        ORDER_BY = "ORDER_BY",
+        
         /**
-         * @var string type name
+         * @var string
          */
-        WHERE           = "WHERE",
+        WHERE = "WHERE",
+        
         /**
-         * @var string operator name
+         * @var string
          */
-        OP_IS_NULL      = "IS_NULL",
+        OP_IS_NULL = "IS_NULL",
+        
         /**
-         * @var string operator name
+         * @var string
          */
         OPE_IS_NOT_NULL = "IS_NOT_NULL",
+        
         /**
-         * @var string operator name
+         * @var string
          */
-        OPE_EQUAL       = "EQUAL",
+        OPE_EQUAL = "EQUAL",
+        
         /**
-         * @var string operator name
+         * @var string
          */
-        OPE_INEQUAL     = "INEQUAL",
+        OPE_INEQUAL = "INEQUAL",
+        
         /**
-         * @var string operator name
+         * @var string
          */
-        OPE_SUP         = "SUP",
+        OPE_SUP = "SUP",
+        
         /**
-         * @var string operator name
+         * @var string
          */
-        OPE_SUP_EQUAL   = "SUP_EQUAL",
+        OPE_SUP_EQUAL = "SUP_EQUAL",
+        
         /**
-         * @var string operator name
+         * @var string
          */
-        OPE_INF         = "INF",
+        OPE_INF = "INF",
+        
         /**
-         * @var string operator name
+         * @var string
          */
-        OPE_INF_EQUAL   = "INF_EQUAL",
+        OPE_INF_EQUAL = "INF_EQUAL",
+        
         /**
-         * @var string operator name
+         * @var string
          */
-        OPE_ASC         = "ASC",
+        OPE_ASC = "ASC",
+        
         /**
-         * @var string operator name
+         * @var string
          */
-        OPE_DESC        = "DESC";
+        OPE_DESC = "DESC";
 
     /**
      * Get type

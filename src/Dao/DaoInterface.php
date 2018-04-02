@@ -1,14 +1,13 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Dao\DaoInterface interface
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
  * @version 1.0.2
  */
@@ -20,7 +19,7 @@ use Seeren\Database\Dal\DalInterface;
 
 /**
  * Interface for provide data access object
- * 
+ *
  * @category Seeren
  * @package Database
  * @subpackage Dao
@@ -29,24 +28,28 @@ interface DaoInterface
 {
 
     const
-        /**
-         * @var string attribut name
-         */
-        ATTR_ROW    = "row",
-        /**
-         * @var string attribut name
-         */
-        ATTR_PARAM  = "param",
-        /**
-         * @var string attribut name
-         */
-        ATTR_RESULT = "result";
+
+    /**
+     * @var string
+     */
+    ATTR_ROW = "row",
+    
+    /**
+     * @var string
+     */
+    ATTR_PARAM = "param",
+    
+    /**
+     * @var string
+     */
+    ATTR_RESULT = "result";
 
     /**
      * Query table for dal
      *
-     * @param TableInterface $table table
-     * @param DalInterface $dal access layer
+     * @param TableInterface $table
+     * @param DalInterface $dal
+     * 
      * @return DaoInterface self
      */
     public function query(TableInterface $table, DalInterface $dal): self;
@@ -62,7 +65,7 @@ interface DaoInterface
      * Get an instance
      *
      * @return DaoInterface instance
-     *
+     *        
      */
     public function clone(): self;
 
@@ -76,7 +79,8 @@ interface DaoInterface
     /**
      * Get attribut
      *
-     * @param string $name attribut name
+     * @param string $name
+     * 
      * @return null
      */
     public function __get($name);

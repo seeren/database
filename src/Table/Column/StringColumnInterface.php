@@ -1,15 +1,13 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Table\Column\StringColumnInterface
- * interface
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
  * @version 1.0.1
  */
@@ -18,7 +16,7 @@ namespace Seeren\Database\Table\Column;
 
 /**
  * Interface for represent table string column
- * 
+ *
  * @category Seeren
  * @package Database
  * @subpackage Table\Column
@@ -27,29 +25,35 @@ interface StringColumnInterface extends ColumnInterface
 {
 
     const
+
         /**
-         * @var string type name
+         * @var string
          */
-        TINYTEXT   = "TINYTEXT",
+        TINYTEXT = "TINYTEXT",
+        
         /**
-         * @var string type name
+         * @var string
          */
-        TEXT       = "TEXT",
+        TEXT = "TEXT",
+        
         /**
-         * @var string type name
+         * @var string
          */
         MEDIUMTEXT = "MEDIUMTEXT",
+        
         /**
-         * @var string type name
+         * @var string
          */
-        LONGTEXT   = "LONGTEXT",
+        LONGTEXT = "LONGTEXT",
+        
         /**
-         * @var string type name
+         * @var string
          */
-        CHAR       = "CHAR",
+        CHAR = "CHAR",
+        
         /**
-         * @var string type name
+         * @var string
          */
-        VARCHAR    = "VARCHAR";
+        VARCHAR = "VARCHAR";
 
 }

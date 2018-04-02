@@ -1,14 +1,13 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Dao\MySql\UseDbMySqlDao class
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
  * @version 1.0.2
  */
@@ -33,9 +32,7 @@ class UseDbMySqlDao extends AbstractDao implements MySqlDaoInterface
 {
 
     /**
-     * Construct UseDbMySqlDao
-     *
-     * @return null
+     * @constructor
      */
     public function __construct()
     {
@@ -43,10 +40,8 @@ class UseDbMySqlDao extends AbstractDao implements MySqlDaoInterface
     }
 
     /**
-     * Template method Get MSql syntaxe
-     *
-     * @param TableInterface $table table
-     * @return string Myql operation for table
+     * {@inheritDoc}
+     * @see \Seeren\Database\Dao\AbstractDao::getSyntax()
      */
     protected function getSyntax(TableInterface $table): string
     {
@@ -54,10 +49,8 @@ class UseDbMySqlDao extends AbstractDao implements MySqlDaoInterface
     }
 
     /**
-     * Template method Execute operation
-     *
-     * @param DalInterface $dal access layer
-     * @return null
+     * {@inheritDoc}
+     * @see \Seeren\Database\Dao\AbstractDao::execute()
      */
     protected function execute(DalInterface $dal)
     {
@@ -66,13 +59,8 @@ class UseDbMySqlDao extends AbstractDao implements MySqlDaoInterface
     }
 
     /**
-     * Query table for dal
-     *
-     * @param TableInterface $table table
-     * @param DalInterface $dal access layer
-     * @return DaoInterface self
-     * 
-     * @throws InvalidArgumentException
+     * {@inheritDoc}
+     * @see \Seeren\Database\Dao\AbstractDao::query()
      */
     public function query(
         TableInterface $table,
@@ -80,10 +68,12 @@ class UseDbMySqlDao extends AbstractDao implements MySqlDaoInterface
     {
         if (!$table instanceof UserInterface) {
             throw new InvalidArgumentException(
-                "Can't query table: must implement UserInterface");
+                "Can't query table: must implement UserInterface"
+            );
         } else if (!$table->{UserInterface::COL_DB}) {
             throw new InvalidArgumentException(
-                "Can't query table: no database specified");
+                "Can't query table: no database specified"
+            );
         }
         return parent::query($table, $dal);
     }

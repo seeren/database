@@ -1,18 +1,16 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Dal\DalInterface interface
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
  * @version 1.0.1
  */
-
 namespace Seeren\Database\Dal;
 
 use PDO;
@@ -21,7 +19,7 @@ use Seeren\Database\Dao\DaoInterface;
 
 /**
  * Interface for provide data access layer
- * 
+ *
  * @category Seeren
  * @package Database
  * @subpackage Dal
@@ -30,59 +28,70 @@ interface DalInterface
 {
 
     const
+
         /**
-         * @var string operation name
+         * @var string
          */
-        COUNT    = "count",
+        COUNT = "count",
+        
         /**
-         * @var string operation name
+         * @var string
          */
-        CREATE   = "create",
+        CREATE = "create",
+        
         /**
-         * @var string operation name
+         * @var string
          */
         CREATE_DB = "create_db",
+        
         /**
-         * @var string operation name
+         * @var string
          */
-        DELETE    = "delete",
+        DELETE = "delete",
+        
         /**
-         * @var string operation name
+         * @var string
          */
-        DROP      = "drop",
+        DROP = "drop",
+        
         /**
-         * @var string operation name
+         * @var string
          */
-        DROP_DB   = "drop_db",
+        DROP_DB = "drop_db",
+        
         /**
-         * @var string operation name
+         * @var string
          */
-        INSERT    = "insert",
+        INSERT = "insert",
+        
         /**
-         * @var string operation name
+         * @var string
          */
-        OPEN      = "open",
+        OPEN = "open",
+        
         /**
-         * @var string operation name
+         * @var string
          */
-        SELECT    = "select",
+        SELECT = "select",
+        
         /**
-         * @var string operation name
+         * @var string
          */
-        UPDATE    = "update",
+        UPDATE = "update",
+        
         /**
-         * @var string operation name
+         * @var string
          */
-        USE_DB    = "use_db";
+        USE_DB = "use_db";
 
     /**
      * Query table for operation
      *
-     * @param TableInterface $table table
-     * @param string $operation operation name
+     * @param TableInterface $table
+     * @param string $operation
      * @return DalInterface self
-     * 
-     * @throws RuntimeException on faillure
+     *        
+     * @throws \RuntimeException on faillure
      */
     public function query(TableInterface $table, string $operation): self;
 
@@ -90,15 +99,15 @@ interface DalInterface
      * Get layer
      *
      * @return PDO database layer
-     * 
-     * @throws RuntimeException on null
+     *        
+     * @throws \RuntimeException on null
      */
     public function getLayer(): PDO;
 
     /**
      * Set layer
      *
-     * @param PDO $dbh layer
+     * @param PDO $dbh
      * @return null
      */
     public function setLayer(PDO $dbh);
@@ -106,10 +115,10 @@ interface DalInterface
     /**
      * Get object for operation
      *
-     * @param string $operation operation name
+     * @param string $operation
      * @return DaoInterface access object
-     *
-     * @throws RuntimeException on operation unreachable
+     *        
+     * @throws \RuntimeException on operation unreachable
      */
     public function getObject(string $operation): DaoInterface;
 

@@ -1,14 +1,13 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Table\AbstractTable class
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
  * @version 1.1.4
  */
@@ -34,27 +33,29 @@ abstract class AbstractTable
 {
 
     private
+
         /**
-         * @var array DaoInterface access object
+         * @var array DaoInterface
          */
         $object,
-        /**
-         * @var array ColumnInterface collection
+
+       /**
+         * @var array ColumnInterface
          */
         $column,
-        /**
-         * @var array KeyInterface collection
+
+       /**
+         * @var array KeyInterface
          */
         $key,
-        /**
-        * @var array ClauseInterface collection
+
+       /**
+        * @var array ClauseInterface
         */
         $clause;
 
     /**
-     * Construct AbstractTable
-     * 
-     * @return null
+     * @constructor
      */
     protected function __construct()
     {
@@ -62,10 +63,7 @@ abstract class AbstractTable
     }
 
     /**
-     * Add a column
-     * 
-     * @param ColumnInterface $column column
-     * @return null
+     * @param ColumnInterface $column
      */
     protected final function addColumn(ColumnInterface $column)
     {
@@ -73,10 +71,7 @@ abstract class AbstractTable
     }
 
     /**
-     * Add a key
-     *
-     * @param KeyInterface $key key
-     * @return null
+     * @param KeyInterface $key
      */
     protected final function addKey(KeyInterface $key)
     {
@@ -84,21 +79,18 @@ abstract class AbstractTable
     }
 
     /**
-     * Call
-     *
-     * @param string $name methode name
-     * @param array $args methode arguments
-     * @return TableInterface self
-     * 
-     * @throws InvalidArgumentException for no layer
-     * @throws RuntimeException on layer exception
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\TableInterface::__call()
      */
     public function __call(string $name, array $args): TableInterface
     {
         if (!array_key_exists(0, $args)) {
             throw new InvalidArgumentException(
-               "Can't call " . static::class . "::" . $name
-             . ": missing DalInterface");
+               "Can't call "
+             . static::class
+             . "::" . $name
+             . ": missing DalInterface"
+            );
         }
         try {
             $args[0]->query($this, $name);
@@ -111,10 +103,8 @@ abstract class AbstractTable
     }
 
     /**
-     * Get column value
-     * 
-     * @param string $name column index
-     * @return mixed column value
+     * @param string $name
+     * @return NULL
      */
     public function __get(string $name)
     {
@@ -124,11 +114,8 @@ abstract class AbstractTable
     }
 
     /**
-     * Set column value
-     * 
-     * @param string $name column index
-     * @param mixed $value column value
-     * @return null
+     * @param string $name
+     * @param mixed $value
      */
     public function __set(string $name, $value)
     {
@@ -138,10 +125,8 @@ abstract class AbstractTable
     }
 
     /**
-     * Get attribute
-     *
-     * @param string $name attribute name
-     * @return mixed attribute value
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\TableInterface::get()
      */
     public function get(string $name = TableInterface::ATTR_OBJECT)
     {
@@ -153,10 +138,8 @@ abstract class AbstractTable
     }
 
     /**
-     * Set access object
-     *
-     * @param DaoInterface $object access object
-     * @return null
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\TableInterface::set()
      */
     public function set(DaoInterface $object)
     {
@@ -165,10 +148,8 @@ abstract class AbstractTable
     }
 
     /**
-     * Add clause
-     *
-     * @param ClauseInterface $clause table clause
-     * @return null
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\TableInterface::addClause()
      */
     public function addClause(ClauseInterface $clause)
     {
@@ -176,9 +157,8 @@ abstract class AbstractTable
     }
 
     /**
-     * Clear clauses and results
-     *
-     * @return null
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\TableInterface::clear()
      */
     public function clear()
     {
@@ -187,9 +167,8 @@ abstract class AbstractTable
     }
 
     /**
-     * Json serialize
-     *
-     * @return array data to json encode
+     * {@inheritDoc}
+     * @see \JsonSerializable::jsonSerialize()
      */
     public function jsonSerialize()
     {

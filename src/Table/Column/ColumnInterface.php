@@ -1,25 +1,23 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Table\Column\ColumnInterface interface
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
  * @version 2.0.2
  */
-
 namespace Seeren\Database\Table\Column;
 
 use JsonSerializable;
 
 /**
  * Interface for represent a table column
- * 
+ *
  * @category Seeren
  * @package Database
  * @subpackage Table\Column
@@ -28,42 +26,50 @@ interface ColumnInterface extends JsonSerializable
 {
 
     const
+    
         /**
-         * @var string option name
+         * @var string
          */
-        OPT_NULL             = "NULL",
+        OPT_NULL = "NULL",
+        
         /**
-         * @var string option name
+         * @var string
          */
-        OPT_NOT_NULL         = "NOT_NULL",
+        OPT_NOT_NULL = "NOT_NULL",
+        
         /**
-         * @var string option name
+         * @var string
          */
-        OPT_DEFAULT_NULL     = "DEFAULT_NULL",
+        OPT_DEFAULT_NULL = "DEFAULT_NULL",
+        
         /**
-         * @var string option name
+         * @var string
          */
-        OPT_DEFAULT_STRING    = "DEFAULT_STRING",
+        OPT_DEFAULT_STRING = "DEFAULT_STRING",
+        
         /**
-         * @var string option name
+         * @var string
          */
         OPT_DEFAULT_TIMESTAMP = "DEFAULT_TIMESTAMP",
+        
         /**
-         * @var string option name
+         * @var string
          */
-        OPT_BINARY            = "BINARY",
+        OPT_BINARY = "BINARY",
+        
         /**
-         * @var string option name
+         * @var string
          */
-        OPT_UNSIGNED          = "UNSIGNED",
+        OPT_UNSIGNED = "UNSIGNED",
+        
         /**
-         * @var string option name
+         * @var string
          */
-        OPT_AUTO_INCREMENT    = "AUTO_INCREMENT";
+        OPT_AUTO_INCREMENT = "AUTO_INCREMENT";
 
     /**
      * Get name
-     * 
+     *
      * @return string name
      */
     public function getName(): string;
@@ -78,7 +84,8 @@ interface ColumnInterface extends JsonSerializable
     /**
      * Set value
      *
-     * @param mixed $value value
+     * @param mixed $value
+     * 
      * @return null
      */
     public function setValue($value);

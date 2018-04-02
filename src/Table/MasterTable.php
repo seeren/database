@@ -1,14 +1,13 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Table\MasterTable class
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
  * @version 1.3.4
  */
@@ -32,16 +31,14 @@ abstract class MasterTable extends AbstractTable
 {
 
     private
+
         /**
-         * @var array TableInterface collection
+         * @var array TableInterface
          */
         $table;
 
     /**
-     * Construct MasterTable
-     * 
      * @param array $table agregate table
-     * @return null
      */
     protected function __construct(array $table)
     {
@@ -55,13 +52,8 @@ abstract class MasterTable extends AbstractTable
     }
 
     /**
-     * Call
-     *
-     * @param string $name methode name
-     * @param array methode arguments
-     * @return TableInterface self
-     *
-     * @throws RuntimeException on error or layer exception
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\AbstractTable::__call()
      */
     public final function __call(string $name, array $args): TableInterface
     {
@@ -88,12 +80,9 @@ abstract class MasterTable extends AbstractTable
     }
 
     /**
-     * Select
-     *
      * @param DalInterface $dal
-     * @return TableInterface self
-     *
-     * @throws RuntimeException on layer exception
+     * @throws RuntimeException
+     * @return \Seeren\Database\Table\MasterTable
      */
     public function select(DalInterface $dal)
     {
@@ -109,12 +98,9 @@ abstract class MasterTable extends AbstractTable
     }
 
     /**
-     * Delete
-     * 
      * @param DalInterface $dal
-     * @return TableInterface self
-     * 
-     * @throws RuntimeException on layer exception
+     * @throws RuntimeException
+     * @return \Seeren\Database\Table\MasterTable
      */
     public function delete(DalInterface $dal)
     {
@@ -133,10 +119,8 @@ abstract class MasterTable extends AbstractTable
     }
 
     /**
-     * Get column value
-     *
-     * @param string $name column index
-     * @return mixed column value
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\AbstractTable::__get()
      */
     public final function __get(string $name)
     {
@@ -151,11 +135,8 @@ abstract class MasterTable extends AbstractTable
     }
 
     /**
-     * Set column value
-     *
-     * @param string $name column index
-     * @param mixed $value column value
-     * @return null
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\AbstractTable::__set()
      */
     public final function __set(string $name, $value)
     {
@@ -166,10 +147,8 @@ abstract class MasterTable extends AbstractTable
     }
 
     /**
-     * Get attribute
-     *
-     * @param string $name attribute name
-     * @return mixed attribute value
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\AbstractTable::get()
      */
     public final function get(string $name = TableInterface::ATTR_OBJECT)
     {
@@ -181,10 +160,8 @@ abstract class MasterTable extends AbstractTable
     }
 
     /**
-     * Add clause
-     *
-     * @param ClauseInterface $clause table clause
-     * @return null
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\AbstractTable::addClause()
      */
     public final function addClause(ClauseInterface $clause)
     {
@@ -195,9 +172,8 @@ abstract class MasterTable extends AbstractTable
     }
 
     /**
-     * Clear clauses and results
-     *
-     * @return null
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\AbstractTable::clear()
      */
     public final function clear()
     {
@@ -208,9 +184,8 @@ abstract class MasterTable extends AbstractTable
     }
 
     /**
-     * Json serialize
-     *
-     * @return array data to json encode
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\AbstractTable::jsonSerialize()
      */
     public final function jsonSerialize()
     {

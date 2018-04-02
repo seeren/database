@@ -1,14 +1,13 @@
 <?php
 
 /**
- * This file contain Seeren\Database\Table\Key\Key class
  *     __
  *    / /__ __ __ __ __ __
  *   / // // // // // // /
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @copyright (c) Cyril Ichti <consultant@seeren.fr>
+ * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
  * @version 1.0.1
  */
@@ -26,31 +25,32 @@ class Key implements KeyInterface
 {
 
     protected
+
         /**
-         * @var string type
+         * @var string
          */
         $type,
+
         /**
-         * @var array subject name collection
+         * @var array
          */
         $subject,
+
         /**
-         * @var string foreigner name
+         * @var string
          */
         $foreigner,
+
         /**
-         * @var array foreigner subject name collection
+         * @var array
          */
         $foreignerSubject;
 
     /**
-     * Construct Key
-     * 
      * @param string $type type
      * @param array $subject subject name collection
      * @param string $foreigner foreigner name
      * @param array $foreignerSubject foreigner subject name collection
-     * @return null
      */
     public function __construct(
         string $type,
@@ -66,9 +66,8 @@ class Key implements KeyInterface
     }
 
     /**
-     * Get type
-     *
-     * @return string type
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\Key\KeyInterface::getType()
      */
     public final function getType(): string
     {
@@ -76,9 +75,8 @@ class Key implements KeyInterface
     }
 
     /**
-     * Get subject name collection
-     *
-     * @return array subject
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\Key\KeyInterface::getSubject()
      */
     public final function getSubject(): array
     {
@@ -86,9 +84,8 @@ class Key implements KeyInterface
     }
 
     /**
-     * Get foreigner
-     *
-     * @return string foreigner name
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\Key\KeyInterface::getForeigner()
      */
     public final function getForeigner(): string
     {
@@ -96,9 +93,8 @@ class Key implements KeyInterface
     }
 
     /**
-     * Get foreigner subject name collection
-     *
-     * @return array foreigner subject name collection
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\Key\KeyInterface::getForeignerSubject()
      */
     public final function getForeignerSubject(): array
     {
