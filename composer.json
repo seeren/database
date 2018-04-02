@@ -1,9 +1,10 @@
 {
 	"name" : "seeren/database",
-	"description" : "Data mapper and syntax resolvers",
+	"description" : "Database mapping",
 	"keywords" : [
-		"datamapper",
-		"activerecord"
+		"mapping",
+		"database",
+		"table"
 	],
 	"type" : "library",
 	"license" : "MIT",
@@ -15,7 +16,7 @@
 	],
 	"minimum-stability" : "dev",
 	"require" : {
-		"php" : ">=7.0.1"
+		"php" : ">=7.2.0"
 	},
 	"autoload" : {
 		"psr-4" : {
@@ -28,7 +29,7 @@
 		}
 	},
 	"require-dev" : {
-		"phpunit/phpunit" : "dev-master",
-		"satooshi/php-coveralls" : "dev-master"
+		"phpunit/phpunit" : "7.0.2",
+		"satooshi/php-coveralls" : "2.0.0"
 	}
 }
