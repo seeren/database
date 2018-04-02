@@ -18,6 +18,7 @@ use Seeren\Database\Dao\DaoInterface;
 use Seeren\Database\Dal\DalInterface;
 use Seeren\Database\Table\TableInterface;
 use InvalidArgumentException;
+use Seeren\Database\Table\Column\ColumnInterface;
 
 /**
  * Class for provide update MySql operation
@@ -45,7 +46,11 @@ class UpdateMySqlDao extends AbstractMySqlDao implements MySqlDaoInterface
     {
         $mySql = "";
         foreach ($table->get($table::ATTR_COLUMN) as $key => $value) {
-            if ($value->getValue()) {
+            if (null !== $value->getValue()
+             || in_array(
+                     ColumnInterface::OPT_DEFAULT_NULL,
+                     $value->getOption()
+                 )) {
                 $id = ":" . $key;
                 $mySql .= "`" . $key . "`=" . $id . ", ";
                 $this->setParam($id, $value->getValue(), $value->getParam());
