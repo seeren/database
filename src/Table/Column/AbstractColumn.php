@@ -121,7 +121,7 @@ abstract class AbstractColumn implements ColumnInterface
 
     /**
      * {@inheritDoc}
-     * @see JsonSerializable::jsonSerialize()
+     * @see \JsonSerializable::jsonSerialize()
      */
     public final function jsonSerialize()
     {
