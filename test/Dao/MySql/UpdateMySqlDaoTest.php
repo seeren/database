@@ -33,9 +33,8 @@ class UpdateMySqlDaoTest extends AbstractMySqlDaoTest
 {
 
     /**
-     * Get Dao
-     *
-     * @return DaoInterface dao
+     * {@inheritDoc}
+     * @see \Seeren\Database\Test\Dao\AbstractDaoTest::getDao()
      */
     protected function getDao(): DaoInterface
     {
@@ -44,9 +43,8 @@ class UpdateMySqlDaoTest extends AbstractMySqlDaoTest
     }
 
     /**
-     * Get Table
-     *
-     * @return TableInterface table
+     * {@inheritDoc}
+     * @see \Seeren\Database\Test\Dao\AbstractDaoTest::getTable()
      */
     protected function getTable(): TableInterface
     {
@@ -61,15 +59,14 @@ class UpdateMySqlDaoTest extends AbstractMySqlDaoTest
     }
 
     /**
-     * Get default syntax
-     *
-     * @return string dao to string
+     * {@inheritDoc}
+     * @see \Seeren\Database\Test\Dao\AbstractDaoTest::getDefaultSyntax()
      */
     protected function getDefaultSyntax(): string
-    {
+    { 
         return "UPDATE `"
              . $this->getTable()->get(TableInterface::ATTR_NAME) . "` "
-             . "SET `host`=:host WHERE id = :c0_id;";
+             . "SET `host`=:host, `dbname`=:dbname WHERE id = :c0_id;";
     }
 
     /**
@@ -101,6 +98,7 @@ class UpdateMySqlDaoTest extends AbstractMySqlDaoTest
      * @covers \Seeren\Database\Table\Column\AbstractColumn::__construct
      * @covers \Seeren\Database\Table\Column\AbstractColumn::getName
      * @covers \Seeren\Database\Table\Column\AbstractColumn::getValue
+     * @covers \Seeren\Database\Table\Column\AbstractColumn::getOption
      * @covers \Seeren\Database\Table\AbstractTable::__set
      * @covers \Seeren\Database\Table\Column\StringColumn::getParam
      * @covers \Seeren\Database\Table\Column\StringColumn::setValue
