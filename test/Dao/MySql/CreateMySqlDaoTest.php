@@ -156,17 +156,6 @@ class CreateMySqlDaoTest extends AbstractDaoTest
     /**
      * @covers \Seeren\Database\Dao\MySql\CreateMySqlDao::__construct
      * @covers \Seeren\Database\Dao\AbstractDao::__construct
-     * @covers \Seeren\Database\Dao\AbstractDao::close
-     * @covers \Seeren\Database\Dao\AbstractDao::__get
-     */
-    public function testClose()
-    {
-        parent::testClose();
-    }
-
-    /**
-     * @covers \Seeren\Database\Dao\MySql\CreateMySqlDao::__construct
-     * @covers \Seeren\Database\Dao\AbstractDao::__construct
      * @covers \Seeren\Database\Dao\AbstractDao::clone
      */
     public function testClone()

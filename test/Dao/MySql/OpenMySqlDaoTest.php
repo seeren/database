@@ -121,7 +121,6 @@ class OpenMySqlDaoTest extends AbstractDaoTest
     /**
      * @covers \Seeren\Database\Dao\MySql\OpenMySqlDao::__construct
      * @covers \Seeren\Database\Dao\AbstractDao::__construct
-     * @covers \Seeren\Database\Dao\AbstractDao::close
      * @covers \Seeren\Database\Dao\AbstractDao::__get
      * @covers \Seeren\Database\Dal\Dal::__construct
      * @covers \Seeren\Database\Dal\Dal::setLayer
@@ -142,17 +141,6 @@ class OpenMySqlDaoTest extends AbstractDaoTest
     public function testQueryInvalidArgumentException()
     {
         $this->getDao()->query(new DummyTable, $this->getDal());
-    }
-
-    /**
-     * @covers \Seeren\Database\Dao\MySql\OpenMySqlDao::__construct
-     * @covers \Seeren\Database\Dao\AbstractDao::__construct
-     * @covers \Seeren\Database\Dao\AbstractDao::close
-     * @covers \Seeren\Database\Dao\AbstractDao::__get
-     */
-    public function testClose()
-    {
-        parent::testClose();
     }
 
     /**

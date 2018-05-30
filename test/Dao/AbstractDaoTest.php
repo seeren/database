@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link https://github.com/seeren/database
- * @version 1.0.2
+ * @version 2.0.2
  */
 
 namespace Seeren\Database\Test\Dao;
@@ -97,16 +97,6 @@ abstract class AbstractDaoTest extends \PHPUnit\Framework\TestCase
         } catch (PDOException $e) {
         }
         $this->assertTrue($dao->queryString === $this->getDefaultSyntax());
-    }
-
-    /**
-     * Test close
-     */
-    public function testClose()
-    {
-        $dao = $this->getDao();
-        $dao->close();
-        $this->assertTrue($dao->queryString === "");
     }
 
     /**

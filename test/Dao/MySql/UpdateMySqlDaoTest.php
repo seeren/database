@@ -149,21 +149,8 @@ class UpdateMySqlDaoTest extends AbstractMySqlDaoTest
     /**
      * @covers \Seeren\Database\Dao\MySql\UpdateMySqlDao::__construct
      * @covers \Seeren\Database\Dao\AbstractDao::__construct
-     * @covers \Seeren\Database\Dao\AbstractDao::__get
-     * @covers \Seeren\Database\Dao\AbstractDao::close
+     * @covers \Seeren\Database\Dao\AbstractDao::clone
      * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::__construct
-     * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::close
-     */
-    public function testClose()
-    {
-        parent::testClose();
-    }
-
-    /**
-     * @covers \Seeren\Database\Dao\MySql\UpdateMySqlDao::__construct
-    * @covers \Seeren\Database\Dao\AbstractDao::__construct
-    * @covers \Seeren\Database\Dao\AbstractDao::clone
-    * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::__construct
      */
     public function testClone()
     {

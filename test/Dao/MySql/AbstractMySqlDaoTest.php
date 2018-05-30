@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link https://github.com/seeren/database
- * @version 1.0.1
+ * @version 2.0.1
  */
 
 namespace Seeren\Database\Test\Dao\MySql;
@@ -35,16 +35,6 @@ abstract class AbstractMySqlDaoTest extends AbstractDaoTest
     {
         parent::test__get();
         $this->assertTrue($this->getDao()->result === []);
-    }
-    
-    /**
-     * Test close
-     */
-    public function testClose()
-    {
-        $dao = $this->getDao();
-        $dao->close();
-        $this->assertTrue($dao->result === []);
     }
 
 }
