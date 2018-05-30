@@ -18,8 +18,6 @@ namespace Seeren\Database\Test\Dal\MySql;
 use Seeren\Database\Dal\DalInterface;
 use Seeren\Database\Test\Dal\AbstractDalTest;
 use Seeren\Database\Dal\MySql\MySqlDal;
-use Seeren\Database\Dao\DaoInterface;
-use Seeren\Database\Dao\MySql\SelectMySqlDao;
 use ReflectionClass;
 
 /**
@@ -93,11 +91,9 @@ class MySqlDalTest extends AbstractDalTest
     * @covers \Seeren\Database\Dal\Dal::setLayer
     * @covers \Seeren\Database\Dao\AbstractDao::__construct
     * @covers \Seeren\Database\Dao\AbstractDao::clone
-    * @covers \Seeren\Database\Dao\AbstractDao::close
     * @covers \Seeren\Database\Dao\AbstractDao::query
     * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::__construct
     * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::bindParam
-    * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::close
     * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::getClause
     * @covers \Seeren\Database\Dao\MySql\SelectMySqlDao::__construct
     * @covers \Seeren\Database\Dao\MySql\SelectMySqlDao::execute
