@@ -9,7 +9,7 @@
  *
  * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 namespace Seeren\Database\Table\Column;
@@ -50,7 +50,7 @@ class IntegerColumn extends AbstractColumn implements IntegerColumnInterface
      */
     public final function setValue($value)
     {
-        $this->value = (int) $value;
+        $this->value = is_numeric($value) || $value ? (int) $value : null;
     }
 
     /**
