@@ -9,7 +9,7 @@
  *
  * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.1.4
+ * @version 2.1.0
  */
 
 namespace Seeren\Database\Table;
@@ -29,7 +29,7 @@ use Throwable;
  * @package Database
  * @abstract
  */
-abstract class AbstractTable
+abstract class AbstractTable implements TableInterface
 {
 
     private
@@ -143,7 +143,6 @@ abstract class AbstractTable
      */
     public function set(DaoInterface $object)
     {
-        $object->close();
         $this->object = $object;
     }
 
@@ -164,6 +163,17 @@ abstract class AbstractTable
     {
         $this->object = null;
         $this->clause   = [];
+    }
+
+    /**
+     * {@inheritDoc}
+     * @see \Seeren\Database\Table\TableInterface::handle()
+     */
+    public function handle($data)
+    {
+        foreach ($data as $key => $value) {
+            $this->__set($key, $value);
+        }
     }
 
     /**
