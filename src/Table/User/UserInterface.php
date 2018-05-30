@@ -9,12 +9,10 @@
  *
  * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 1.0.2
+ * @version 2.0.2
  */
 
 namespace Seeren\Database\Table\User;
-
-use Seeren\Database\Table\TableInterface;
 
 /**
  * Interface for represent a database user
@@ -23,7 +21,7 @@ use Seeren\Database\Table\TableInterface;
  * @package Database
  * @subpackage Table/User
  */
-interface UserInterface extends TableInterface
+interface UserInterface
 {
 
     const
