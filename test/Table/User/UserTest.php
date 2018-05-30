@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link https://github.com/seeren/database
- * @version 1.1.1
+ * @version 1.2.0
  */
 
 namespace Seeren\Database\Test\Table\User;
@@ -132,6 +132,30 @@ class UserTest extends AbstractTableTest
    public function testSet()
    {
        parent::testSet();
+   }
+
+   /**
+    * @covers \Seeren\Database\Table\User\User::__construct
+    * @covers \Seeren\Database\Table\AbstractTable::__construct
+    * @covers \Seeren\Database\Table\AbstractTable::__get
+    * @covers \Seeren\Database\Table\AbstractTable::__set
+    * @covers \Seeren\Database\Table\AbstractTable::addColumn
+    * @covers \Seeren\Database\Table\AbstractTable::addKey
+    * @covers \Seeren\Database\Table\AbstractTable::handle
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::__construct
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::getName
+    * @covers \Seeren\Database\Table\Column\AbstractColumn::getValue
+    * @covers \Seeren\Database\Table\Column\StringColumn::__construct
+    * @covers \Seeren\Database\Table\Column\StringColumn::setValue
+    * @covers \Seeren\Database\Table\Key\Key::__construct
+    */
+   public function testHandle()
+   {
+       $object = new stdClass();
+       $object->{User::COL_USER} = "foo";
+       $table = $this->getTable();
+       $table->handle($object);
+       $this->assertEquals($object->{User::COL_USER}, $table->{User::COL_USER});
    }
 
    /**
