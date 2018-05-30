@@ -85,15 +85,6 @@ abstract class AbstractDao
 
     /**
      * {@inheritDoc}
-     * @see \Seeren\Database\Dao\DaoInterface::close()
-     */
-    public function close()
-    {
-        $this->queryString = "";
-    }
-
-    /**
-     * {@inheritDoc}
      * @see \Seeren\Database\Dao\DaoInterface::clone()
      */
     public final function clone(): DaoInterface
