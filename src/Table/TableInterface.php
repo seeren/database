@@ -9,7 +9,7 @@
  *
  * @author (c) Cyril Ichti <consultant@seeren.fr>
  * @link http://www.seeren.fr/ Seeren
- * @version 2.0.2
+ * @version 2.2.2
  */
 namespace Seeren\Database\Table;
 
@@ -81,6 +81,14 @@ interface TableInterface extends JsonSerializable
      * @return null
      */
     public function set(DaoInterface $object);
+
+    /**
+     * Handle
+     *
+     * @param array|\stdClass $data
+     * @return null
+     */
+    public function handle($data);
 
     /**
      * Add clause
