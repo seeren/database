@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1527709665">
-  <project timestamp="1527709665">
+<coverage generated="1527723640">
+  <project timestamp="1527723640">
     <package name="Seeren\Database\Dal">
       <file name="C:\xampp\htdocs\dev-master.seeren\database\src/Dal/Dal.php">
         <class name="Seeren\Database\Dal\Dal" namespace="Seeren\Database\Dal" fullPackage="Database.Dal" category="Seeren" package="Database" subpackage="Dal">
