@@ -10,7 +10,7 @@
  *
  * @copyright (c) Cyril Ichti <consultant@seeren.fr>
  * @link https://github.com/seeren/database
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 namespace Seeren\Database\Test;
@@ -133,7 +133,7 @@ class IntegerColumnTest extends AbstractColumnTest
    {
        $column = $this->getColumn();
        $column->setValue(null);
-       $this->assertTrue($column->getValue() === 0);
+       $this->assertNull($column->getValue());
    }
 
    /**
