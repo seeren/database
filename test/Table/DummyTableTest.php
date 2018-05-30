@@ -145,7 +145,6 @@ class DummyTableTest extends MasterTableTest
    /**
     * @covers \Seeren\Database\Test\Table\DummyTable::__construct
     * @covers \Seeren\Database\Dao\AbstractDao::__construct
-    * @covers \Seeren\Database\Dao\AbstractDao::close
     * @covers \Seeren\Database\Dao\MySql\OpenMySqlDao::__construct
     * @covers \Seeren\Database\Table\AbstractTable::__construct
     * @covers \Seeren\Database\Table\AbstractTable::addColumn
@@ -169,7 +168,6 @@ class DummyTableTest extends MasterTableTest
    /**
     * @covers \Seeren\Database\Test\Table\DummyTable::__construct
     * @covers \Seeren\Database\Dao\AbstractDao::__construct
-    * @covers \Seeren\Database\Dao\AbstractDao::close
     * @covers \Seeren\Database\Dao\MySql\OpenMySqlDao::__construct
     * @covers \Seeren\Database\Table\AbstractTable::__construct
     * @covers \Seeren\Database\Table\AbstractTable::addClause
@@ -255,11 +253,9 @@ class DummyTableTest extends MasterTableTest
     * @covers \Seeren\Database\Dal\MySql\MySqlDal::__construct
     * @covers \Seeren\Database\Dao\AbstractDao::__construct
     * @covers \Seeren\Database\Dao\AbstractDao::clone
-    * @covers \Seeren\Database\Dao\AbstractDao::close
     * @covers \Seeren\Database\Dao\AbstractDao::query
     * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::__construct
     * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::bindParam
-    * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::close
     * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::getClause
     * @covers \Seeren\Database\Dao\MySql\CountMySqlDao::__construct
     * @covers \Seeren\Database\Dao\MySql\CountMySqlDao::execute
@@ -303,12 +299,10 @@ class DummyTableTest extends MasterTableTest
     * @covers \Seeren\Database\Dal\MySql\MySqlDal::__construct
     * @covers \Seeren\Database\Dao\AbstractDao::__construct
     * @covers \Seeren\Database\Dao\AbstractDao::clone
-    * @covers \Seeren\Database\Dao\AbstractDao::close
     * @covers \Seeren\Database\Dao\AbstractDao::constant
     * @covers \Seeren\Database\Dao\AbstractDao::query
     * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::__construct
     * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::bindParam
-    * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::close
     * @covers \Seeren\Database\Dao\MySql\AbstractMySqlDao::getClause
     * @covers \Seeren\Database\Dao\MySql\DeleteMySqlDao::__construct
     * @covers \Seeren\Database\Dao\MySql\DeleteMySqlDao::execute
