@@ -55,13 +55,6 @@ interface DaoInterface
     public function query(TableInterface $table, DalInterface $dal): self;
 
     /**
-     * Close
-     *
-     * @return null
-     */
-    public function close();
-
-    /**
      * Get an instance
      *
      * @return DaoInterface instance
