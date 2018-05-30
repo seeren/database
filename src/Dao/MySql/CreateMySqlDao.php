@@ -85,7 +85,7 @@ class CreateMySqlDao extends AbstractDao implements MySqlDaoInterface
                 $column[$key]->getOption())) {
             $autoIncrement .= "MODIFY "
                  . substr($this->getColumnSyntaxe($column[$key]), 0, -2)
-                 . " AUTO_INCREMENT;\n";
+                 . " AUTO_INCREMENT,\n";
         }
         return $autoIncrement;
     }
