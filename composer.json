@@ -1,35 +1,34 @@
 {
-	"name" : "seeren/database",
-	"description" : "Database mapping",
-	"keywords" : [
-		"mapping",
-		"database",
-		"table"
-	],
-	"type" : "library",
-	"license" : "MIT",
-	"authors" : [{
-			"name" : "Cyril Ichti",
-			"email" : "consultant@seeren.fr",
-			"homepage" : "http://www.seeren.fr"
-		}
-	],
-	"minimum-stability" : "dev",
-	"require" : {
-		"php" : ">=7.2.0"
-	},
-	"autoload" : {
-		"psr-4" : {
-			"Seeren\\Database\\" : "src/"
-		}
-	},
-	"autoload-dev" : {
-		"psr-4" : {
-			"Seeren\\Database\\Test\\" : "test/"
-		}
-	},
-	"require-dev" : {
-		"phpunit/phpunit" : "7.0.2",
-		"satooshi/php-coveralls" : "2.0.0"
-	}
+  "name": "seeren/database",
+  "description": "Active record pattern for database abstraction",
+  "keywords": [
+    "active record pattern",
+    "database"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Cyril Ichti",
+      "email": "consultant@seeren.fr",
+      "homepage": "https://github.com/seeren/database"
+    }
+  ],
+  "require": {
+    "php": ">=7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Seeren\\Database\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Seeren\\Database\\Test\\": "test/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "9.4.0",
+    "php-coveralls/php-coveralls": "v2.4.1"
+  }
 }
