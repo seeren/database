@@ -41,8 +41,7 @@ class Key implements KeyInterface
         array $columnsName,
         string $foreignerName = null)
     {
-
-        $this->type = defined("static::" . $type) ? $type : self::KEY;
+        $this->type = $type;
         $this->columnsName = $columnsName;
         $this->foreignerName = $foreignerName;
     }

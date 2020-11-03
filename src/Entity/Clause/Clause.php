@@ -49,8 +49,8 @@ class Clause implements ClauseInterface
         $value = null)
     {
         $this->columnName = $columnName;
-        $this->type = defined('static::' . $type) ? $type : '';
-        $this->operator = defined('static::OPE_' . $operator) ? $operator : '';
+        $this->type = $type;
+        $this->operator = $operator;
         $this->value = $value;
     }
 
