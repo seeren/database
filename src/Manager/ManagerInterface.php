@@ -6,7 +6,7 @@ use InvalidArgumentException;
 use PDO;
 use PDOException;
 use Seeren\Database\Statement\StatementInterface;
-use Seeren\Database\Table\TableInterface;
+use Seeren\Database\Entity\TableInterface;
 
 /**
  * Interface to represent a manager

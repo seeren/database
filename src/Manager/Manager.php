@@ -5,7 +5,7 @@ namespace Seeren\Database\Manager;
 use InvalidArgumentException;
 use PDO;
 use Seeren\Database\Statement\StatementInterface;
-use Seeren\Database\Table\TableInterface;
+use Seeren\Database\Entity\TableInterface;
 
 /**
  * Class to represent a manager
