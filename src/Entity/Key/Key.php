@@ -27,28 +27,18 @@ class Key implements KeyInterface
     private array $columnsName;
 
     /**
-     * @var string|null
-     */
-    private ?string $foreignerName;
-
-    /**
      * @param string $type
      * @param array $columnsName
-     * @param string|null $foreignerName
      */
-    public function __construct(
-        string $type,
-        array $columnsName,
-        string $foreignerName = null)
+    public function __construct(string $type, array $columnsName)
     {
         $this->type = $type;
         $this->columnsName = $columnsName;
-        $this->foreignerName = $foreignerName;
     }
 
     /**
      * {@inheritDoc}
-     * @see \Seeren\Database\Entity\Key\KeyInterface::getType()
+     * @see KeyInterface::getType()
      */
     public function getType(): string
     {
@@ -57,20 +47,11 @@ class Key implements KeyInterface
 
     /**
      * {@inheritDoc}
-     * @see KeyInterface::getForeignerName()
+     * @see KeyInterface::getColumnsName()
      */
     public function getColumnsName(): array
     {
         return $this->columnsName;
-    }
-
-    /**
-     * {@inheritDoc}
-     * @see KeyInterface::getForeignerName()
-     */
-    public function getForeignerName(): ?string
-    {
-        return $this->foreignerName;
     }
 
 }

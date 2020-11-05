@@ -2,10 +2,9 @@
 
 namespace Seeren\Database\Manager;
 
-use InvalidArgumentException;
 use PDO;
 use Seeren\Database\Statement\StatementInterface;
-use Seeren\Database\Entity\TableInterface;
+use Seeren\Database\Entity\EntityInterface;
 
 /**
  * Class to represent a manager
@@ -57,7 +56,7 @@ class Manager implements ManagerInterface
      * {@inheritDoc}
      * @see ManagerInterface::getLayer()
      */
-    public final function getLayer(): PDO
+    public function getLayer(): PDO
     {
         return $this->layer;
     }
@@ -66,11 +65,9 @@ class Manager implements ManagerInterface
      * {@inheritDoc}
      * @see ManagerInterface::prepare()
      */
-    public final function prepare(string $operation): StatementInterface
+    public function prepare(string $operation): StatementInterface
     {
-        if (!array_key_exists($operation, $this->statements)) {
-            throw new InvalidArgumentException('Operation "' . $operation . '" unreachable');
-        } else if (is_object($this->statements[$operation])) {
+        if (is_object($this->statements[$operation])) {
             return clone $this->statements[$operation];
         }
         $this->statements[$operation] = new $this->statements[$operation];
@@ -81,9 +78,9 @@ class Manager implements ManagerInterface
      * {@inheritDoc}
      * @see ManagerInterface::execute()
      */
-    public final function execute(string $operation, TableInterface $table): void
+    public function execute(string $operation, EntityInterface $table)
     {
-        $table->set($this->prepare($operation)->query($table, $this));
+        return $this->prepare($operation)->execute($this, $table);
     }
 
 }

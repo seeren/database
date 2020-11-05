@@ -39,7 +39,7 @@ interface ClauseInterface
     /**
      * @var string
      */
-    const ORDER_BY = 'ORDER_BY';
+    const ORDER_BY = 'ORDER BY';
 
     /**
      * @var string
@@ -49,42 +49,42 @@ interface ClauseInterface
     /**
      * @var string
      */
-    const OP_IS_NULL = 'IS_NULL';
+    const OP_IS_NULL = 'IS NULL';
 
     /**
      * @var string
      */
-    const OP_IS_NOT_NULL = 'IS_NOT_NULL';
+    const OP_IS_NOT_NULL = 'IS NOT NULL';
 
     /**
      * @var string
      */
-    const OP_EQUAL = 'EQUAL';
+    const OP_EQUAL = '=';
 
     /**
      * @var string
      */
-    const OP_UNEQUAL = 'UNEQUAL';
+    const OP_UNEQUAL = '!=';
 
     /**
      * @var string
      */
-    const OP_SUP = 'SUP';
+    const OP_SUP = '>';
 
     /**
      * @var string
      */
-    const OP_SUP_EQUAL = 'SUP_EQUAL';
+    const OP_SUP_EQUAL = '>=';
 
     /**
      * @var string
      */
-    const OP_INF = 'INF';
+    const OP_INF = '<';
 
     /**
      * @var string
      */
-    const OP_INF_EQUAL = 'INF_EQUAL';
+    const OP_INF_EQUAL = '<=';
 
     /**
      * @var string

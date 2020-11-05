@@ -2,11 +2,10 @@
 
 namespace Seeren\Database\Manager;
 
-use InvalidArgumentException;
 use PDO;
 use PDOException;
 use Seeren\Database\Statement\StatementInterface;
-use Seeren\Database\Entity\TableInterface;
+use Seeren\Database\Entity\EntityInterface;
 
 /**
  * Interface to represent a manager
@@ -65,16 +64,15 @@ interface ManagerInterface
     /**
      * @param string $operation
      * @return StatementInterface
-     * @throws InvalidArgumentException
      */
     public function prepare(string $operation): StatementInterface;
 
     /**
      * @param string $operation
-     * @param TableInterface $table
-     * @throws InvalidArgumentException
+     * @param EntityInterface $table
+     * @return mixed
      * @throws PDOException
      */
-    public function execute(string $operation, TableInterface $table): void;
+    public function execute(string $operation, EntityInterface $table);
 
 }

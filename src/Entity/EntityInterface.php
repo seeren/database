@@ -4,6 +4,8 @@ namespace Seeren\Database\Entity;
 
 use JsonSerializable;
 use Seeren\Database\Entity\Clause\ClauseInterface;
+use Seeren\Database\Entity\Column\ColumnInterface;
+use Seeren\Database\Entity\Key\KeyInterface;
 
 /**
  * Interface to represent a entity
@@ -14,60 +16,40 @@ use Seeren\Database\Entity\Clause\ClauseInterface;
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @package Seeren\Database\Entity\Key
+ * @package Seeren\Database\Entity
  */
 interface EntityInterface extends JsonSerializable
 {
 
     /**
-     * @var string
+     * @return string
      */
-    const ATTR_NAME = 'NAME';
+    public function getName(): string;
 
     /**
-     * @var string
+     * @return ColumnInterface[]
      */
-    const ATTR_COLUMN = 'COLUMN';
+    public function getColumns(): array;
 
     /**
-     * @var string
+     * @return KeyInterface[]
      */
-    const ATTR_KEY = 'KEY';
+    public function getKeys(): array;
 
     /**
-     * @var string
+     * @return ClauseInterface[]
      */
-    const ATTR_CLAUSE = 'CLAUSE';
-
-    /**
-     * @param string $name
-     * @return mixed
-     */
-    public function getAttribute(string $name);
-
-    /**
-     * @param string $name
-     * @return mixed
-     */
-    public function __get(string $name);
-
-    /**
-     * @param string $name
-     * @param $value
-     * @return mixed
-     */
-    public function __set(string $name, $value);
+    public function getClauses(): array;
 
     /**
      * @param ClauseInterface $clause
-     * @return $this
      */
-    public function addClause(ClauseInterface $clause): self;
+    public function addClause(ClauseInterface $clause): void;
 
     /**
-     * @return $this
+     * @return void
      */
-    public function clearClauses(): self;
+    public function clearClauses(): void;
 
     /**
      * @return int
@@ -95,7 +77,7 @@ interface EntityInterface extends JsonSerializable
     public function insert(): self;
 
     /**
-     * @return mixed
+     * @return EntityInterface|EntityInterface[]|null
      */
     public function select();
 

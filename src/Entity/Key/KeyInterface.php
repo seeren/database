@@ -19,7 +19,7 @@ interface KeyInterface
     /**
      * @var string
      */
-    const PRIMARY = 'PRIMARY';
+    const PRIMARY = 'PRIMARY KEY';
 
     /**
      * @var string
@@ -29,17 +29,12 @@ interface KeyInterface
     /**
      * @var string
      */
-    const INDEX = 'INDEX';
+    const INDEX = 'KEY';
 
     /**
      * @var string
      */
-    const UNIQUE = 'UNIQUE';
-
-    /**
-     * @var string
-     */
-    const FOREIGN = 'FOREIGN';
+    const UNIQUE = 'UNIQUE KEY';
 
     /**
      * @return string
@@ -50,10 +45,5 @@ interface KeyInterface
      * @return array
      */
     public function getColumnsName(): array;
-
-    /**
-     * @return string|null
-     */
-    public function getForeignerName(): ?string;
 
 }

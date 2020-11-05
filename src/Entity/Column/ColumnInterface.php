@@ -2,6 +2,8 @@
 
 namespace Seeren\Database\Entity\Column;
 
+use JsonSerializable;
+
 /**
  * Interface to represent a entity column
  *
@@ -13,7 +15,7 @@ namespace Seeren\Database\Entity\Column;
  *
  * @package Seeren\Database\Entity\Column
  */
-interface ColumnInterface
+interface ColumnInterface extends JsonSerializable
 {
 
     /**
@@ -24,22 +26,22 @@ interface ColumnInterface
     /**
      * @var string
      */
-    const OPT_NOT_NULL = 'NOT_NULL';
+    const OPT_NOT_NULL = 'NOT NULL';
 
     /**
      * @var string
      */
-    const OPT_DEFAULT_NULL = 'DEFAULT_NULL';
+    const OPT_DEFAULT_NULL = 'DEFAULT NULL';
 
     /**
      * @var string
      */
-    const OPT_DEFAULT_STRING = 'DEFAULT_STRING';
+    const OPT_DEFAULT_STRING = "DEFAULT ''";
 
     /**
      * @var string
      */
-    const OPT_DEFAULT_TIMESTAMP = 'DEFAULT_TIMESTAMP';
+    const OPT_DEFAULT_TIMESTAMP = 'DEFAULT CURRENT_TIMESTAMP';
 
     /**
      * @var string
@@ -50,12 +52,6 @@ interface ColumnInterface
      * @var string
      */
     const OPT_UNSIGNED = 'UNSIGNED';
-
-    /**
-     * @var string
-     */
-    const OPT_AUTO_INCREMENT = 'AUTO_INCREMENT';
-
 
     /**
      * @return mixed
