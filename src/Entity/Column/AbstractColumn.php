@@ -2,6 +2,8 @@
 
 namespace Seeren\Database\Entity\Column;
 
+use InvalidArgumentException;
+
 /**
  * Class to represent a entity generic column
  *
@@ -44,6 +46,7 @@ abstract class AbstractColumn implements ColumnInterface
     /**
      * @param $value
      * @return mixed
+     * @throws InvalidArgumentException
      */
     abstract protected function castValue($value);
 
@@ -117,6 +120,15 @@ abstract class AbstractColumn implements ColumnInterface
     public function getOptions(): array
     {
         return $this->options;
+    }
+
+    /**
+     * {@inheritDoc}
+     * @see JsonSerializable::jsonSerialize()
+     */
+    public function jsonSerialize()
+    {
+        return $this->value;
     }
 
 }
