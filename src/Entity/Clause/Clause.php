@@ -44,7 +44,7 @@ class Clause implements ClauseInterface
      */
     public function __construct(
         string $type,
-        string $columnName = '',
+        string $columnName,
         string $operator = '',
         $value = null)
     {
