@@ -92,7 +92,7 @@ abstract class AbstractColumn implements ColumnInterface
      */
     public function set($value): void
     {
-        $this->value = $this->castValue($value);
+        $this->value = null !== $value ? $this->castValue($value) : null;
     }
 
     /**

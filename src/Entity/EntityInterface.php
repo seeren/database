@@ -2,6 +2,7 @@
 
 namespace Seeren\Database\Entity;
 
+use InvalidArgumentException;
 use JsonSerializable;
 use Seeren\Database\Entity\Clause\ClauseInterface;
 use Seeren\Database\Entity\Column\ColumnInterface;
@@ -57,21 +58,28 @@ interface EntityInterface extends JsonSerializable
     public function count(): int;
 
     /**
+     * Create entity with cascade
+     *
      * @return $this
      */
     public function create(): self;
 
     /**
      * @return $this
+     * @throws InvalidArgumentException
      */
     public function delete(): self;
 
     /**
+     * Drop entity with cascade
+     *
      * @return $this
      */
     public function drop(): self;
 
     /**
+     * Insert entity with cascade when no id
+     *
      * @return $this
      */
     public function insert(): self;
@@ -82,6 +90,8 @@ interface EntityInterface extends JsonSerializable
     public function select();
 
     /**
+     * Insert entity without cascade
+     *
      * @return $this
      */
     public function update(): self;

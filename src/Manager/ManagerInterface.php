@@ -2,6 +2,7 @@
 
 namespace Seeren\Database\Manager;
 
+use InvalidArgumentException;
 use PDO;
 use PDOException;
 use Seeren\Database\Statement\StatementInterface;
@@ -71,6 +72,7 @@ interface ManagerInterface
      * @param string $operation
      * @param EntityInterface $table
      * @return mixed
+     * @throws InvalidArgumentException
      * @throws PDOException
      */
     public function execute(string $operation, EntityInterface $table);

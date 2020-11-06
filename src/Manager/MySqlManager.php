@@ -2,13 +2,13 @@
 
 namespace Seeren\Database\Manager;
 
-use Seeren\Database\Statement\MySql\CountMySqlDao;
-use Seeren\Database\Statement\MySql\CreateMySqlDao;
-use Seeren\Database\Statement\MySql\DeleteMySqlDao;
-use Seeren\Database\Statement\MySql\DropMySqlDao;
-use Seeren\Database\Statement\MySql\InsertMySqlDao;
-use Seeren\Database\Statement\MySql\SelectMySqlDao;
-use Seeren\Database\Statement\MySql\UpdateMySqlDao;
+use Seeren\Database\Statement\MySql\CountMySqlStatement;
+use Seeren\Database\Statement\MySql\CreateMySqlStatement;
+use Seeren\Database\Statement\MySql\DeleteMySqlStatement;
+use Seeren\Database\Statement\MySql\DropMySqlStatement;
+use Seeren\Database\Statement\MySql\InsertMySqlStatement;
+use Seeren\Database\Statement\MySql\SelectMySqlStatement;
+use Seeren\Database\Statement\MySql\UpdateMySqlStatement;
 
 /**
  * Class to represent a mysql manager
@@ -32,13 +32,13 @@ class MySqlManager extends Manager
     public function __construct(string $dsn, string $user, string $password)
     {
         parent::__construct($dsn, $user, $password, [
-            self::COUNT => CountMySqlDao::class,
-            self::CREATE => CreateMySqlDao::class,
-            self::DELETE => DeleteMySqlDao::class,
-            self::DROP => DropMySqlDao::class,
-            self::INSERT => InsertMySqlDao::class,
-            self::SELECT => SelectMySqlDao::class,
-            self::UPDATE => UpdateMySqlDao::class,
+            self::COUNT => CountMySqlStatement::class,
+            self::CREATE => CreateMySqlStatement::class,
+            self::DELETE => DeleteMySqlStatement::class,
+            self::DROP => DropMySqlStatement::class,
+            self::INSERT => InsertMySqlStatement::class,
+            self::SELECT => SelectMySqlStatement::class,
+            self::UPDATE => UpdateMySqlStatement::class,
         ]);
     }
 

@@ -17,14 +17,15 @@ use Seeren\Database\Statement\StatementInterface;
  *  /_// // // // // // /
  *    /_//_//_//_//_//_/
  *
- * @package Seeren\Database\Statement
+ * @package Seeren\Database\Statement\MySql
  */
 class CreateMySqlStatement implements StatementInterface
 {
 
     /**
-     * {@inheritDoc}
-     * @see StatementInterface::execute()
+     * @param ManagerInterface $manager
+     * @param EntityInterface $entity
+     * @return EntityInterface
      */
     public function execute(ManagerInterface $manager, EntityInterface $entity)
     {
@@ -42,7 +43,6 @@ class CreateMySqlStatement implements StatementInterface
             . $this->getAlteration($entity)
             . $this->getConstraint($manager, $entity);
         $sql = substr($sql, 0, -2) . ';';
-        echo($sql);
         $manager->getLayer()->query($sql);
         return $entity;
     }

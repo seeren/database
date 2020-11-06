@@ -2,6 +2,7 @@
 
 namespace Seeren\Database\Statement;
 
+use InvalidArgumentException;
 use Seeren\Database\Entity\EntityInterface;
 use Seeren\Database\Manager\ManagerInterface;
 
@@ -23,6 +24,7 @@ interface StatementInterface
      * @param ManagerInterface $manager
      * @param EntityInterface $table
      * @return mixed
+     * @throws InvalidArgumentException
      */
     public function execute(ManagerInterface $manager, EntityInterface $table);
 

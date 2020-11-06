@@ -43,11 +43,10 @@ class RelationColumn extends AbstractColumn implements RelationColumnInterface
      */
     protected function castValue($value)
     {
-        $className = $this->getType();
         if ($value instanceof $this->className) {
             return $value;
         }
-        throw new InvalidArgumentException('Expect a "' . $className . '"');
+        throw new InvalidArgumentException('Expect a "' . $this->className . '"');
     }
 
     /**
