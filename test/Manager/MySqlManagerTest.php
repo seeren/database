@@ -11,13 +11,13 @@ use Seeren\Database\Manager\MySqlManager;
 use Seeren\Database\Statement\StatementInterface;
 use Seeren\Database\Test\Mock\Color;
 
-class ManagerTest extends TestCase
+class MySqlManagerTest extends TestCase
 {
 
     /**
-     * @return ManagerInterface
+     * @return MySqlManager
      */
-    public function getMock(): ManagerInterface
+    public function getMock(): MySqlManager
     {
         return new MySqlManager('sqlite::memory:', 'user', 'password');
     }
