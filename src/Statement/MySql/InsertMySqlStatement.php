@@ -45,8 +45,6 @@ class InsertMySqlStatement implements StatementInterface
                     . '_'
                     . $key;
                 $columnList .= '`'
-                    . $entity->getName()
-                    . '`.`'
                     . $key
                     . '`, ';
                 $valueList .= $id . ', ';
