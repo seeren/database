@@ -173,7 +173,7 @@ Manager need credentials at construction: use container to resolve arguments
 {
   "parameters": { },
   "services": {
-    "Seeren\\Database\\Manager\MySqlManager": {
+    "Seeren\\Database\\Manager\\MySqlManager": {
       "dsn": ":localhost",
       "user": ":root",
       "password": ""
